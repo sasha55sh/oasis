@@ -4,7 +4,7 @@ interface ButtonProps {
   className?: string;
   text: string;
   type?: "button" | "submit";
-  background?: "amberOrange" | "transparent";
+  background?: "amberOrange" | "transparent" | "white";
   fullWidth?: boolean;
   disabled?: boolean;
   onClick?: () => void;
@@ -29,11 +29,17 @@ const Button: FC<ButtonProps> = ({
   const Tag = tag;
   const finalBackground = bordered ? "transparent" : background;
   const backgroundClass =
-    finalBackground === "amberOrange" ? "bg-amberOrange" : "bg-transparent";
+    finalBackground === "amberOrange"
+      ? "bg-amberOrange"
+      : finalBackground === "white"
+      ? "bg-white border border-transparent"
+      : "bg-transparent";
   const disabledBg = "disabled:bg-romance disabled:text-warmWhite";
   const textClass =
     finalBackground === "amberOrange"
       ? "text-white"
+      : finalBackground === "white"
+      ? "text-amberOrange"
       : bordered
       ? "text-amberOrange"
       : "";
@@ -42,6 +48,8 @@ const Button: FC<ButtonProps> = ({
   const hoverClass =
     finalBackground === "amberOrange"
       ? "hover:bg-romance hover:text-amberOrange transition-colors duration-300"
+      : finalBackground === "white"
+      ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
       : bordered
       ? "hover:bg-amberOrange hover:text-white transition-colors duration-300"
       : "";
