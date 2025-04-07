@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Input from "@/components/InputComponent";
+import Button from "@/components/ButtonComponent";
 
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Pinterest from "@/images/vectors/pinterest-logo.svg";
@@ -38,46 +40,63 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-black text-white relative">
-      <div>
-        <h1 className="font-bold text-[32px]">
-          Дізнавайся першим про найсмачніше
-        </h1>
-        <p>
-          Підпишись на розсилку та отримуй акції, спеціальні пропозиції й нові
-          страви!
-        </p>
+      <div className="container flex justify-around items-center my-[30px]">
+        <div className="flex flex-col space-y-[15px]">
+          <h1 className="font-bold text-[32px]">
+            Дізнавайся першим про найсмачніше!
+          </h1>
+          <p>Підпишись на розсилку та отримуй акції та спеціальні пропозиції</p>
+        </div>
+
+        <div className="flex">
+          <Input
+            inputType="input"
+            placeholder="Введіть свій емейл"
+            background="amberOrange"
+            className="max-w-[300px] rounded-md"
+          />
+          <Button
+            text="Підписатися"
+            background="white"
+            className="rounded-md ml-[-10px]"
+          />
+        </div>
       </div>
-      <hr className="max-w-[1170px] h-[1px] bg-amberOrange" />
-      <div>
-        <div>
-          <h2 className="font-bold text-[24px]">Про нас</h2>
-          <p>
+
+      <hr className="max-w-[1150px] h-[1px] bg-amberOrange border-0 m-auto" />
+
+      <div className="container flex justify-between my-[30px]">
+        <div className="space-y-[20px]">
+          <h2 className="font-bold text-[24px]">Інформація</h2>
+          <p className="max-w-[310px]">
             Ресторан з вишуканими стравами, де кожен візит — це нові
             гастрономічні враження, унікальні смаки та бездоганна атмосфера для
             справжніх гурманів
           </p>
-          <div>
+          <div className="flex space-x-[15px] ">
             <button
-              className="p-[25px] bg-amberOrange cursor-default rounded-md"
+              className="p-[15px] bg-amberOrange cursor-default rounded-md"
               aria-label="clockwise"
             >
               <Image src={Clockwise} alt="clockwise" height={40} width={40} />
             </button>
-            <p className="text-[18px]">Години роботи:</p>
-            <p>
-              Понеділок - П'ятниця(<time dateTime="11:00">11:00</time> -
-              <time dateTime="22:00"> 22:00)</time>
-            </p>
-            <p>
-              Субота - Неділя(<time dateTime="10:00">10:00</time> -
-              <time dateTime="22:00"> 22:00)</time>
-            </p>
+            <div className="flex flex-col text-[14px]">
+              <p className="text-[18px]">Години роботи:</p>
+              <p>
+                Понеділок - П'ятниця(<time dateTime="11:00">11:00</time> -
+                <time dateTime="22:00"> 22:00)</time>
+              </p>
+              <p>
+                Субота - Неділя(<time dateTime="10:00">10:00</time> -
+                <time dateTime="22:00"> 22:00)</time>
+              </p>
+            </div>
           </div>
         </div>
+
         <div>
           <h2 className="font-bold text-[24px]">Корисні посилання</h2>
-
-          <ul className="hidden space-y-2 md:block">
+          <ul className="hidden space-y-2 mt-[20px] md:block">
             {additionalLink.map(({ href, text }, index) => (
               <li
                 key={index}
@@ -88,9 +107,10 @@ const Footer = () => {
             ))}
           </ul>
         </div>
+
         <div>
-          <h2>Потрібна допомога?</h2>
-          <ul className="hidden space-y-2 mini:block">
+          <h2 className="font-bold text-[24px]">Потрібна допомога?</h2>
+          <ul className="hidden space-y-2  mt-[20px] mini:block">
             {mainLinks.map(({ href, text }, index) => (
               <li
                 key={index}
@@ -102,35 +122,19 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2>Наш блог</h2>
-          {socialObject.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className=""
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  height={40}
-                  width={40}
-                  className="transition delay-150 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110 p-[10px] rounded-full bg-white"
-                />
-              </Link>
-            ))}
+          <h2  className="font-bold text-[24px]">Наш блог</h2>
         </div>
       </div>
+
       <div className="bg-amberOrange p-[30px] text-center">
         Oasis © {currentYear} by Oleksandra Shapovaliuk. All rights reserved
       </div>
 
-      <Image
+      {/* <Image
         src={Corner}
         alt="corner"
         className="absolute z-10 bottom-0 right-0 border-0"
-      />
+      /> */}
     </footer>
   );
 };
