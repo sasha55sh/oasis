@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import Header from "@/components/HeaderComponent";
 import Footer from "@/components/FooterComponent";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -19,9 +19,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <Header />
         <main className="font-inter">{children}</main>
-        <Footer />
+        {/* <Header />
+        <Footer /> */}
       </body>
     </html>
   );
