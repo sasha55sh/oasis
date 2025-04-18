@@ -4,7 +4,7 @@ interface InputProps {
   className?: string;
   placeholder?: string;
   inputType: "input" | "textarea";
-  type?: "text" | "email";
+  type?: "text" | "email" | "search";
   background?: "amberOrange" | "transparent";
   bordered?: boolean;
   fullWidth?: boolean;
