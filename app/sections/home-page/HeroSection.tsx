@@ -5,7 +5,7 @@ import Image from "next/image";
 import Facebook from "@/images/vectors/facebook-logo.svg";
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import MainDish from "@/images/home-page/hero-section/main-dish.svg";
+import mainDish from "@/images/home-page/hero-section/main-dish.svg";
 
 import Button from "@/components/ButtonComponent";
 
@@ -48,7 +48,7 @@ const Links: FC<HeroProps> = ({ className }) => {
 
 const HeroSection: FC = () => {
   return (
-    <section className="container lg:flex-row items-center justify-between flex flex-col ">
+    <section className="container lg:flex-row items-center justify-between flex flex-col">
       <div className="flex flex-col justify-center items-center lg:items-start text-white space-y-[30px] lg:order-2">
         <p className="text-amberOrange font-vibes text-[32px]">
           Welcome to Oasis restaurant!
@@ -71,7 +71,7 @@ const HeroSection: FC = () => {
       </div>
       <Links className="lg:order-1" />
       <Image
-        src={MainDish}
+        src={mainDish}
         alt="mainDish"
         className="w-[600px] lg:w-[430px] xl:w-[600px] lg:order-3"
       />
