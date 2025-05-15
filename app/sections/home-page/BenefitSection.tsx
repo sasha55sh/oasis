@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 
-import background from "@/images/backgrounds/benefit-section-bg.svg";
+import background from "@/images/home-page/backgrounds/benefit-section-bg.svg";
 import pizza from "@/images/vectors/pizza-benefit.svg";
 import tools from "@/images/vectors/spoon-fork-benefit.svg";
 import cap from "@/images/vectors/cap-benefit.svg";

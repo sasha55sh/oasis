@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import Button from "@/components/ButtonComponent";
 import listIcon from "@/images/vectors/list-image.svg";
-import image1 from "@/images/home-page/about-us-section/image-1.svg";
-import image2 from "@/images/home-page/about-us-section/image-2.svg";
-import image3 from "@/images/home-page/about-us-section/image-3.svg";
+import image1 from "@/images/home-page/about-us/image-1.svg";
+import image2 from "@/images/home-page/about-us/image-2.svg";
+import image3 from "@/images/home-page/about-us/image-3.svg";
 
 const listItems = [
   "Lacus nisi, et ac dapibus sit eu velit in consequat",
@@ -41,7 +41,7 @@ const AboutUsSection: FC = () => {
         <Button text="Read more" fullWidth className="max-w-[190px]" />
       </div>
       <div className="hidden md:grid grid-cols-2 gap-[20px] place-content-center">
-        <Image src={image1} alt="egg-toast" className="col-span-2" />
+        <Image src={image1} alt="egg-toast" className="col-span-2" /> 
         <Image src={image2} alt="salad" />
         <Image src={image3} alt="salat-toast" />
       </div>

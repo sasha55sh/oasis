@@ -5,7 +5,7 @@ import Image from "next/image";
 import Facebook from "@/images/vectors/facebook-logo.svg";
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import mainDish from "@/images/home-page/hero-section/main-dish.svg";
+import mainDish from "@/images/home-page/hero/main-dish.svg";
 
 import Button from "@/components/ButtonComponent";
 
