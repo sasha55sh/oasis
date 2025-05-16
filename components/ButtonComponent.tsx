@@ -41,7 +41,7 @@ const Button: FC<ButtonProps> = ({
       : finalBackground === "white"
       ? "text-amberOrange"
       : bordered
-      ? "text-amberOrange"
+      ? "text-white"
       : "";
   const borderClass = bordered ? "border border-amberOrange border-solid" : "";
   const widthClass = fullWidth ? "w-[100%]" : "";
@@ -51,7 +51,7 @@ const Button: FC<ButtonProps> = ({
       : finalBackground === "white"
       ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
       : bordered
-      ? "hover:bg-amberOrange hover:text-white transition-colors duration-300"
+      ? "hover:bg-amberOrange transition-colors duration-300"
       : "";
   return (
     <>
