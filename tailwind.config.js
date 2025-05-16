@@ -19,7 +19,10 @@ module.exports = {
         mossGray: "#999966",
         romance: "#FAF7F2",
         white: "#FFFFFF",
-        black: "#0D0D0D"
+        black: "#0D0D0D",
+        darkLiver: "#4F4F4F",
+        darkCharcoal: "#333333",
+        oldSilver: "#828282",
       },
       backgroundImage: {},
       fontFamily: {
