@@ -15,14 +15,14 @@ const listItems = [
 
 const AboutUsSection: FC = () => {
   return (
-    <section className="container flex flex-col justify-between lg:flex-row">
-      <div className="flex flex-col justify-center items-center lg:items-start text-white space-y-[30px]">
+    <section className="container flex flex-col justify-between my-[50px] lg:flex-row">
+      <div className="flex flex-col justify-center items-center text-white space-y-[30px] lg:items-start">
         <p className="text-amberOrange font-vibes text-[32px]">About us</p>
-        <h1 className="font-bold lg:text-[60px] leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] lg:text-[60px] xl:max-w-[550px]">
           <span className="text-amberOrange">We </span>create the best foody
           product
         </h1>
-        <p className="lg:my-[50px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <p className="text-center lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
           pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
           augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
@@ -40,8 +40,8 @@ const AboutUsSection: FC = () => {
 
         <Button text="Read more" fullWidth className="max-w-[190px]" />
       </div>
-      <div className="hidden md:grid grid-cols-2 gap-[20px] place-content-center">
-        <Image src={image1} alt="egg-toast" className="col-span-2" /> 
+      <div className="hidden grid-cols-2 gap-[20px] place-content-center ml-[30px] md:grid">
+        <Image src={image1} alt="egg-toast" className="col-span-2" />
         <Image src={image2} alt="salad" />
         <Image src={image3} alt="salat-toast" />
       </div>

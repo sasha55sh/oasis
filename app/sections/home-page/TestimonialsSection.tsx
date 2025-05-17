@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import TestimonialComponent from "@/components/home-page/TestimonialComponent";
+
 import fourStars from "@/images/home-page/testimonials/four-stars.svg";
 import fiveStars from "@/images/home-page/testimonials/five-stars.svg";
 import reviewerPhoto from "@/images/home-page/testimonials/reviewer.svg";
+
 const TestimonialsData = [
   {
     src: reviewerPhoto,

@@ -1,15 +1,14 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Button from "@/components/ButtonComponent";
 
 import Facebook from "@/images/vectors/facebook-logo.svg";
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Tiktok from "@/images/vectors/tiktok-logo.svg";
 import mainDish from "@/images/home-page/hero/main-dish.svg";
 
-import Button from "@/components/ButtonComponent";
-
-interface HeroProps {
+interface heroProps {
   className?: string;
 }
 
@@ -19,10 +18,10 @@ const SocialObject = [
   { href: "https://www.tiktok.com/", title: "Tiktok", image: Tiktok },
 ];
 
-const Links: FC<HeroProps> = ({ className }) => {
+const Links: FC<heroProps> = ({ className }) => {
   return (
     <div className={`${className} flex flex-col items-center space-y-[30px]`}>
-      <hr className="hidden lg:block bg-white h-[100px] w-[1px] border-0" />
+      <hr className="hidden bg-white h-[100px] w-[1px] border-0 lg:block" />
       <div className="flex space-x-[50px] lg:flex-col lg:items-center lg:space-y-[50px] lg:space-x-0">
         {SocialObject.map((item, index) => (
           <Link
@@ -41,23 +40,23 @@ const Links: FC<HeroProps> = ({ className }) => {
           </Link>
         ))}
       </div>
-      <hr className="hidden lg:block bg-white h-[100px] w-[1px] border-0" />
+      <hr className="hidden bg-white h-[100px] w-[1px] border-0 lg:block" />
     </div>
   );
 };
 
 const HeroSection: FC = () => {
   return (
-    <section className="container lg:flex-row items-center justify-between flex flex-col">
-      <div className="flex flex-col justify-center items-center lg:items-start text-white space-y-[30px] lg:order-2">
+    <section className="container flex flex-col items-center justify-between my-[30px] lg:my-[70px] lg:flex-row">
+      <div className="flex flex-col justify-center items-center text-white space-y-[30px] lg:items-start lg:order-2">
         <p className="text-amberOrange font-vibes text-[32px]">
           Welcome to Oasis restaurant!
         </p>
-        <h1 className="font-bold lg:text-[60px] leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] lg:text-[60px] xl:max-w-[550px]">
           <span className="text-amberOrange">Di</span>scover the taste of
           elegance
         </h1>
-        <p className="lg:my-[50px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <p className="text-center lg:text-left lg:my-[50px] lg:max-w-[450px] xl:max-w-[550px]">
           Exquisite dishes, warm ambiance, and unforgettable moments await you
           <br />
           Where passion meets the plate and each meal becomes a moment to savor
@@ -73,7 +72,7 @@ const HeroSection: FC = () => {
       <Image
         src={mainDish}
         alt="mainDish"
-        className="w-[600px] lg:w-[430px] xl:w-[600px] lg:order-3"
+        className="w-[600px] lg:w-[430px] lg:order-3 xl:w-[600px]"
       />
     </section>
   );
