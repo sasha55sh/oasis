@@ -48,7 +48,7 @@ const Links: FC<heroProps> = ({ className }) => {
 const HeroSection: FC = () => {
   return (
     <section className="container flex flex-col items-center justify-between my-[30px] lg:my-[70px] lg:flex-row">
-      <div className="flex flex-col justify-center items-center text-white space-y-[30px] lg:items-start lg:order-2">
+      <div className="flex flex-col justify-center items-center text-white space-y-[15px] lg:space-y-[30px] lg:items-start lg:order-2">
         <p className="text-amberOrange font-vibes text-[32px]">
           Welcome to Oasis restaurant!
         </p>
@@ -56,7 +56,7 @@ const HeroSection: FC = () => {
           <span className="text-amberOrange">Di</span>scover the taste of
           elegance
         </h1>
-        <p className="text-center lg:text-left lg:my-[50px] lg:max-w-[450px] xl:max-w-[550px]">
+        <p className="text-center max-w-[550px] lg:text-left lg:my-[50px] lg:max-w-[450px] xl:max-w-[550px]">
           Exquisite dishes, warm ambiance, and unforgettable moments await you
           <br />
           Where passion meets the plate and each meal becomes a moment to savor
