@@ -7,7 +7,7 @@ import playIcon from "@/images/vectors/play-icon.svg";
 
 const ActiveProcessSection: FC = () => {
   return (
-    <section className="flex justify-end">
+    <section className="flex justify-end items-center">
       <Image src={background} alt="Background" className="relative -z-10" />
       <div className="container flex flex-col absolute text-white text-right items-end space-y-[20px] ">
         <p className="text-amberOrange font-vibes text-[32px]">

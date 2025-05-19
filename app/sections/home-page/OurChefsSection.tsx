@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Button from "@/components/ButtonComponent";
+import { Carousel } from "flowbite-react";
 
 import Estwood from "@/images/home-page/our-chefs/d-estwood.svg";
 import Scoriesh from "@/images/home-page/our-chefs/d-scoriesh.svg";
@@ -24,17 +25,37 @@ const chefsData = [
 ];
 const OurChefsSection: FC = () => {
   return (
-    <section className="container flex flex-col space-y-[20px] items-center">
+    <section className="container flex flex-col my-[30px] space-y-[20px] items-center">
       <p className="text-amberOrange font-vibes text-[32px] ">Chefs</p>
-      <h1 className="font-bold text-[48px] text-white leading-none">
+      <h1 className="font-bold text-[42px] text-white leading-none text-center lg:text-[60px]">
         <span className="text-amberOrange ">Me</span>et our chefs
       </h1>
-      <div className="flex justify-evenly">
+
+      <div className="hidden justify-between gap-[20px] lg:flex">
         {chefsData.map((chef, index) => (
-          <Image src={chef.src} alt={chef.alt} key={index} />
+          <div key={index}>
+            <Image src={chef.src} alt={chef.alt} />
+          </div>
         ))}
       </div>
-      <Button text="See More" bordered />
+
+      <div className="max-w-[550px] mx-auto lg:hidden">
+        <Carousel slide={false} indicators={true}>
+          {chefsData.map((chef, index) => (
+            <div key={index}>
+              <Image
+                src={chef.src}
+                alt={chef.alt}
+                width={500}
+                height={300}
+                className="object-cover rounded-md"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
+
+      <Button text="See more" bordered />
     </section>
   );
 };

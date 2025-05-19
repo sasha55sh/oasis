@@ -20,7 +20,7 @@ const cardsData = [
 ];
 const FoodCategoryComponent = () => {
   return (
-    <section className="container flex flex-col space-y-[15px] items-center my-[30px] lg:my-[70px] lg:space-y-[30px]">
+    <section className="container flex flex-col space-y-[15px] items-center my-[50px] lg:my-[70px] lg:space-y-[30px]">
       <p className="text-amberOrange font-vibes text-[32px]">Food category</p>
       <h1 className="font-bold leading-none text-[42px] text-white text-center lg:text-[60px]">
         <span className="text-amberOrange">Ch</span>oose food item

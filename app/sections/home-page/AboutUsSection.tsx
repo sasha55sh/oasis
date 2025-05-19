@@ -15,7 +15,7 @@ const listItems = [
 
 const AboutUsSection: FC = () => {
   return (
-    <section className="container flex flex-col justify-between my-[50px] lg:flex-row">
+    <section className="container flex flex-col justify-between my-[50px] lg:my-[70px] lg:flex-row">
       <div className="flex flex-col justify-center items-center text-white space-y-[15px] lg:space-y-[30px] lg:items-start">
         <p className="text-amberOrange font-vibes text-[32px]">About us</p>
         <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] lg:text-[60px] xl:max-w-[550px]">
@@ -40,7 +40,7 @@ const AboutUsSection: FC = () => {
 
         <Button text="Read more" fullWidth className="max-w-[190px]" />
       </div>
-      <div className="hidden grid-cols-2 gap-[20px] mt-[30px] max-w-[660px] content-center mx-auto md:grid">
+      <div className="hidden grid-cols-2 gap-[20px] mt-[30px] max-w-[660px] content-center mx-auto md:grid xl:ml-[90px]">
         <Image src={image1} alt="egg-toast" className="col-span-2" />
         <Image src={image2} alt="salad" />
         <Image src={image3} alt="salat-toast" />
