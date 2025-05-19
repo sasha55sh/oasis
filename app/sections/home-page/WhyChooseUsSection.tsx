@@ -19,80 +19,56 @@ const buttonsItems = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="container flex flex-col justofy-between lg:flex-row">
-      {/* <div className="grid grid-cols-3 grid-rows-3 place-content-center max-w-[650px] gap-[10px]">
+    <section className="container flex flex-col justify-between my-[50px] lg:my-[70px] lg:flex-row">
+      <div className="hidden grid-cols-3 auto-rows-auto gap-[10px] max-w-[640px] scale-[95%] lg:grid">
+        
         <Image
           src={tacoImage}
-          alt="tacos"
-          className="duration-300 hover:scale-105"
+          alt="Tacos"
+          className="col-span-2 row-span-1 justify-self-end place-self-end duration-300 hover:scale-105 "
         />
-        <Image
-          src={burgerImage}
-          alt="burger"
-          className="duration-300 hover:scale-105"
-        />
-        <Image
-          src={chickenImage}
-          alt="chicken"
-          className="row-span-2 row-start-2 duration-300 hover:scale-105"
-        />
-        <Image
-          src={cheeseburgerImage}
-          alt="cheeseburger"
-          className="row-start-2 duration-300 hover:scale-105"
-        />
-        <Image
-          src={potatoImage}
-          alt="potato"
-          className="row-start-2 duration-300 hover:scale-105"
-        />
-        <Image
-          src={fishImage}
-          alt="fish"
-          className="col-start-3 row-start-3 duration-300 hover:scale-105"
-        />
-      </div> */}
 
-<div className="grid grid-cols-4 grid-rows-4 place-items-center max-w-[650px] max-h-[700px] gap-[10px]">
+        <div className="flex justify-center items-end">
+          <Image
+            src={burgerImage}
+            alt="Burger"
+            className="row-span-1 duration-300 hover:scale-105"
+          />
+        </div>
+
         <Image
-          src={tacoImage}
-          alt="tacos"
-          className="duration-300 hover:scale-105 col-span-2"
-        />
-        <Image
-          src={burgerImage}
-          alt="burger"
-          className="duration-300 hover:scale-105 col-span-2 col-start-3"
-        />
-        {/* <Image
           src={chickenImage}
-          alt="chicken"
-          className="row-span- row-start- duration-300 hover:scale-105"
+          alt="Chicken Strips"
+          className="row-span-1 duration-300 hover:scale-105"
         />
+
         <Image
           src={cheeseburgerImage}
-          alt="cheeseburger"
-          className="row-start- duration-300 hover:scale-105"
+          alt="Cheesy Burger"
+          className="duration-300 hover:scale-105"
         />
-        <Image
-          src={potatoImage}
-          alt="potato"
-          className="row-start- duration-300 hover:scale-105"
-        />
-        <Image
-          src={fishImage}
-          alt="fish"
-          className="col-start- row-start- duration-300 hover:scale-105"
-        /> */}
+
+        <div className="flex flex-col gap-4 items-center">
+          <Image
+            src={potatoImage}
+            alt="Burger with fries"
+            className="rounded-xl w-[90%] duration-300 hover:scale-105"
+          />
+          <Image
+            src={fishImage}
+            alt="Salmon plate"
+            className="rounded-xl w-[90%] duration-300 hover:scale-105"
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center lg:items-start text-white space-y-[30px]">
+      <div className="flex flex-col items-center text-white space-y-[30px] lg:items-start">
         <p className="text-amberOrange font-vibes text-[32px]">Why Choose us</p>
-        <h1 className="font-bold lg:text-[60px] leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-[60px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
           <span className="text-amberOrange">Ex</span>tra ordinary taste and
           experienced
         </h1>
-        <p className="lg:my-[50px] text-center lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+        <p className="text-center max-w-[550px] lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
           pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
           augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
