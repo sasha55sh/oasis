@@ -39,17 +39,11 @@ const OurChefsSection: FC = () => {
         ))}
       </div>
 
-      <div className="max-w-[550px] mx-auto lg:hidden">
+      <div className="max-w-[700px] mx-auto lg:hidden">
         <Carousel slide={false} indicators={true}>
           {chefsData.map((chef, index) => (
             <div key={index}>
-              <Image
-                src={chef.src}
-                alt={chef.alt}
-                width={500}
-                height={300}
-                className="object-cover rounded-md"
-              />
+              <Image src={chef.src} alt={chef.alt} />
             </div>
           ))}
         </Carousel>

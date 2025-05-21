@@ -34,7 +34,7 @@ const TestimonialComponent: FC<testimonialProps> = ({
         <p className="text-[24px] text-darkCharcoal font-bold">
           {reviewerName}
         </p>
-        <p className="text-[16px] text-oldSilver">{reviewerOccupation}</p>
+        <p className="text-oldSilver">{reviewerOccupation}</p>
       </div>
     </div>
   );

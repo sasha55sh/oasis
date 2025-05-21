@@ -17,7 +17,7 @@ const data = [
 
 const BenefitSection: FC = () => {
   return (
-    <section className="flex my-[50px] justify-center items-center lg:my-[120px]">
+    <section className="hidden lg:flex my-[50px] justify-center items-center lg:my-[120px]">
       <Image
         src={background}
         alt="Background"
@@ -31,7 +31,7 @@ const BenefitSection: FC = () => {
             key={index}
           >
             <Image src={item.src} alt={item.alt} />
-            <h5 className="font-bold text-[16px] lg:text-[24px]">
+            <h5 className="font-bold lg:text-[24px]">
               {item.title}
             </h5>
             <h3 className="font-bold text-[28px] lg:text-[40px]">
