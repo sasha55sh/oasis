@@ -21,9 +21,11 @@ const BlogComponent: FC<blogProps> = ({
   title,
 }) => {
   return (
-    <div className={`${className} text-white`}>
+    <div
+      className={`${className} relative text-white flex flex-col items-center`}
+    >
       <Image src={imageSrc} alt={imageAlt} width={360} height={330} />
-      <div className="p-[10px] space-y-[20px] py-[20px] border border-[1px] border-solid border-white border-t-transparent">
+      <div className="p-[10px] space-y-[20px] py-[20px] border border-[1px] border-solid border-white max-w-[360px] border-t-transparent">
         <p className="text-amberOrange">{postDate}</p>
         <h2 className="text-[24px] font-bold max-w-[340px]">{title}</h2>
         <div className="flex justify-between">

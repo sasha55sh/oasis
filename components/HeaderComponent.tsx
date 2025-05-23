@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Link from "next/link";
-import Button from "./ButtonComponent";
+import Button from "@/components/ButtonComponent";
 
 const navData = [
   { link: "#text", text: "Головна сторінка" },

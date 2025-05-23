@@ -122,7 +122,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2  className="font-bold text-[24px]">Наш блог</h2>
+          <h2 className="font-bold text-[24px]">Наш блог</h2>
         </div>
       </div>
 

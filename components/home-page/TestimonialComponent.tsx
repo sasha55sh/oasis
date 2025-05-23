@@ -22,9 +22,9 @@ const TestimonialComponent: FC<testimonialProps> = ({
 }) => {
   return (
     <div
-      className={`${className} relative bg-white py-[30px] px-[60px] rounded-lg max-w-fit overflow-visible`}
+      className={`${className} relative bg-white py-[30px] px-[60px] rounded-lg max-w-[700px]`}
     >
-      <div className="-mt-[60px] z-10 adsolute flex flex-col items-center space-y-[20px]">
+      <div className="-mt-[60px] z-10 flex flex-col items-center space-y-[20px]">
         <Image src={reviewerSrc} alt="reviewer photo" />
         <Image src={quotes} alt="quotes" />
         <p className="text-[18px] text-darkLiver text-center max-w-[700px]">
