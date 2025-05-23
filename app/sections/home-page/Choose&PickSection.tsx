@@ -13,13 +13,11 @@ const foodTitles = [
   "Suops",
 ];
 
-
-
 const ChooseAndPickSection: FC = () => {
   return (
-    <section className="container flex flex-col my-[50px] items-center space-y-[30px] lg:my-[70px]">
+    <section className="container flex flex-col my-[50px] items-center space-y-[15px] lg:space-y-[30px] lg:my-[70px]">
       <p className="text-amberOrange font-vibes text-[32px]">Choose & pick</p>
-      <h1 className="font-bold text-white leading-none text-[48px] ">
+      <h1 className="font-bold text-white leading-none text-[48px]">
         <span className="text-amberOrange">Fr</span>om our menu
       </h1>
 
@@ -35,7 +33,11 @@ const ChooseAndPickSection: FC = () => {
       </div>
 
       <div className="grid grid-rows-4 grid-cols-3">
-        <Image src={Salad} alt="asparagula salad" className="row-span-4 col-span-1" />
+        <Image
+          src={Salad}
+          alt="asparagula salad"
+          className="row-span-4 col-span-1"
+        />
       </div>
     </section>
   );

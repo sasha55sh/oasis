@@ -3,6 +3,27 @@ import BlogComponent from "@/components/home-page/BlogComponent";
 import { Carousel } from "flowbite-react";
 
 import Burger from "@/images/home-page/why-choose-us/burger-image.svg";
+
+const blogCards = [
+  {
+    src: Burger,
+    alt: "ferferfre",
+    date: "10 February 2022",
+    title: "Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis",
+  },
+  {
+    src: Burger,
+    alt: "ferferfre",
+    date: "10 February 2022",
+    title: "Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis",
+  },
+  {
+    src: Burger,
+    alt: "ferferfre",
+    date: "10 February 2022",
+    title: "Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis",
+  },
+];
 const BlogSection: FC = () => {
   return (
     <section className="container flex flex-col items-center my-[50px] space-y-[15px] lg:space-y-[30px] lg:my-[70px]">
@@ -13,53 +34,28 @@ const BlogSection: FC = () => {
 
       {/*змінити на справжні дані*/}
       <div className="hidden justify-between w-full gap-[20px] lg:flex">
-        <BlogComponent
-          imageSrc={Burger}
-          imageAlt="vfbdf"
-          postDate="10 February 2022"
-          title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-        />
-
-        <BlogComponent
-          imageSrc={Burger}
-          imageAlt="vfbdf"
-          postDate="10 February 2022"
-          title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-        />
-
-        <BlogComponent
-          imageSrc={Burger}
-          imageAlt="vfbdf"
-          postDate="10 February 2022"
-          title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-        />
+        {blogCards.map((card, index) => (
+          <BlogComponent
+            key={index}
+            imageSrc={card.src}
+            imageAlt={card.alt}
+            postDate={card.date}
+            title={card.title}
+          />
+        ))}
       </div>
 
-      <div className="max-w-[500px] lg:hidden">
+      <div className="max-w-[700px] max-h-[800px] lg:hidden">
         <Carousel slide={false} indicators={true}>
-          <BlogComponent
-            key={1}
-            imageSrc={Burger}
-            imageAlt="vfbdf"
-            postDate="10 February 2022"
-            title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-          />
-
-          <BlogComponent
-            key={2}
-            imageSrc={Burger}
-            imageAlt="vfbdf"
-            postDate="10 February 2022"
-            title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-          />
-
-          <BlogComponent
-            key={3}
-            imageSrc={Burger}
-            imageAlt="vfbdf"
-            postDate="10 February 2022"
-            title="Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis"
-          />
+          {blogCards.map((card, index) => (
+            <BlogComponent
+              key={index}
+              imageSrc={card.src}
+              imageAlt={card.alt}
+              postDate={card.date}
+              title={card.title}
+            />
+          ))}
         </Carousel>
       </div>
     </section>

@@ -7,13 +7,13 @@ import playIcon from "@/images/vectors/play-icon.svg";
 
 const ActiveProcessSection: FC = () => {
   return (
-    <section className="relative flex justify-end items-center my-[50px] lg:my-[120px] ">
+    <section className="relative flex justify-center items-center my-[50px] lg:justify-end lg:my-[120px] ">
       <Image
         src={background}
         alt="Background"
-        className="-z-10 lg:scale-y-[120%] xl:scale-none "
+        className="hidden -z-10 lg:scale-y-[120%] lg:block xl:scale-none"
       />
-      <div className="container flex flex-col absolute text-white text-right items-end space-y-[20px] ">
+      <div className="container flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
         <p className="text-amberOrange font-vibes text-[32px]">
           Restaurant Active Process
         </p>

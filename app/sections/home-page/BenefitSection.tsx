@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import { Carousel } from "flowbite-react";
 
 import background from "@/images/home-page/backgrounds/benefit-section-bg.svg";
 import pizza from "@/images/vectors/pizza-benefit.svg";
@@ -17,7 +16,7 @@ const data = [
 
 const BenefitSection: FC = () => {
   return (
-    <section className="hidden lg:flex my-[50px] justify-center items-center lg:my-[120px]">
+    <section className="hidden my-[50px] justify-center items-center lg:flex lg:my-[120px]">
       <Image
         src={background}
         alt="Background"

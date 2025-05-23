@@ -19,15 +19,13 @@ const buttonsItems = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="container flex flex-col justify-between my-[50px] lg:my-[70px] lg:flex-row">
+    <section className="container flex flex-col justify-between my-[50px] lg:my-[70px] lg:gap-[50px] lg:flex-row xl:gap-0">
       <div className="hidden grid-cols-3 auto-rows-auto gap-[10px] max-w-[640px] scale-[95%] lg:grid">
-        
         <Image
           src={tacoImage}
           alt="Tacos"
           className="col-span-2 row-span-1 justify-self-end place-self-end duration-300 hover:scale-105 "
         />
-
         <div className="flex justify-center items-end">
           <Image
             src={burgerImage}
@@ -35,19 +33,16 @@ const WhyChooseUsSection = () => {
             className="row-span-1 duration-300 hover:scale-105"
           />
         </div>
-
         <Image
           src={chickenImage}
           alt="Chicken Strips"
           className="row-span-1 duration-300 hover:scale-105"
         />
-
         <Image
           src={cheeseburgerImage}
           alt="Cheesy Burger"
           className="duration-300 hover:scale-105"
         />
-
         <div className="flex flex-col gap-4 items-center">
           <Image
             src={potatoImage}
@@ -62,7 +57,7 @@ const WhyChooseUsSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center text-white space-y-[30px] lg:items-start">
+      <div className="flex flex-col items-center text-white space-y-[15px] my-[50px] lg:my-[70px] lg:space-y-[30px] lg:items-start">
         <p className="text-amberOrange font-vibes text-[32px]">Why Choose us</p>
         <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-[60px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
           <span className="text-amberOrange">Ex</span>tra ordinary taste and

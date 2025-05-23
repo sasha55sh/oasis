@@ -26,7 +26,7 @@ const chefsData = [
 const OurChefsSection: FC = () => {
   return (
     <section className="container flex flex-col my-[30px] space-y-[20px] items-center">
-      <p className="text-amberOrange font-vibes text-[32px] ">Chefs</p>
+      <p className="text-amberOrange font-vibes text-[32px]">Chefs</p>
       <h1 className="font-bold text-[42px] text-white leading-none text-center lg:text-[60px]">
         <span className="text-amberOrange ">Me</span>et our chefs
       </h1>
@@ -39,10 +39,10 @@ const OurChefsSection: FC = () => {
         ))}
       </div>
 
-      <div className="max-w-[700px] mx-auto lg:hidden">
+      <div className="max-w-[500px] mx-auto lg:hidden">
         <Carousel slide={false} indicators={true}>
           {chefsData.map((chef, index) => (
-            <div key={index}>
+            <div key={index} className="relative flex justify-center">
               <Image src={chef.src} alt={chef.alt} />
             </div>
           ))}
