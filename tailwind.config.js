@@ -1,15 +1,17 @@
+const flowbite = require("flowbite-react/tailwind");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    flowbite.content(),
   ],
   theme: {
     extend: {
       fontSize: {
-        default: ["14px", { lineHeight: "18px" }],
-        xs: ["16px", { lineHeight: "22px" }],
+        default: ["16px", { lineHeight: "22px" }],
         xl: ["22px", { lineHeight: "32px" }],
       },
       colors: {
@@ -18,6 +20,12 @@ module.exports = {
         sandstone: "#BC9A6C",
         warmWhite: "#EDEAE3",
         mossGray: "#999966",
+        romance: "#FAF7F2",
+        white: "#FFFFFF",
+        black: "#0D0D0D",
+        darkLiver: "#4F4F4F",
+        darkCharcoal: "#333333",
+        oldSilver: "#828282",
       },
       backgroundImage: {},
       fontFamily: {
@@ -43,5 +51,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbite.plugin()],
 };
