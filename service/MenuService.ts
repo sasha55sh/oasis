@@ -1,9 +1,11 @@
 import axios from "axios";
 import { BASE_URL } from "@/config/config";
 
-export const getMenu = async (): Promise<any> => {
+export const getMenuByCategory = async (category = ""): Promise<any> => {
   try {
-    const responce = await axios.get(`${BASE_URL}/menu`);
+    const responce = await axios.get(`${BASE_URL}/menu`, {
+      params: { category },
+    });
     return responce.data;
   } catch (error) {
     console.error("Error getting menu:", error);
