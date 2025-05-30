@@ -1,22 +1,86 @@
-import React, { FC } from "react";
-import { useEffect, useState } from "react";
-import { getMenu } from "@/service/MenuService";
+"use client";
+import React, { useEffect, useState } from "react";
+import { Loader } from "@mantine/core";
+import { Menu } from "@/config/types";
+import { getMenuByCategory } from "@/service/MenuService";
+import MenuCategory from "@/components/menu-page/MenuCategoryComponent";
+import TitleComponent from "@/components/TitleComponent";
+import BenefitSection from "@/app/sections/home-page/BenefitSection";
+import PartnersSection from "./PartnersSection";
 
-const MenuSection = () => {
+import starterImg from "@/images/menu-page/udon.svg";
+import mainImg from "@/images/menu-page/cheessburger.svg";
+import dessertImg from "@/images/menu-page/pastry.svg";
+import drinksImg from "@/images/menu-page/cocktail.svg";
+
+const MenuList = () => {
+  const [starterItems, setStarterItems] = useState<Menu[]>([]);
+  const [mainItems, setMainItems] = useState<Menu[]>([]);
+  const [dessertItems, setDessertItems] = useState<Menu[]>([]);
+  const [drinksItems, setDrinksItems] = useState<Menu[]>([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const data = await getMenu();
-        console.log("Menu data:", data);
+        const [starter, main, dessert, drinks] = await Promise.all([
+          getMenuByCategory("starter menu"),
+          getMenuByCategory("main course"),
+          getMenuByCategory("dessert"),
+          getMenuByCategory("drinks"),
+        ]);
+        setStarterItems(starter);
+        setMainItems(main);
+        setDessertItems(dessert);
+        setDrinksItems(drinks);
       } catch (error) {
-        console.error("Failed to fetch menu", error);
+        console.error("Error loading menu", error);
       }
     };
-
     fetchMenu();
+    setLoading(false);
   }, []);
 
-  return <div>Check console for menu data</div>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[80vh] w-full ">
+        <Loader className="animate-spin rounded-full border-4 border-amberOrange border-b-transparent w-10 h-10" />
+      </div>
+    );
+  }
+
+  return (
+    <section className="container">
+      <TitleComponent title="our menu" />
+      <MenuCategory
+        sectionTitle="Starter Menu"
+        imageSrc={starterImg}
+        imageAlt="udon image"
+        items={starterItems}
+      />
+      <MenuCategory
+        sectionTitle="Main Course"
+        imageSrc={mainImg}
+        imageAlt="cheessburger image"
+        items={mainItems}
+        className="flex-row-reverse"
+      />
+      <BenefitSection />
+      <MenuCategory
+        sectionTitle="Dessert"
+        imageSrc={dessertImg}
+        imageAlt="pastry image"
+        items={dessertItems}
+      />
+      <MenuCategory
+        sectionTitle="Drinks"
+        imageSrc={drinksImg}
+        imageAlt="cocktail image"
+        items={drinksItems}
+         className="flex-row-reverse"
+      />
+      <PartnersSection />
+    </section>
+  );
 };
 
-export default MenuSection;
+export default MenuList;
