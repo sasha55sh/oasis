@@ -49,36 +49,38 @@ const MenuList = () => {
   }
 
   return (
-    <section className="container">
+    <section>
       <TitleComponent title="our menu" />
-      <MenuCategory
-        sectionTitle="Starter Menu"
-        imageSrc={starterImg}
-        imageAlt="udon image"
-        items={starterItems}
-      />
-      <MenuCategory
-        sectionTitle="Main Course"
-        imageSrc={mainImg}
-        imageAlt="cheessburger image"
-        items={mainItems}
-        className="flex-row-reverse"
-      />
-      <BenefitSection />
-      <MenuCategory
-        sectionTitle="Dessert"
-        imageSrc={dessertImg}
-        imageAlt="pastry image"
-        items={dessertItems}
-      />
-      <MenuCategory
-        sectionTitle="Drinks"
-        imageSrc={drinksImg}
-        imageAlt="cocktail image"
-        items={drinksItems}
-         className="flex-row-reverse"
-      />
-      <PartnersSection />
+      <div className="container flex flex-col space-y-[70px] my-[70px]">
+        <MenuCategory
+          sectionTitle="Starter Menu"
+          imageSrc={starterImg}
+          imageAlt="udon image"
+          items={starterItems}
+        />
+        <MenuCategory
+          sectionTitle="Main Course"
+          imageSrc={mainImg}
+          imageAlt="cheessburger image"
+          items={mainItems}
+          className="flex-row-reverse"
+        />
+        <BenefitSection />
+        <MenuCategory
+          sectionTitle="Dessert"
+          imageSrc={dessertImg}
+          imageAlt="pastry image"
+          items={dessertItems}
+        />
+        <MenuCategory
+          sectionTitle="Drinks"
+          imageSrc={drinksImg}
+          imageAlt="cocktail image"
+          items={drinksItems}
+          className="flex-row-reverse"
+        />
+        <PartnersSection />
+      </div>
     </section>
   );
 };

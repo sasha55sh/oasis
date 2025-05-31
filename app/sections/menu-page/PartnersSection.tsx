@@ -24,7 +24,7 @@ const PartnersSection: FC = () => {
       <h2 className="text-[48px] font-bold">We work with the best people</h2>
       <div className="flex justify-between">
         {partnersData.map((partner, index) => (
-          <Image key={index} src={partner.src} alt={partner.alt} className="p-[10px]"/>
+          <Image key={index} src={partner.src} alt={partner.alt}/>
         ))}
       </div>
     </div>

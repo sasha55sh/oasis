@@ -20,7 +20,7 @@ const MenuCategoryComponent: FC<menuProps> = ({
   imageAlt,
 }: menuProps) => {
   return (
-    <div className={`${className} flex justify-between`}>
+    <div className={`${className} flex `}>
       <Image src={imageSrc} alt={imageAlt} />
       <div>
         <Image src={CoffeeIcon} alt="coffe icon" />

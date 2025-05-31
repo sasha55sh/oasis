@@ -11,9 +11,13 @@ interface titleProps {
 
 const TitleComponent: FC<titleProps> = ({ className, title }) => {
   return (
-    <div className={`${className} flex items-center justify-center`}>
-      <Image src={Background} alt="Background" className="relative" />
-      <h1 className="capitalize font-bold text-[48px] text-white absolute">{title}</h1>
+    <div
+      className={`${className} relative flex items-center justify-center w-full h-[150px]`}
+    >
+      <Image src={Background} alt="Background" className="object-cover" fill />
+      <h1 className="capitalize font-bold text-[48px] text-white z-10">
+        {title}
+      </h1>
     </div>
   );
 };
