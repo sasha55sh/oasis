@@ -47,7 +47,7 @@ const Links: FC<heroProps> = ({ className }) => {
 
 const HeroSection: FC = () => {
   return (
-    <section className="container flex flex-col items-center justify-between my-[30px] lg:my-[70px] lg:flex-row">
+    <section className="container flex flex-col items-center justify-between py-[30px] lg:py-[70px] lg:flex-row">
       <div className="flex flex-col justify-center items-center text-white space-y-[15px] lg:space-y-[30px] lg:items-start lg:order-2">
         <p className="text-amberOrange font-vibes text-[32px]">
           Welcome to Oasis restaurant!
