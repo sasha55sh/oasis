@@ -20,11 +20,11 @@ const ServerErrorSection = ({
   return (
     <section>
       <Title title="505 Error" />
-      <div className="container flex flex-col items-center fustify-center space-y-[15px] my-[50px] text-center lg:space-y-[30px] lg:my-[70px]">
-        <h1 className="text-amberOrange text-[64px] lg:text-[96px] font-bold leading-none">
+      <div className="container flex flex-col items-center justify-center space-y-[15px] my-[50px] text-center lg:space-y-[30px] lg:my-[70px]">
+        <h1 className="text-amberOrange text-[64px] font-bold leading-none lg:text-[96px]">
           505
         </h1>
-        <h2 className="text-darkCharcoal text-[24px] lg:text-[32px] font-bold">
+        <h2 className="text-darkCharcoal text-[24px] font-bold lg:text-[32px]">
           Oops! Look likes something going wrong
         </h2>
         <p className="text-darkLiver">
