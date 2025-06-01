@@ -20,10 +20,10 @@ const BenefitSection: FC = () => {
       <Image
         src={background}
         alt="Background"
-        className="relative -z-10 lg:scale-y-[130%] xl:scale-none"
+        className="relative z-1 lg:scale-y-[130%] xl:scale-none"
       />
 
-      <div className="absolute flex text-center justify-between">
+      <div className="absolute z-2 flex text-center justify-between">
         {data.map((item, index) => (
           <div
             className="flex flex-col items-center space-y-[10px] px-[50px] text-white"
