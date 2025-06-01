@@ -11,9 +11,9 @@ const ActiveProcessSection: FC = () => {
       <Image
         src={background}
         alt="Background"
-        className="hidden -z-10 lg:scale-y-[120%] lg:block xl:scale-none"
+        className="hidden z-1 lg:scale-y-[120%] lg:block xl:scale-none"
       />
-      <div className="container flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
+      <div className="container z-2 flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
         <p className="text-amberOrange font-vibes text-[32px]">
           Restaurant Active Process
         </p>
