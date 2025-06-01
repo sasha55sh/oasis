@@ -63,9 +63,12 @@ const MenuList = () => {
           imageSrc={mainImg}
           imageAlt="cheessburger image"
           items={mainItems}
-          className="flex-row-reverse"
+          className="lg:flex-row-reverse"
         />
-        <BenefitSection />
+      </div>
+
+      <BenefitSection />
+      <div className="container flex flex-col space-y-[70px] my-[70px]">
         <MenuCategory
           sectionTitle="Dessert"
           imageSrc={dessertImg}
@@ -77,7 +80,7 @@ const MenuList = () => {
           imageSrc={drinksImg}
           imageAlt="cocktail image"
           items={drinksItems}
-          className="flex-row-reverse"
+          className="lg:flex-row-reverse"
         />
         <PartnersSection />
       </div>

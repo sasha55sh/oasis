@@ -8,16 +8,19 @@ interface menuItemProps {
 
 const MenuItemComponent: FC<menuItemProps> = ({ className, item }) => {
   return (
-    <div className={`${className} flex justify-between max-w-[760px]`}>
-      <div>
-        <h2 className="text-[24px] font-bold text-darkCharcoal">
+    <div
+      className={`${className} flex justify-between max-w-[760px] xl:ml-[30px]`}
+    >
+      <div className="space-y-[8px]">
+        <h2 className="text-[20px] font-bold text-darkCharcoal capitalize md:text-[24px]">
           {item.title}
         </h2>
         <p className="text-darkLiver">{item.description}</p>
         <p className="text-oldSilver">{item.cal} CAL</p>
       </div>
-      <p className="text-amberOrange text-[24px]">{item.price} $</p>
-      <hr className="max-w-[760px] border-t border-dotted border-gainsboro" />
+      <p className="text-amberOrange text-[20px] text-nowrap font-bold md:text-[24px]">
+        {item.price} $
+      </p>
     </div>
   );
 };

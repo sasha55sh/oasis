@@ -20,16 +20,21 @@ const MenuCategoryComponent: FC<menuProps> = ({
   imageAlt,
 }: menuProps) => {
   return (
-    <div className={`${className} flex `}>
+    <div
+      className={`${className} flex flex-col space-y-[30px] items-center lg:gap-x-[40px] lg:flex-row xl:gap-x-[70px]`}
+    >
       <Image src={imageSrc} alt={imageAlt} />
-      <div>
-        <Image src={CoffeeIcon} alt="coffe icon" />
-        <h1 className="text-[48px] text-darkCharcoal font-bold">
+      <div className="w-full">
+        <Image src={CoffeeIcon} alt="coffe icon" className="hidden md:block" />
+        <h1 className="text-[36px] text-darkCharcoal font-bold text-center md:text-left lg:text-[48px]">
           {sectionTitle}
         </h1>
-        <div className="flex flex-col space-y-[10px]">
+        <div className="flex flex-col space-y-[10px] ">
           {items.map((item, index) => (
-            <MenuItemComponent key={index} item={item} />
+            <div key={index}>
+              <MenuItemComponent item={item} />
+              <hr className="max-w-[760px] h-[5px] border-t border-dotted border-gainsboro mt-[10px] xl:ml-[30px]" />
+            </div>
           ))}
         </div>
       </div>

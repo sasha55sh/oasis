@@ -3,7 +3,7 @@ import React, { FC } from "react";
 interface ButtonProps {
   className?: string;
   text: string;
-  type?: "button" | "submit";
+  type?: "button" | "submit" | "reset";
   background?: "amberOrange" | "transparent" | "white";
   fullWidth?: boolean;
   disabled?: boolean;
