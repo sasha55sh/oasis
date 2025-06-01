@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { MantineProvider } from "@mantine/core";
 import Header from "@/components/HeaderComponent";
 import Footer from "@/components/FooterComponent";
 import "./globals.css";
@@ -19,9 +20,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <main className="font-inter">{children}</main>
-        {/* <Header />
-        <Footer /> */}
+        <MantineProvider>
+          {/* <Header />
+          <Footer /> */}
+          <main className="font-inter">{children}</main>
+        </MantineProvider>
       </body>
     </html>
   );
