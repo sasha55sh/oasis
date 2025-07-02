@@ -5,6 +5,8 @@ import { MantineProvider } from "@mantine/core";
 import Header from "@/components/HeaderComponent";
 import Footer from "@/components/FooterComponent";
 import "./globals.css";
+import { CartProvider } from "@/hooks/useCart";
+import { AlertProvider } from "@/hooks/alertContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +22,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <MantineProvider>
-          {/* <Header />
+        <CartProvider>
+          <MantineProvider>
+            <AlertProvider>
+              {/* <Header />
           <Footer /> */}
-          <main className="font-inter">{children}</main>
-        </MantineProvider>
+              <main className="font-inter">{children}</main>
+            </AlertProvider>
+          </MantineProvider>
+        </CartProvider>
       </body>
     </html>
   );
