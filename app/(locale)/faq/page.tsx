@@ -1,9 +1,9 @@
-import ShopMain from "@/app/sections/shop-page/ShopMain";
+import FaqSection from "@/app/sections/faq-page/FAQSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis - Shop",
-  description: "We offer a wide selection of dishes",
+  title: "Oasis - FAQ",
+  description: "Frequently asked questions",
   icons: { icon: "//шлях до фавікону" },
 };
 
@@ -13,7 +13,7 @@ export const generateViewport = () => ({
 });
 
 const Page = () => {
-  return <ShopMain />;
+  return <FaqSection />;
 };
 
 export default Page;
