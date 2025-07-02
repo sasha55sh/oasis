@@ -1,4 +1,8 @@
 import React, { FC } from "react";
+import Image from "next/image";
+
+import FilterIcon from "@/images/vectors/filter-icon.svg";
+import BasketIcon from "@/images/vectors/basket.svg";
 
 interface ButtonProps {
   className?: string;
@@ -11,7 +15,7 @@ interface ButtonProps {
   bordered?: boolean;
   href?: string;
   tag?: "a" | "button";
-  icon?: " ";
+  icon?: "filter" | "basket";
 }
 
 const Button: FC<ButtonProps> = ({
@@ -25,6 +29,7 @@ const Button: FC<ButtonProps> = ({
   bordered = false,
   href,
   tag = "button",
+  icon,
 }) => {
   const Tag = tag;
   const finalBackground = bordered ? "transparent" : background;
@@ -53,16 +58,42 @@ const Button: FC<ButtonProps> = ({
       : bordered
       ? "hover:bg-amberOrange transition-colors duration-300"
       : "";
+
+  const renderIcon = () => {
+    if (icon === "filter") {
+      return (
+        <Image
+          src={FilterIcon}
+          alt="Filter icon"
+          width={14}
+          height={14}
+          className="mr-[8px] inline-block"
+        />
+      );
+    }
+    if (icon === "basket") {
+      return (
+        <Image
+          src={BasketIcon}
+          alt="Basket icon"
+          width={20}
+          height={20}
+          className="ml-[8px] inline-block"
+        />
+      );
+    }
+  };
   return (
     <>
       <Tag
-        className={`${className} ${disabledBg} ${backgroundClass} ${borderClass} ${textClass} ${widthClass} ${hoverClass} py-[12px] px-[24px] rounded-3xl flex items-center justify-center disabled:cursor-not-allowed group`}
+        className={`${className} ${disabledBg} ${backgroundClass} ${borderClass} ${textClass} ${widthClass} ${hoverClass} py-[12px] px-[24px] rounded-xl flex items-center justify-center disabled:cursor-not-allowed group`}
         type={type}
         onClick={onClick}
         disabled={disabled}
         href={href}
       >
         {text}
+        {renderIcon()}
       </Tag>
     </>
   );
