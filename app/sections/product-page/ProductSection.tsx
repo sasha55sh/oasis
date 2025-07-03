@@ -7,22 +7,24 @@ import { getProductByHandle } from "@/service/ProductService";
 import { useAlert } from "@/hooks/alertContext";
 import { Loader } from "@mantine/core";
 
+import Counter from "@/components/CounterComponent";
 import Button from "@/components/ButtonComponent";
-import Title from "@/components/TitleComponent";
+import EnergyCard from "@/components/shop-page/EnergyCardComponent";
+import { useCart } from "@/hooks/useCart";
 
 interface productProps {
   productHandle: string;
 }
 
 const ProductSection: FC<productProps> = ({ productHandle }) => {
-  const [maxQuantity, setMaxQuantity] = useState<number>(100);
-  const [quantity, setQuantity] = useState<number>(1);
+  const [maxQuantity, setMaxQuantity] = useState<number>(10);
+  const [quantity, setQuantity] = useState<number>(0);
   const [product, setProduct] = useState<Product>();
   const [loading, setLoading] = useState<boolean>(true);
   const [showCounter, setShowCounter] = useState<boolean>(false);
 
   const { setInfoMessage } = useAlert();
-  //   const { addToCart, isOpen, changeOpenState } = useCart();
+  const { addToCart, isOpen, changeOpenState } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,8 +36,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
         if (productData) {
           console.log("data: ", productData);
           setProduct(productData);
-          setQuantity(1);
-          setMaxQuantity(100);
+          setMaxQuantity(10);
         }
       } catch (error) {
         console.error("Failed to fetch product data:", error);
@@ -47,6 +48,12 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
     fetchProduct();
   }, [productHandle]);
 
+  useEffect(() => {
+    if (quantity <= 0) {
+      setShowCounter(false);
+    }
+  }, [quantity]);
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
@@ -55,39 +62,30 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
     );
   }
 
-  // const handleQuantityChange = (value: number | string | undefined) => {
-  //   const numericValue = typeof value === "string" ? parseFloat(value) : value;
-  //   if (!isNaN(numericValue as number)) {
-  //     setQuantity(numericValue as number);
-  //   }
-  // };
-
   const handleIncrement = () => {
     setQuantity((prev) => Math.min(prev + 1, maxQuantity));
-    // handleQuantityChange(newValue);
   };
 
   const handleDecrement = () => {
-    setQuantity((prev) => Math.max(prev - 1, 1));
-    // handleQuantityChange(newValue);
+    setQuantity((prev) => Math.max(prev - 1, 0));
   };
 
-  //   const handleAddToBasket = (id: string) => {
-  //     !isOpen && changeOpenState(true);
+  const handleAddToBasket = (id: string) => {
+    !isOpen && changeOpenState(true);
 
-  //     if (product) {
-  //       addToCart(
-  //         {
-  //           id: product.id,
-  //           title: product.title,
-  //           handle: product.handle,
-  //           price: product.price,
-  //           image: product.image,
-  //         },
-  //         quantity
-  //       );
-  //     }
-  //   };
+    if (product) {
+      addToCart(
+        {
+          id: product.id,
+          title: product.title,
+          handle: product.handle,
+          price: product.price,
+          image: product.image,
+        },
+        quantity
+      );
+    }
+  };
 
   return (
     <section>
@@ -118,34 +116,46 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
             <Button
               text="I want it"
               icon="basket"
-              onClick={() => setShowCounter(true)}
+              onClick={() => {
+                setShowCounter(true);
+                setQuantity(1);
+              }}
               className="w-[80%]"
             />
           ) : (
-            <div className="flex items-center">
-              <button
-                onClick={handleDecrement}
-                className="w-[56px] h-[56px] bg-sandstone rounded-xl hover:bg-amberOrange"
-
-              >
-                -
-              </button>
-              <span className="w-[50px] h-[40px] flex items-center justify-center">
-                {quantity}
-              </span>
-              <button
-                onClick={handleIncrement}
-                className={`w-[50px] h-[40px] border-l ${
-                  quantity < maxQuantity
-                    ? "hover:bg-darkBlack hover:text-snow bg-snow"
-                    : "bg-gray-200 bg-opacity-80 cursor-not-allowed text-[gray]"
-                }`}
-                disabled={quantity >= maxQuantity}
-              >
-                +
-              </button>
-            </div>
+            <Counter
+              quantity={quantity}
+              onIncrease={handleIncrement}
+              onDecrease={handleDecrement}
+              maxQuantity={maxQuantity}
+            />
           )}
+          <hr className="w-full h-[2px]" />
+          <p className="text-[18px] text-darkLiver">
+            Energy value of the product:
+          </p>
+
+          <div className="grid grid-cols-2 grid-rows-2 gap-[20px]">
+            <EnergyCard
+              quantity={product?.cal ?? 0}
+              title="Calories"
+              type="cal"
+            />
+            <EnergyCard
+              quantity={product?.proteins ?? 0}
+              title="Proteins"
+              type="g"
+            />
+            <EnergyCard quantity={product?.fats ?? 0} title="Fats" type="g" />
+            <EnergyCard
+              quantity={product?.carbohydrates ?? 0}
+              title="Carbohydrates"
+              type="g"
+            />
+          </div>
+          <p className="text-[14px] text-oldSilver/50 text-left">
+            Energy value is indicated per <b>100g</b>
+          </p>
         </div>
       </div>
     </section>
