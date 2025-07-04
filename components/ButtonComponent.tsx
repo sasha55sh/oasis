@@ -8,7 +8,7 @@ interface ButtonProps {
   className?: string;
   text: string;
   type?: "button" | "submit" | "reset";
-  background?: "amberOrange" | "transparent" | "white";
+  background?: "amberOrange" | "transparent" | "white" | "limeGreen";
   fullWidth?: boolean;
   disabled?: boolean;
   onClick?: () => void;
@@ -38,6 +38,8 @@ const Button: FC<ButtonProps> = ({
       ? "bg-amberOrange"
       : finalBackground === "white"
       ? "bg-white border border-transparent"
+      : finalBackground === "limeGreen"
+      ? "bg-limeGreen border border-transparent"
       : "bg-transparent";
   const disabledBg = "disabled:bg-romance disabled:text-warmWhite";
   const textClass =
@@ -45,6 +47,8 @@ const Button: FC<ButtonProps> = ({
       ? "text-white"
       : finalBackground === "white"
       ? "text-amberOrange"
+      : finalBackground === "limeGreen"
+      ? "text-white"
       : bordered
       ? "text-white"
       : "";
@@ -52,9 +56,10 @@ const Button: FC<ButtonProps> = ({
   const widthClass = fullWidth ? "w-[100%]" : "";
   const hoverClass =
     finalBackground === "amberOrange"
-      ? "hover:bg-romance hover:text-amberOrange transition-colors duration-300"
+      ? "hover:bg-amberOrange/50 duration-300"
       : finalBackground === "white"
       ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
+      : finalBackground === "limeGreen" ? "hover:bg-limeGreen/50 duration-300"
       : bordered
       ? "hover:bg-amberOrange transition-colors duration-300"
       : "";
