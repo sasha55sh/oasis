@@ -32,6 +32,11 @@ export type CartProductProps = {
   image: string;
 };
 
+export type CartItemProps = CartProductProps & {
+  quantity: number;
+  maxQuantity: number;
+};
+
 export type InfoMessage = {
   type: "success" | "error";
   text: string;

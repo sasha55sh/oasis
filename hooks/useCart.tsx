@@ -8,10 +8,10 @@ import React, {
   useEffect,
 } from "react";
 
-import { CartProductProps } from "@/config/types";
+import { CartProductProps, CartItemProps } from "@/config/types";
 
 interface CartContextType {
-  products: CartProductProps[];
+  products: CartItemProps[];
   addToCart: (product: CartProductProps, amount: number) => void;
   addQuantity: (productId: string) => void;
   removeQuantity: (productId: string) => void;
@@ -24,7 +24,7 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [products, setProducts] = useState<CartProductProps[]>([]);
+  const [products, setProducts] = useState<CartItemProps[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -39,45 +39,52 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   }, [products]);
 
   const addToCart = (product: CartProductProps, amount: number) => {
-    const existingProduct = products.find((item) => item.id === product.id);
+    setProducts((prevProducts) => {
+      const existingProduct = prevProducts.find(
+        (item) => item.id === product.id
+      );
 
-    let newArr = [];
-
-    if (existingProduct) {
-      if (existingProduct.quantity < existingProduct.maxQuantity) {
-        existingProduct.quantity += amount;
+      if (existingProduct) {
+        return prevProducts.map((item) => {
+          if (item.id === product.id) {
+            const newQuantity = Math.min(
+              item.quantity + amount,
+              item.maxQuantity
+            );
+            return { ...item, quantity: newQuantity };
+          }
+          return item;
+        });
+      } else {
+        return [
+          ...prevProducts,
+          { ...product, quantity: Math.min(amount, 100), maxQuantity: 100 },
+        ];
       }
-
-      newArr = [...products];
-    } else {
-      newArr = [...products, { ...product }];
-    }
-
-    setProducts(newArr);
+    });
   };
 
   const addQuantity = (productId: string) => {
-    const newProd = products.find((item) => item.id === productId);
-
-    if (newProd && newProd.quantity < newProd.maxQuantity) {
-      newProd.quantity += 1;
-    }
-
-    let newArr = [...products];
-
-    setProducts(newArr);
+    setProducts((prevProducts) =>
+      prevProducts.map((item) => {
+        if (item.id === productId) {
+          const newQuantity = Math.min(item.quantity + 1, item.maxQuantity);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      })
+    );
   };
 
   const removeQuantity = (productId: string) => {
-    const newProd = products.find((item) => item.id === productId);
-
-    if (newProd && newProd.quantity > 1) {
-      newProd.quantity -= 1;
-    }
-
-    let newArr = [...products];
-
-    setProducts(newArr);
+    setProducts((prevProducts) =>
+      prevProducts.map((item) => {
+        if (item.id === productId && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      })
+    );
   };
 
   const changeOpenState = (newType: boolean) => {
