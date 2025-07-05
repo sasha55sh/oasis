@@ -96,7 +96,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
           className="rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
         />
 
-        <div className="flex flex-col space-y-[15px] my-[30px] items-center text-center lg:items-start lg:text-left">
+        <div className="flex flex-col space-y-[15px] mt-[30px] items-center text-center lg:items-start lg:text-left">
           <h2 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px] ">
             {product?.title ?? "Product Title"}
           </h2>
