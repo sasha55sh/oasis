@@ -55,4 +55,5 @@ export type Product = {
   carbohydrates: number;
   fats: number;
   cal: number;
+  discount: number;
 };

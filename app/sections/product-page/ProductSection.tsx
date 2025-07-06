@@ -85,16 +85,36 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
     }
   };
 
+  const discountedPrice = (
+    (Number(product?.price) || 0) -
+    (Number(product?.price) || 0) * (Number(product?.discount) || 0)
+  ).toFixed(2);
+
   return (
     <section>
       <div className="container flex flex-col items-center my-[30px] lg:grid lg:grid-cols-2">
-        <Image
-          src={product?.image ?? "Product Image"}
-          width={275}
-          height={275}
-          alt="Product Image"
-          className="rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
-        />
+        {product?.discount ?? 0 > 0 ? (
+          <div className="relative inline-block">
+            <span className="absolute p-[10px] bg-electricRed text-white top-[-10px] left-[-15px] rounded-xl ">
+              -{Number(product?.discount) * 100}%
+            </span>
+            <Image
+              src={product?.image ?? "Product Image"}
+              width={275}
+              height={275}
+              alt="Product Image"
+              className=" rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
+            />
+          </div>
+        ) : (
+          <Image
+            src={product?.image ?? "Product Image"}
+            width={275}
+            height={275}
+            alt="Product Image"
+            className="rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
+          />
+        )}
 
         <div className="flex flex-col space-y-[15px] mt-[30px] items-center text-center lg:items-start lg:text-left">
           <h2 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px] ">
@@ -108,9 +128,24 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
 
           <div className="flex flex-col whitespace-nowrap space-y-[15px] w-full items-center mini:space-y-0 mini:flex-row mini:justify-center mini:space-x-[20px] sm:justify-around">
             <div className="flex items-center space-x-[20px]">
-              <p className="text-[22px] text-amberOrange font-bold md:text-[24px]">
-                {product?.price ?? "0.00"} $
-              </p>
+              {product?.discount ?? 0 > 0 ? (
+                <div className="flex items-end space-x-[5px]">
+                  <p className="text-[22px] text-electricRed font-bold md:text-[24px]">
+                    {discountedPrice} $
+                  </p>
+                  <p
+                    className="text-[16px] text-amberOrange font-medium line-through
+"
+                  >
+                    {product?.price ?? "0.00"} $
+                  </p>
+                </div>
+              ) : (
+                <p className="text-[22px] text-amberOrange font-bold md:text-[24px]">
+                  {product?.price ?? "0.00"} $
+                </p>
+              )}
+
               <p className="text-oldSilver">{product?.grams ?? "0"} g</p>
             </div>
 
