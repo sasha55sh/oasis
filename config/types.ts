@@ -20,8 +20,8 @@ export type CardProps = {
   price: number;
   discount: number;
   image: string;
-  gramm: number;
-  quantity: number;
+  grams: number;
+  description: string;
 };
 
 export type CartProductProps = {
