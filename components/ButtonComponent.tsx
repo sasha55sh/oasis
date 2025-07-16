@@ -11,7 +11,7 @@ interface ButtonProps {
   background?: "amberOrange" | "transparent" | "white" | "limeGreen";
   fullWidth?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: () => void | string | undefined;
   bordered?: boolean;
   href?: string;
   tag?: "a" | "button";
