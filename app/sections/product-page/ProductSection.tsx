@@ -23,7 +23,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   const [showCounter, setShowCounter] = useState<boolean>(false);
 
   const { setInfoMessage } = useAlert();
-  const { addToCart, isOpen, changeOpenState } = useCart();
+  const { addToCart, removeFromCart } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -50,6 +50,9 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
     if (quantity <= 0) {
       setShowCounter(false);
     }
+    // if (product) {
+    //   removeFromCart(product.id);
+    // }
   }, [quantity]);
 
   if (loading) {
@@ -61,28 +64,26 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   }
 
   const handleIncrement = () => {
-    setQuantity((prev) => Math.min(prev + 1, maxQuantity));
+    if (!product) return;
+    const newQuantity = quantity + 1;
+    if (newQuantity <= maxQuantity) {
+      setQuantity(newQuantity);
+      addToCart(product, newQuantity);
+    }
   };
 
   const handleDecrement = () => {
-    setQuantity((prev) => Math.max(prev - 1, 0));
+    if (quantity > 0) {
+      const newQuantity = quantity - 1;
+      setQuantity(newQuantity);
+    }
   };
 
   const handleAddToBasket = (id: string) => {
-    !isOpen && changeOpenState(true);
-
-    if (product) {
-      addToCart(
-        {
-          id: product.id,
-          title: product.title,
-          handle: product.handle,
-          price: product.price,
-          image: product.image,
-        },
-        quantity
-      );
-    }
+    if (!product) return;
+    setQuantity(1);
+    setShowCounter(true);
+    addToCart(product, 1);
   };
 
   const discountedPrice = (
@@ -120,7 +121,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
           <h2 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px] ">
             {product?.title ?? "Product Title"}
           </h2>
-          <p className="text-[16px] text-oldSilver md:text-[18px]">
+          <p className="text-oldSilver md:text-[18px]">
             {product?.description ?? "Description"}
           </p>
 
@@ -129,14 +130,11 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
           <div className="flex flex-col whitespace-nowrap space-y-[15px] w-full items-center mini:space-y-0 mini:flex-row mini:justify-center mini:space-x-[20px] sm:justify-around">
             <div className="flex items-center space-x-[20px]">
               {product?.discount ?? 0 > 0 ? (
-                <div className="flex items-end space-x-[5px]">
+                <div className="flex items-center space-x-[5px]">
                   <p className="text-[22px] text-electricRed font-bold md:text-[24px]">
                     {discountedPrice} $
                   </p>
-                  <p
-                    className="text-[16px] text-amberOrange font-medium line-through
-"
-                  >
+                  <p className="text-amberOrange font-medium line-through">
                     {product?.price ?? "0.00"} $
                   </p>
                 </div>
@@ -153,11 +151,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
               <Button
                 text="I want it"
                 icon="basket"
-                onClick={() => {
-                  setShowCounter(true);
-                  setQuantity(1);
-                  handleAddToBasket(product?.id || "");
-                }}
+                onClick={() => handleAddToBasket(product?.id || "")}
                 className="w-[80%] mini:w-[50%]"
               />
             ) : (

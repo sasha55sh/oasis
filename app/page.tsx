@@ -11,7 +11,7 @@ import BlogSection from "@/app/sections/home-page/BlogSection";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <>
       <HeroSection />
       <AboutUsSection />
       <FoodCategoryComponent />
@@ -22,6 +22,6 @@ export default function Home() {
       <TestimonialsSection />
       <ActiveProcessSection />
       <BlogSection />
-    </div>
+    </>
   );
 }

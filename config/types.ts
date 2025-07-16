@@ -57,3 +57,11 @@ export type Product = {
   cal: number;
   discount: number;
 };
+
+export type categoryButton = {
+  className?: string;
+  title: string;
+  src: string;
+  alt: string;
+  value: string;
+};
