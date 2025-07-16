@@ -43,7 +43,7 @@ export const getProducts = async (
           if (setInfoMessage) {
             setInfoMessage({
               type: "error",
-              text: "Ой! Сталася помилка на сервері!",
+              text: "Oops! Server error!",
             });
           }
         }
@@ -57,16 +57,16 @@ export const getProducts = async (
   return result;
 };
 
-export const getProductsByTitle = async (
+export const searchProducts = async (
   searchText: string,
   setInfoMessage?: (message: InfoMessage) => void
 ): Promise<any> => {
   let attempts = 0;
   while (attempts < 3) {
     try {
-      const response = await axios.get(
-        `${BASE_URL}/productByTitle/${searchText}`
-      );
+      const response = await axios.get(`${BASE_URL}/search`, {
+        params: { value: searchText },
+      });
       if (response.status === 200) {
         return response.data;
       }
@@ -79,12 +79,12 @@ export const getProductsByTitle = async (
           if (setInfoMessage) {
             setInfoMessage({
               type: "error",
-              text: "Ой! Сталася помилка на сервері!",
+              text: "Oops! Server error!",
             });
           }
         }
       }
-      console.error("Failed to fetch product by title:", error);
+      console.error("Failed to search products:", error);
     }
     await delay(1000);
     attempts++;
@@ -98,7 +98,7 @@ export const getProductByHandle = async (
   let attempts = 0;
   while (attempts < 3) {
     try {
-      const response = await axios.get(`${BASE_URL}/shop/${handle}`);
+      const response = await axios.get(`${BASE_URL}/product/${handle}`);
       if (response.status === 200) {
         return response.data;
       }
@@ -111,7 +111,7 @@ export const getProductByHandle = async (
           if (setInfoMessage) {
             setInfoMessage({
               type: "error",
-              text: "Ой! Сталася помилка на сервері!",
+              text: "Oops! Server error!",
             });
           }
         }
@@ -123,14 +123,14 @@ export const getProductByHandle = async (
   }
 };
 
-export const getFilters = async (
+export const getProductsByCategory = async (
+  category: string,
   setInfoMessage?: (message: InfoMessage) => void
 ): Promise<any> => {
   let attempts = 0;
-
   while (attempts < 3) {
     try {
-      const response = await axios.get(`${BASE_URL}/filter`);
+      const response = await axios.get(`${BASE_URL}/shop/${category}`);
       if (response.status === 200) {
         return response.data;
       }
@@ -143,43 +143,16 @@ export const getFilters = async (
           if (setInfoMessage) {
             setInfoMessage({
               type: "error",
-              text: "Ой! Сталася помилка на сервері!",
+              text: "Oops! Server error!",
             });
           }
         }
       }
-      console.error(`Attempt ${attempts + 1} failed:`, error);
+      console.error("Failed to fetch product by category:", error);
     }
-
-    attempts++;
     await delay(1000);
+    attempts++;
   }
-
-  const filter = {
-    search: {
-      title: "Search",
-    },
-    buttons: {
-      title: "Types",
-      value: ["Wathes", "Other"],
-    },
-    priceRange: {
-      title: "Price",
-      value: [0, 10],
-    },
-    checkboxes: [
-      {
-        title: "example",
-        value: ["1", "2", "3"],
-      },
-      {
-        title: "example2",
-        value: ["1", "2", "3"],
-      },
-    ],
-  };
-
-  return filter;
 };
 
 function delay(ms: number): Promise<void> {
