@@ -7,30 +7,30 @@ import CardComponent from "@/components/shop-page/CardComponent";
 
 const ShopSection = ({
   totalProducts,
-  limit,
   isLoading,
 }: {
   totalProducts: number;
-  limit: number;
   isLoading: boolean;
 }) => {
   const allProducts = useContext(ProductsContext);
 
   return (
-    <section>
-      {isLoading ? (
-        <div>
-          {Array.from({ length: limit }, (_, index) => (
-            <ProductSceleton key={index} />
-          ))}
-        </div>
-      ) : (
-        <div>
-          {allProducts.map((card: CardProps, index) => (
-            <CardComponent {...card} key={index} />
-          ))}
-        </div>
-      )}
+    <section className="container my-[50px]">
+      <div className="grid gap-[20px] grid-cols-1 justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {isLoading ? (
+          <>
+            {Array.from({ length: 9 }, (_, index) => (
+              <ProductSceleton key={index} />
+            ))}
+          </>
+        ) : (
+          <>
+            {allProducts.map((card: CardProps, index) => (
+              <CardComponent {...card} key={index} />
+            ))}
+          </>
+        )}
+      </div>
     </section>
   );
 };
