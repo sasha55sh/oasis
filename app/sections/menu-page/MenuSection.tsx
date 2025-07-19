@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Loader } from "@mantine/core";
 import { Menu } from "@/config/types";
+import { Loader } from "@mantine/core";
 import { getMenuByCategory } from "@/service/MenuService";
 import MenuCategory from "@/components/menu-page/MenuCategoryComponent";
 import TitleComponent from "@/components/TitleComponent";
@@ -19,6 +19,7 @@ const MenuList = () => {
   const [dessertItems, setDessertItems] = useState<Menu[]>([]);
   const [drinksItems, setDrinksItems] = useState<Menu[]>([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchMenu = async () => {
       try {
@@ -43,7 +44,7 @@ const MenuList = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
-        <Loader className="animate-spin rounded-full border-4 border-amberOrange border-b-transparent w-10 h-10" />
+        <Loader className="animate-spin rounded-full border-[5px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
       </div>
     );
   }

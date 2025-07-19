@@ -27,6 +27,8 @@ module.exports = {
         darkCharcoal: "#333333",
         oldSilver: "#828282",
         gainsboro: "#e0e0e0",
+        limeGreen: "#4fb045",
+        electricRed: "#e30000"
       },
       backgroundImage: {},
       fontFamily: {

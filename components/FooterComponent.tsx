@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Input from "@/components/InputComponent";
@@ -8,10 +8,9 @@ import Instagram from "@/images/vectors/instagram-logo.svg";
 import Pinterest from "@/images/vectors/pinterest-logo.svg";
 import Facebook from "@/images/vectors/facebook-logo.svg";
 import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import Corner from "@/images/backgrounds/corner-salad.svg";
 import Clockwise from "@/images/vectors/clockwise-right.svg";
 
-const socialObject = [
+const socialObjects = [
   { href: "https://www.instagram.com/", title: "Instagram", image: Instagram },
   { href: "https://www.pinterest.com/", title: "Pinterest", image: Pinterest },
   { href: "https://www.facebook.com/", title: "Facebook", image: Facebook },
@@ -19,59 +18,61 @@ const socialObject = [
 ];
 
 const mainLinks = [
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
+  { href: "menu", text: "Menu" },
+  { href: "shop", text: "Shop" },
+  { href: "delivery", text: "Delivery" },
+  { href: "about-us", text: "About us" },
+  { href: "news", text: "News" },
 ];
 
-const additionalLink = [
-  { href: "#about", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
-  { href: "#", text: "Текст" },
+const numbersData = [
+  "+380 (68) 68 68 686",
+  "+380 (99) 00 00 000",
+  "+380 (67) 67 67 676",
 ];
 
-const Footer = () => {
+const Footer: FC<{ className?: string }> = ({ className }) => {
   const currentYear = new Date().getFullYear();
-  return (
-    <footer className="bg-black text-white relative">
-      <div className="container flex justify-around items-center my-[30px]">
+
+  const SubscribeBlock = () => {
+    return (
+      <div className="container flex flex-col items-center my-[30px] space-y-[15px] lg:flex-row lg:justify-between">
         <div className="flex flex-col space-y-[15px]">
-          <h1 className="font-bold text-[32px]">
-            Дізнавайся першим про найсмачніше!
+          <h1 className="font-bold text-[20px] lg:text-[32px]">
+            Be the first to know about the most delicious things!
           </h1>
-          <p>Підпишись на розсилку та отримуй акції та спеціальні пропозиції</p>
+          <p>
+            Subscribe to the newsletter and receive promotions and special
+            offers
+          </p>
         </div>
 
-        <div className="flex">
+        <div className="flex items-center">
           <Input
             inputType="input"
-            placeholder="Введіть свій емейл"
+            placeholder="Enter your email"
             background="amberOrange"
-            className="max-w-[300px] rounded-md"
+            className="rounded-md"
           />
           <Button
-            text="Підписатися"
+            text="Subscribe"
             background="white"
-            className="rounded-md ml-[-10px]"
+            className="rounded-md ml-[-10px] py-[15px]"
           />
         </div>
       </div>
+    );
+  };
 
-      <hr className="max-w-[1150px] h-[1px] bg-amberOrange border-0 m-auto" />
-
-      <div className="container flex justify-between my-[30px]">
-        <div className="space-y-[20px]">
-          <h2 className="font-bold text-[24px]">Інформація</h2>
+  const FooterMain = () => {
+    return (
+      <div className="container flex flex-col justify-between my-[30px] space-y-[15px] sm:grid sm:grid-cols-2 sm:gap-[20px] lg:grid-cols-4">
+        <div className="space-y-[10px]">
+          <h2 className="font-bold text-[24px] text-amberOrange">About Us</h2>
           <p className="max-w-[310px]">
-            Ресторан з вишуканими стравами, де кожен візит — це нові
-            гастрономічні враження, унікальні смаки та бездоганна атмосфера для
-            справжніх гурманів
+            A restaurant with exquisite dishes, where every visit is a new
+            gastronomic experience, unique flavors and an impeccable atmosphere
+            for true gourmets
           </p>
           <div className="flex space-x-[15px] ">
             <button
@@ -81,36 +82,35 @@ const Footer = () => {
               <Image src={Clockwise} alt="clockwise" height={40} width={40} />
             </button>
             <div className="flex flex-col text-[14px]">
-              <p className="text-[18px]">Години роботи:</p>
+              <p className="text-[18px]">Opening hours:</p>
               <p>
-                Понеділок - П'ятниця(<time dateTime="11:00">11:00</time> -
+                Monday - Friday(<time dateTime="11:00">11:00</time> -
                 <time dateTime="22:00"> 22:00)</time>
               </p>
               <p>
-                Субота - Неділя(<time dateTime="10:00">10:00</time> -
+                Saturday - Sunday(<time dateTime="10:00">10:00</time> -
                 <time dateTime="22:00"> 22:00)</time>
               </p>
             </div>
           </div>
         </div>
 
-        <div>
-          <h2 className="font-bold text-[24px]">Корисні посилання</h2>
-          <ul className="hidden space-y-2 mt-[20px] md:block">
-            {additionalLink.map(({ href, text }, index) => (
-              <li
-                key={index}
-                className="transition-transform duration-300 hover:scale-105 hover:text-amberOrange"
-              >
-                <Link href={href}>{text}</Link>
-              </li>
+        <div className="sm:justify-self-center">
+          <h2 className="font-bold text-[24px] text-amberOrange">
+            Place an order
+          </h2>
+          <ul className="space-y-[8px] mt-[10px] flex flex-col">
+            {numbersData.map((number, index) => (
+              <li key={index}>{number}</li>
             ))}
           </ul>
         </div>
 
-        <div>
-          <h2 className="font-bold text-[24px]">Потрібна допомога?</h2>
-          <ul className="hidden space-y-2  mt-[20px] mini:block">
+        <div className="hidden sm:block lg:justify-self-center">
+          <h2 className="font-bold text-[24px] text-amberOrange">
+            Useful links
+          </h2>
+          <ul className="space-y-[8px] mt-[20px] grid grid-cols-3 lg:grid-cols-1 lg:justify-self-center lg:text-center">
             {mainLinks.map(({ href, text }, index) => (
               <li
                 key={index}
@@ -121,20 +121,39 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div>
-          <h2 className="font-bold text-[24px]">Наш блог</h2>
+
+        <div className="sm:justify-self-center">
+          <h2 className="font-bold text-[24px] text-amberOrange whitespace-nowrap">
+            We are on social media
+          </h2>
+          <ul className="flex mt-[20px] space-x-[20px] sm:justify-center">
+            {socialObjects.map((obj, index) => (
+              <li key={index}>
+                <Link href={obj.href} target="_blank">
+                  <Image
+                    src={obj.image}
+                    alt={obj.title}
+                    height={25}
+                    width={25}
+                    className="transition-transform duration-300 hover:scale-105"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
+    );
+  };
 
+  return (
+    <footer className="bg-black text-white pt-[10px]">
+      <SubscribeBlock />
+      <hr className="max-w-[1150px] h-[1px] bg-amberOrange border-0 m-auto" />
+      <FooterMain />
       <div className="bg-amberOrange p-[30px] text-center">
         Oasis © {currentYear} by Oleksandra Shapovaliuk. All rights reserved
       </div>
-
-      {/* <Image
-        src={Corner}
-        alt="corner"
-        className="absolute z-10 bottom-0 right-0 border-0"
-      /> */}
     </footer>
   );
 };
