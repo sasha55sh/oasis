@@ -22,16 +22,19 @@ footer {
   margin-top: auto;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgb(228, 228, 228);
-  border-radius: 5px;
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgb(139, 139, 139);
-  border-radius: 10px;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
 }
