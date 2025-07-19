@@ -19,7 +19,7 @@ const SearchInputComponent: FC<searchProps> = ({
 }) => {
   return (
     <div
-      className={`${className} flex p-[15px] rounded-xl shadow-xl max-w-[400px]`}
+      className={`${className} flex p-[15px] rounded-xl shadow-xl max-w-[350px]`}
     >
       <Image src={Search} alt="search icon" width={30} height={30} />
       <input

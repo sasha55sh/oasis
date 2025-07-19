@@ -3,13 +3,6 @@ import { BASE_URL } from "@/config/config";
 import { InfoMessage } from "@/config/types";
 
 export const getProducts = async (
-  filters?: object,
-  optionsString?: string,
-  limit?: number,
-  pageCursor?: string,
-  sortKey?: string,
-  reverse?: boolean,
-  pagination?: boolean,
   setInfoMessage?: (message: InfoMessage) => void
 ): Promise<any> => {
   let attempts = 0;
@@ -17,15 +10,6 @@ export const getProducts = async (
   while (attempts < 3) {
     try {
       const response = await axios.get(`${BASE_URL}/shop`, {
-        params: {
-          filters,
-          optionsString,
-          pageCursor,
-          limit,
-          sortKey,
-          reverse,
-          pagination,
-        },
         headers: {
           "Content-Type": "application/json",
         },
@@ -150,6 +134,40 @@ export const getProductsByCategory = async (
       }
       console.error("Failed to fetch product by category:", error);
     }
+    await delay(1000);
+    attempts++;
+  }
+};
+
+export const getSortedProducts = async (
+  sortType: string,
+  setInfoMessage?: (message: InfoMessage) => void
+): Promise<any> => {
+  let attempts = 0;
+
+  while (attempts < 3) {
+    try {
+      const response = await axios.get(`${BASE_URL}/sort?sort=${sortType}`);
+      if (response.status === 200) {
+        return response.data;
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        if (
+          (error.response?.status === 500 || error.code === "ERR_NETWORK") &&
+          attempts === 2
+        ) {
+          if (setInfoMessage) {
+            setInfoMessage({
+              type: "error",
+              text: "Oops! Server error!",
+            });
+          }
+        }
+      }
+      console.error("Failed to fetch sorted products:", error);
+    }
+
     await delay(1000);
     attempts++;
   }

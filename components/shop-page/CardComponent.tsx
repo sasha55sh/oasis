@@ -62,8 +62,15 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
   return (
     <Card
       className={`${className} max-w-sm relative`}
-      imgAlt={title}
-      imgSrc={image}
+      renderImage={() => (
+        <Image
+          width={385}
+          height={385}
+          src={image}
+          alt={handle}
+          className="h-[380px] rounded-t-lg object-cover"
+        />
+      )}
     >
       {discount > 0 && (
         <span className="absolute p-[10px] bg-electricRed text-white top-0 left-0 rounded-xl">
@@ -72,11 +79,11 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
       )}
 
       <a href={`/shop/${handle}`} className="flex flex-col space-y-[10px]">
-        <h5 className="text-[22px] text-darkLiver font-bold leading-none">
+        <h5 className="text-[22px] text-darkLiver font-bold leading-none h-[45px]">
           {title}
         </h5>
         <p className="text-amberOrange">{grams} g</p>
-        <p className="text-oldSilver">{description}</p>
+        <p className="text-oldSilver h-[80px]">{description}</p>
       </a>
 
       <div className="flex justify-between items-center">

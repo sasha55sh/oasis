@@ -108,7 +108,7 @@ const ShopFilters: FC<{
           </div>
 
           {!isLoading && products.length === 0 && (
-            <div className="flex flex-col-reverse justify-center items-center rounded-xl shadow-xl my-[20px] py-[30px] text-center lg:flex-row lg:space-x-[50px]">
+            <div className="flex flex-col-reverse justify-center items-center rounded-xl shadow-xl my-[20px] py-[30px] text-center lg:flex-row lg:justify-evenly w-full">
               <Image src={NotFound} alt="Not found" width={600} height={600} />
               <div>
                 <p className="text-[30px] font-medium text-amberOrange md:text-[42px]">
