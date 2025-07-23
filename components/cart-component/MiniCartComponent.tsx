@@ -3,23 +3,23 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { useCart } from "@/hooks/useCart";
 import { usePathname } from "next/navigation";
-import Button from "./ButtonComponent";
+import Button from "@/components/ButtonComponent";
 
 const MiniCartComponent: FC = () => {
   const { products, totalAmount } = useCart();
   const pathname = usePathname();
 
   const totalItems = products.reduce((sum, item) => sum + item.quantity, 0);
-
+  
   if (products.length === 0) return null;
 
   let buttonText = "Place an order";
-  let buttonLink = "/shop/cart";
+  let buttonLink = "/cart";
 
-  if (pathname === "/shop/cart") {
+  if (pathname === "/cart") {
     buttonText = "Continue";
-    buttonLink = "/shop/checkout";
-  } else if (pathname === "/shop/checkout") {
+    buttonLink = "/checkout";
+  } else if (pathname === "/checkout") {
     return null;
   }
 
