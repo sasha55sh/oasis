@@ -32,7 +32,7 @@ const CounterComponent: FC<counterProps> = ({
         />
       </button>
 
-      <span className="w-[50px] h-[40px] flex items-center justify-center text-[22px] text-darkLiver font-medium">
+      <span className="w-[35px] h-[40px] flex items-center justify-center text-[22px] text-darkLiver font-medium">
         {quantity}
       </span>
 

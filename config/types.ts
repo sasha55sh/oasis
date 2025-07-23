@@ -30,11 +30,9 @@ export type CartProductProps = {
   title: string;
   price: number;
   image: string;
-};
-
-export type CartItemProps = CartProductProps & {
   quantity: number;
   maxQuantity: number;
+  grams: number;
 };
 
 export type InfoMessage = {
@@ -56,6 +54,7 @@ export type Product = {
   fats: number;
   cal: number;
   discount: number;
+  quantity: number;
 };
 
 export type categoryButton = {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon } from "@mantine/core";
+import { useCart } from "@/hooks/useCart";
 
 import Button from "@/components/ButtonComponent";
 import Heart from "@/images/header/nav-heart.svg";
@@ -13,15 +14,17 @@ import Cart from "@/images/header/nav-cart.svg";
 import Close from "@/images/vectors/close.svg";
 
 const navData = [
-  { link: "menu", text: "Menu" },
-  { link: "shop", text: "Shop" },
-  { link: "delivery", text: "Delivery" },
-  { link: "about-us", text: "About Us" },
-  { link: "news", text: "News" },
+  { link: "/menu", text: "Menu" },
+  { link: "/shop", text: "Shop" },
+  { link: "/delivery", text: "Delivery" },
+  { link: "/about-us", text: "About Us" },
+  { link: "/news", text: "News" },
 ];
 
 const Header: FC<{ className?: string }> = ({ className }) => {
   const [opened, { open, close }] = useDisclosure(false);
+  const { products, changeOpenState, isOpen } = useCart();
+
   const HeaderNavigation = () => {
     return (
       <nav className="flex">
@@ -61,13 +64,34 @@ const Header: FC<{ className?: string }> = ({ className }) => {
         >
           <Image src={User} alt="User"></Image>
         </button>
-        <button
-          className="hidden border-oldSilver border-[1px] p-[10px] rounded-xl lg:flex"
-          aria-label="cart"
-        >
-          Cart
-          <Image src={Cart} alt="Cart" className="ml-[10px]"></Image>
-        </button>
+
+        {products.length > 0 ? (
+          <>
+            <button
+              className="relative hidden border-oldSilver border-[1px] p-[10px] rounded-xl lg:flex"
+              aria-label="cart"
+              onClick={() => changeOpenState(true)}
+            >
+              Cart
+              <Image src={Cart} alt="Cart" className="ml-[10px]"></Image>
+              <div className="absolute top-[-10px] right-[-10px] rounded-full px-[8px] bg-amberOrange text-white">
+                {products.reduce(
+                  (total, product) => total + product.quantity,
+                  0
+                )}
+              </div>
+            </button>
+          </>
+        ) : (
+          <button
+            className="hidden border-oldSilver border-[1px] p-[10px] rounded-xl lg:flex"
+            aria-label="cart"
+            onClick={() => changeOpenState(true)}
+          >
+            Cart
+            <Image src={Cart} alt="Cart" className="ml-[10px]"></Image>
+          </button>
+        )}
         <button
           className="border-oldSilver border-[1px] p-[10px] rounded-xl lg:hidden"
           aria-label="burger-menu"
@@ -93,6 +117,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
         <HeaderLogo />
         <HeaderNavigation />
         <HeaderButtons />
+
         <Modal
           opened={opened}
           onClose={close}
@@ -129,6 +154,30 @@ const Header: FC<{ className?: string }> = ({ className }) => {
               <Image src={Close} alt="Close" />
             </ActionIcon>
           </div>
+
+          <div className="flex flex-col items-center gap-[20px] px-[20px]">
+            {navData.map((item, index) => (
+              <Button
+                key={index}
+                tag="a"
+                background="transparent"
+                text={item.text}
+                href={item.link}
+                className="text-black text-[24px] font-medium hover:text-amberOrange transition"
+                onClick={close}
+              />
+            ))}
+          </div>
+
+          {/* <div className="flex flex-col gap-[7px] text-amberOrange text-[20px] text-center">
+              <p className="text-darkLiver">Place an order</p>
+              <p>+380 (68) 68 68 686</p>
+              <p>+380 (99) 00 00 000</p>
+              <p>+380 (67) 67 67 676</p>
+              <p className="text-darkLiver">
+                Call us from 11:00 to 21:30, seven days a week
+              </p>
+            </div> */}
         </Modal>
       </div>
     </header>

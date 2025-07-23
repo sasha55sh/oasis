@@ -1,9 +1,9 @@
 "use client";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
+import Image from "next/image";
 import { Card } from "flowbite-react";
 import { CardProps } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
-import Image from "next/image";
 import Counter from "@/components/CounterComponent";
 
 import Heart from "@/images/vectors/heart-icon.svg";
@@ -20,38 +20,28 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
   description,
   grams,
 }) => {
-  const [showCounter, setShowCounter] = useState<boolean>(false);
-  const [quantity, setQuantity] = useState<number>(0);
-  const [maxQuantity, setMaxQuantity] = useState<number>(10);
-  const { addToCart, isOpen, changeOpenState } = useCart();
+  const { addToCart, products, removeFromCart } = useCart();
 
-  useEffect(() => {
-    if (quantity <= 0) {
-      setShowCounter(false);
-    }
-  }, [quantity]);
+  const cartProduct = products.find((p) => p.id === id);
+  const quantity = cartProduct?.quantity || 0;
+  const maxQuantity = cartProduct?.maxQuantity || 100;
 
-  const handleIncrement = () => {
-    setQuantity((prev) => Math.min(prev + 1, maxQuantity));
-  };
-
-  const handleDecrement = () => {
-    setQuantity((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleAddToBasket = (id: string) => {
-    !isOpen && changeOpenState(true);
-
+  const handleAddToCart = () => {
     addToCart(
-      {
-        id: id,
-        handle: handle,
-        title: title,
-        price: +price,
-        image: image,
-      },
-      quantity
+      { id, handle, title, price, image, grams, maxQuantity, quantity: 1 },
+      1
     );
+  };
+
+  const handleIncrease = () => handleAddToCart();
+
+  const handleDecrease = () => {
+    if (quantity === 1) removeFromCart(id);
+    else
+      addToCart(
+        { id, handle, title, price, image, grams, maxQuantity, quantity: 1 },
+        -1
+      );
   };
 
   const discountedPrice = (
@@ -102,7 +92,14 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
           </p>
         )}
 
-        {!showCounter ? (
+        {quantity > 0 ? (
+          <Counter
+            quantity={quantity}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            maxQuantity={maxQuantity}
+          />
+        ) : (
           <div className="flex gap-[10px]">
             <button
               className="p-[10px] rounded-xl bg-oldSilver/10 w-[56px] h-[56px] flex items-center justify-center"
@@ -112,11 +109,7 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
             </button>
             <button
               className="w-[56px] h-[56px] rounded-xl flex items-center justify-center bg-amberOrange/50 hover:bg-amberOrange transition-colors group"
-              onClick={() => {
-                setShowCounter(true);
-                setQuantity(1);
-                handleAddToBasket(id);
-              }}
+              onClick={handleAddToCart}
               aria-label="add-to-cart"
             >
               <Image
@@ -126,13 +119,6 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
               />
             </button>
           </div>
-        ) : (
-          <Counter
-            quantity={quantity}
-            onIncrease={handleIncrement}
-            onDecrease={handleDecrement}
-            maxQuantity={maxQuantity}
-          />
         )}
       </div>
     </Card>

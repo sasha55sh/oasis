@@ -6,7 +6,6 @@ import { useAlert } from "@/hooks/alertContext";
 import { useCart } from "@/hooks/useCart";
 import { Loader } from "@mantine/core";
 import { getProductByHandle } from "@/service/ProductService";
-
 import Counter from "@/components/CounterComponent";
 import Button from "@/components/ButtonComponent";
 import EnergyCard from "@/components/shop-page/EnergyCardComponent";
@@ -16,14 +15,15 @@ interface productProps {
 }
 
 const ProductSection: FC<productProps> = ({ productHandle }) => {
-  const [maxQuantity, setMaxQuantity] = useState<number>(10);
-  const [quantity, setQuantity] = useState<number>(0);
   const [product, setProduct] = useState<Product>();
   const [loading, setLoading] = useState<boolean>(true);
-  const [showCounter, setShowCounter] = useState<boolean>(false);
 
   const { setInfoMessage } = useAlert();
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart, products, removeFromCart } = useCart();
+
+  const cartProduct = products.find((p) => p.handle === productHandle);
+  const quantity = cartProduct?.quantity || 0;
+  const maxQuantity = cartProduct?.maxQuantity || 100;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -32,10 +32,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
           productHandle,
           setInfoMessage
         );
-        if (productData) {
-          setProduct(productData);
-          setMaxQuantity(10);
-        }
+        setProduct(productData);
       } catch (error) {
         console.error("Failed to fetch product data:", error);
       } finally {
@@ -46,44 +43,28 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
     fetchProduct();
   }, [productHandle]);
 
-  useEffect(() => {
-    if (quantity <= 0) {
-      setShowCounter(false);
-    }
-    // if (product) {
-    //   removeFromCart(product.id);
-    // }
-  }, [quantity]);
-
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
-        <Loader className="animate-spin rounded-full border-4 border-amberOrange border-b-transparent w-10 h-10" />
+        <Loader className="animate-spin rounded-full border-[16px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
       </div>
     );
   }
 
-  const handleIncrement = () => {
+  const handleAddToCart = () => {
     if (!product) return;
-    const newQuantity = quantity + 1;
-    if (newQuantity <= maxQuantity) {
-      setQuantity(newQuantity);
-      addToCart(product, newQuantity);
-    }
+    addToCart({ ...product, quantity: 1, maxQuantity }, 1);
   };
 
-  const handleDecrement = () => {
-    if (quantity > 0) {
-      const newQuantity = quantity - 1;
-      setQuantity(newQuantity);
-    }
-  };
+  const handleIncrease = () => handleAddToCart();
 
-  const handleAddToBasket = (id: string) => {
+  const handleDecrease = () => {
     if (!product) return;
-    setQuantity(1);
-    setShowCounter(true);
-    addToCart(product, 1);
+    if (quantity === 1) {
+      removeFromCart(product.id);
+    } else {
+      addToCart({ ...product, quantity: 1, maxQuantity }, -1);
+    }
   };
 
   const discountedPrice = (
@@ -135,31 +116,31 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
                     {discountedPrice} $
                   </p>
                   <p className="text-amberOrange font-medium line-through">
-                    {product?.price ?? "0.00"} $
+                    {Number(product?.price).toFixed(2) ?? "0.00"} $
                   </p>
                 </div>
               ) : (
                 <p className="text-[22px] text-amberOrange font-bold md:text-[24px]">
-                  {product?.price ?? "0.00"} $
+                  {Number(product?.price).toFixed(2) ?? "0.00"} $
                 </p>
               )}
 
               <p className="text-oldSilver">{product?.grams ?? "0"} g</p>
             </div>
 
-            {!showCounter ? (
+            {quantity > 0 ? (
+              <Counter
+                quantity={quantity}
+                onIncrease={handleIncrease}
+                onDecrease={handleDecrease}
+                maxQuantity={maxQuantity}
+              />
+            ) : (
               <Button
                 text="I want it"
                 icon="basket"
-                onClick={() => handleAddToBasket(product?.id || "")}
+                onClick={handleAddToCart}
                 className="w-[80%] mini:w-[50%]"
-              />
-            ) : (
-              <Counter
-                quantity={quantity}
-                onIncrease={handleIncrement}
-                onDecrease={handleDecrement}
-                maxQuantity={maxQuantity}
               />
             )}
           </div>
