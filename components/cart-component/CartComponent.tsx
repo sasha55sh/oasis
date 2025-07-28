@@ -66,7 +66,7 @@ const CartComponent = () => {
                   href="/checkout"
                   onClick={() => changeOpenState(false)}
                 >
-                  Place an order
+                  Continue
                 </Link>
               </div>
             </>
