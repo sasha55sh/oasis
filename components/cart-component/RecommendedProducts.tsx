@@ -1,0 +1,60 @@
+import React from "react";
+import Image from "next/image";
+import { Product } from "@/config/types";
+import { useCart } from "@/hooks/useCart";
+import Plus from "@/images/vectors/plus-icon.svg";
+
+const RecommendedProduct = ({ product }: { product: Product }) => {
+  const { addQuantity, products, addToCart } = useCart();
+
+  const handleAddToCart = (product: Product) => {
+    const existingProduct = products.find((p) => p.id === product.id);
+
+    if (existingProduct) {
+      addQuantity(product.id);
+    } else {
+      addToCart({ ...product, quantity: 1, maxQuantity: 100 }, 1);
+    }
+  };
+
+  return (
+    <li className="rounded-md p-[10px] shadow-md flex flex-col items-center max-w-[250px]">
+      <div className="flex flex-col space-y-[8px]">
+        <Image
+          src={product.image}
+          alt={product.title}
+          width={100}
+          height={100}
+          className="rounded-xl object-fill w-[220px] h-[220px]"
+        />
+
+        <p className="text-[18px] font-bold text-darkLiver h-[55px]">
+          {product.title}
+        </p>
+        <p className="text-oldSilver">{product.grams} g</p>
+      </div>
+
+      <div className="flex justify-between w-full items-center px-[5px]">
+        <p className="text-oldSilver">
+          <span className="text-amberOrange font-bold text-[24px]">
+            {product.price}
+          </span>{" "}
+          $
+        </p>
+
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="group bg-amberOrange/50 hover:bg-amberOrange p-[10px] rounded-xl"
+        >
+          <Image
+            src={Plus}
+            alt="Plus icon"
+            className="transition-colors group-hover:filter group-hover:brightness-0 group-hover:invert"
+          />
+        </button>
+      </div>
+    </li>
+  );
+};
+
+export default RecommendedProduct;

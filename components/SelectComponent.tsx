@@ -13,22 +13,24 @@ type Option = {
 
 type SelectProps = {
   options: Option[];
+  onSelect: (value: string) => void;
   placeholder?: string;
   left?: boolean;
   className?: string;
-  onSelect: (value: string) => void;
+  disabled?: boolean;
+  value: string;
 };
 
 const CustomSelect: FC<SelectProps> = ({
   options,
   placeholder = "Sort from...",
   onSelect,
-
+  disabled = false,
   className,
+  value,
   left = false,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
   const selectRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -47,25 +49,30 @@ const CustomSelect: FC<SelectProps> = ({
   }, []);
 
   const handleSelect = (value: string) => {
-    setSelected(value);
     onSelect(value);
     setIsOpen(false);
   };
 
   const handleResetOption = () => {
-    setSelected(null);
     onSelect("");
   };
 
+  const selectedLabel = options.find((option) => option.value === value)?.label;
+
   return (
     <div
-      className={`${className} relative w-[350px] lg:max-w-[320px] shadow-xl text-darkCharcoal rounded-xl text-center cursor-pointer`}
+      className={`${className} relative w-[350px] lg:max-w-[320px] shadow-xl text-darkCharcoal rounded-xl text-center cursor-pointer   ${
+        disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+      }
+      `}
       ref={selectRef}
+      aria-disabled={disabled}
     >
-      <div className="px-[25px] py-[22px] rounded-xl" onClick={toggleDropdown}>
-        {selected
-          ? options.find((option) => option.value === selected)?.label
-          : placeholder}
+      <div
+        className="px-[25px] py-[22px] rounded-xl"
+        onClick={!disabled ? toggleDropdown : undefined}
+      >
+        {selectedLabel || placeholder}
 
         <Image
           src={Arrow}
@@ -76,7 +83,7 @@ const CustomSelect: FC<SelectProps> = ({
           } ${left ? "left-[15px]" : "right-[25px]"}`}
         />
 
-        {options.find((option) => option.value === selected) ? (
+        {value && (
           <button
             className={`absolute top-1/2 -translate-y-1/2 hover:rotate-180 duration-500 ${
               left ? "right-[15px] " : "left-[25px]"
@@ -85,12 +92,10 @@ const CustomSelect: FC<SelectProps> = ({
           >
             <Image src={Close} alt="Arrow" width={20} className="w-[20px]" />
           </button>
-        ) : (
-          ""
         )}
       </div>
 
-      {isOpen && (
+      {isOpen && !disabled && (
         <motion.ul
           className="absolute mt-[8px] w-full rounded-lg bg-white z-10 overflow-hidden text-darkCharcoal"
           initial={{ opacity: 0, y: -10 }}

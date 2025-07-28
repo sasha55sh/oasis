@@ -1,4 +1,4 @@
-// import SuccessOrderingSection from "@/app/sections/checkout-page/SuccessOrderingSection";
+import SuccessfulOrderSection from "@/app/sections/checkout-page/SuccessfulOrderSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +13,14 @@ export const generateViewport = () => ({
   width: "device-width",
 });
 
-const Page = ({ params }: { params: any }) => {
-  const orderId = params.orderId;
-  return <>{/* <SuccessOrderingSection orderId={orderId} /> */}</>;
+const Page = async ({ params }: { params: Promise<{ orderId: string }> }) => {
+  const { orderId } = await params;
+
+  return (
+    <>
+      <SuccessfulOrderSection orderId={orderId} />
+    </>
+  );
 };
 
 export default Page;

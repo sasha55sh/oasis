@@ -10,14 +10,14 @@ const MiniCartComponent: FC = () => {
   const pathname = usePathname();
 
   const totalItems = products.reduce((sum, item) => sum + item.quantity, 0);
-  
+
   if (products.length === 0) return null;
 
-  let buttonText = "Place an order";
+  let buttonText = "Сontinue";
   let buttonLink = "/cart";
 
   if (pathname === "/cart") {
-    buttonText = "Continue";
+    buttonText = "Place an order";
     buttonLink = "/checkout";
   } else if (pathname === "/checkout") {
     return null;
