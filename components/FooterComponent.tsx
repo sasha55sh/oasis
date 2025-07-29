@@ -21,7 +21,7 @@ const mainLinks = [
   { href: "menu", text: "Menu" },
   { href: "shop", text: "Shop" },
   { href: "delivery", text: "Delivery" },
-  { href: "about-us", text: "About us" },
+  { href: "faq", text: "FAQ" },
   { href: "news", text: "News" },
 ];
 

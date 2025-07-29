@@ -14,7 +14,7 @@ interface faqProps {
 
 const FaqItemComponent: FC<faqProps> = ({ className, item }) => {
   return (
-    <Accordion className={`${className} max-w-[650px]`} collapseAll>
+    <Accordion className={`${className} max-w-[650px] `} alwaysOpen>
       <AccordionPanel>
         <AccordionTitle className="text-[18px] text-darkCharcoal">
           {item.question}

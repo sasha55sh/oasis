@@ -18,7 +18,7 @@ type SelectProps = {
   left?: boolean;
   className?: string;
   disabled?: boolean;
-  value: string;
+  value?: string;
 };
 
 const CustomSelect: FC<SelectProps> = ({
