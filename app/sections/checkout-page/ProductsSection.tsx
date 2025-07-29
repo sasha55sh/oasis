@@ -142,7 +142,7 @@ const ProductsSection: FC<{
             </>
           ) : (
             <>
-              {randomProducts?.map((product: any, index: number) => (
+              {randomProducts?.map((product, index) => (
                 <SwiperSlide key={index}>
                   <RecommendedProducts product={product} />
                 </SwiperSlide>
