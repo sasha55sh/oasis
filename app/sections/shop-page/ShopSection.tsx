@@ -6,7 +6,6 @@ import { ProductsContext } from "./ShopMain";
 import CardComponent from "@/components/shop-page/CardComponent";
 
 const ShopSection = ({
-  totalProducts,
   isLoading,
 }: {
   totalProducts: number;

@@ -17,7 +17,7 @@ const navData = [
   { link: "/menu", text: "Menu" },
   { link: "/shop", text: "Shop" },
   { link: "/delivery", text: "Delivery" },
-  { link: "/about-us", text: "About Us" },
+  { link: "/faq", text: "FAQ" },
   { link: "/news", text: "News" },
 ];
 

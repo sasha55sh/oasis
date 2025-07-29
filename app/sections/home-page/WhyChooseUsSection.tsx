@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import tacoImage from "@/images/home-page/why-choose-us/taco-image.svg";
 import burgerImage from "@/images/home-page/why-choose-us/burger-image.svg";
@@ -12,9 +13,9 @@ import cookieIcon from "@/images/vectors/сookie.svg";
 import wineIcon from "@/images/vectors/wine.svg";
 
 const buttonsItems = [
-  { src: burgerIcon, alt: "burger-icon", title: "Fast Food" },
-  { src: cookieIcon, alt: "cookie-icon", title: "Lunch" },
-  { src: wineIcon, alt: "wine-icon", title: "Dinner" },
+  { src: burgerIcon, alt: "burger-icon", title: "Breakfast", href: "/shop" },
+  { src: cookieIcon, alt: "cookie-icon", title: "Dessert", href: "/shop" },
+  { src: wineIcon, alt: "wine-icon", title: "Main", href: "/shop" },
 ];
 
 const WhyChooseUsSection = () => {
@@ -64,21 +65,28 @@ const WhyChooseUsSection = () => {
           experienced
         </h1>
         <p className="text-center max-w-[550px] lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
-          sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
-          consequata
+          At Oasis, we blend passion with perfection to create dishes that
+          delight your senses. Every recipe is crafted with the finest
+          ingredients, ensuring a burst of authentic flavors in every bite. Our
+          commitment to quality and exceptional service makes every visit
+          unforgettable.
         </p>
         <div className="flex space-x-[20px]">
           {buttonsItems.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center space-y-[10px]"
+              className="flex flex-col items-center space-y-[10px] justify-center"
             >
-              <button className="w-[100px] h-[100px] rounded-xl bg-amberOrange duration-300 hover:scale-105">
-                <Image src={item.src} alt={item.alt} className="m-auto" />
-              </button>
+              <Link
+                className="w-[100px] h-[100px] rounded-xl bg-amberOrange duration-300 hover:scale-105 flex items-center justify-center"
+                href={item.href}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  className="max-w-[70%] max-h-[70%]"
+                />
+              </Link>
               <span>{item.title}</span>
             </div>
           ))}

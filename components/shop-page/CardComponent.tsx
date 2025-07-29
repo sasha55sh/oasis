@@ -83,12 +83,12 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
               {discountedPrice} $
             </p>
             <p className="text-amberOrange font-medium line-through">
-              {Number(price)} $
+              {Number(price).toFixed(2)} $
             </p>
           </div>
         ) : (
           <p className="text-[24px] text-amberOrange font-bold">
-            {Number(price)} $
+            {Number(price).toFixed(2)} $
           </p>
         )}
 

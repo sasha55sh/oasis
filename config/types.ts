@@ -64,3 +64,15 @@ export type categoryButton = {
   alt: string;
   value: string;
 };
+
+export type News = {
+  id: string;
+  image: string;
+  title: string;
+  handle: string;
+  date: string;
+  highText: string;
+  text: string;
+  lowText: string;
+  category: string;
+};

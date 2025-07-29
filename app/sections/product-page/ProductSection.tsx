@@ -46,7 +46,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
-        <Loader className="animate-spin rounded-full border-[16px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
+        <Loader className="animate-spin rounded-full border-[5px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
       </div>
     );
   }

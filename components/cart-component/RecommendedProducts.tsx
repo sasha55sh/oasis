@@ -1,10 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import { Product } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
 import Plus from "@/images/vectors/plus-icon.svg";
 
-const RecommendedProduct = ({ product }: { product: Product }) => {
+interface productProps {
+  product: Product;
+  className?: string;
+}
+
+const RecommendedProduct: FC<productProps> = ({ product, className }) => {
   const { addQuantity, products, addToCart } = useCart();
 
   const handleAddToCart = (product: Product) => {
@@ -18,7 +23,9 @@ const RecommendedProduct = ({ product }: { product: Product }) => {
   };
 
   return (
-    <li className="rounded-md p-[10px] shadow-md flex flex-col items-center max-w-[250px]">
+    <li
+      className={`${className} rounded-md p-[10px] shadow-md flex flex-col items-center max-w-[250px]`}
+    >
       <div className="flex flex-col space-y-[8px]">
         <Image
           src={product.image}

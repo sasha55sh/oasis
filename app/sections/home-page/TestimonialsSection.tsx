@@ -9,28 +9,28 @@ import reviewerPhoto from "@/images/home-page/testimonials/reviewer.svg";
 const TestimonialsData = [
   {
     src: reviewerPhoto,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+    text: "Oasis turned an ordinary dinner into an unforgettable experience! The flavors were rich, the ingredients fresh, and the service absolutely amazing",
     rating: fourStars,
     name: "Alamin Hasan",
     occupation: "Food Specialist",
   },
   {
     src: reviewerPhoto,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+    text: "Incredible taste and excellent presentation! Oasis really knows how to make dining a delightful experience. Highly recommended!",
     rating: fiveStars,
     name: "John Brown",
     occupation: "Programmer",
   },
   {
     src: reviewerPhoto,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+    text: "Fantastic service and delicious meals. From appetizers to dessert, everything was cooked to perfection. Will definitely come back soon!",
     rating: fiveStars,
     name: "Alan White",
     occupation: "Manager",
   },
   {
     src: reviewerPhoto,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+    text: "The best restaurant I’ve visited this year! Every dish was a masterpiece, and the cozy atmosphere made me feel at home",
     rating: fourStars,
     name: "David Smith",
     occupation: "Receptionist",
@@ -44,7 +44,7 @@ const TestimonialsSection: FC = () => {
         <span className="text-amberOrange">Wh</span>at our client are saying
       </h1>
 
-      <div className="max-w-[1000px]">
+      <div className="w-full">
         <Carousel slide={false} indicators={true}>
           {TestimonialsData.map((testimonial, index) => (
             <TestimonialComponent

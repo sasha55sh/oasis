@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Oasis - dishes",
   description:
     "Unique combinations of ingredients, combinations of different textures create a unique taste!",
+  icons: {icon: "@/app/favicon.ico"},
 };
 
 export const generateViewport = () => ({
