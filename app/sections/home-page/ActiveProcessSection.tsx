@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import Button from "@/components/ButtonComponent";
+import Link from "next/link";
 
 import background from "@/images/home-page/backgrounds/active-process-section.svg";
 import playIcon from "@/images/vectors/play-icon.svg";
@@ -22,20 +22,21 @@ const ActiveProcessSection: FC = () => {
           process untile it is saved
         </h1>
         <p className="max-w-[650px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna,
+          We capture every detail of the culinary journey, from the freshest
+          ingredients to the final presentation on your plate. Our commitment to
+          transparency ensures you enjoy not only great taste but also trust in
+          every dish we serve
         </p>
 
         <div className="flex max-w-[390px] items-center space-x-[20px]">
-          <Button text="Read more" bordered />
-
-          <button
+          <Link
+            href="https://www.youtube.com/@JoshuaWeissman"
+            target="_blank"
             className="bg-amberOrange rounded-full p-[15px] hover:bg-amberOrange/60"
             aria-label="play"
           >
             <Image src={playIcon} alt="play" />
-          </button>
+          </Link>
           <span>Play Video</span>
         </div>
       </div>

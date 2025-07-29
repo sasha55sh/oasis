@@ -66,6 +66,8 @@ const HeroSection: FC = () => {
           background="amberOrange"
           fullWidth
           className="max-w-[190px]"
+          href="/menu"
+          tag="a"
         />
       </div>
       <Links className="lg:order-1" />

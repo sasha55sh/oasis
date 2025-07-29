@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
-
 import Button from "@/components/ButtonComponent";
+
 import listIcon from "@/images/vectors/list-image.svg";
 import image1 from "@/images/home-page/about-us/image-1.svg";
 import image2 from "@/images/home-page/about-us/image-2.svg";
@@ -23,11 +23,11 @@ const AboutUsSection: FC = () => {
           product
         </h1>
         <p className="text-center max-w-[550px] lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
-          sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
-          consequata
+          At Oasis, we craft flavors that bring joy to every bite. Our passion
+          for quality and taste drives us to select the finest ingredients and
+          prepare dishes with care. From classic favorites to bold new
+          creations, every meal is made to satisfy and inspire. Enjoy the
+          perfect harmony of taste and freshness with us
         </p>
         <ul className="list-none">
           {listItems.map((item, index) => (
@@ -38,7 +38,13 @@ const AboutUsSection: FC = () => {
           ))}
         </ul>
 
-        <Button text="Read more" fullWidth className="max-w-[190px]" />
+        <Button
+          text="Read more"
+          fullWidth
+          className="max-w-[190px]"
+          tag="a"
+          href="/about-us"
+        />
       </div>
       <div className="hidden grid-cols-2 gap-[20px] mt-[30px] max-w-[660px] content-center mx-auto md:grid xl:ml-[90px]">
         <Image src={image1} alt="egg-toast" className="col-span-2" />
