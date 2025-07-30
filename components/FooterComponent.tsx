@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Input from "@/components/InputComponent";
-import Button from "@/components/ButtonComponent";
 
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Pinterest from "@/images/vectors/pinterest-logo.svg";
@@ -33,36 +31,6 @@ const numbersData = [
 
 const Footer: FC<{ className?: string }> = ({ className }) => {
   const currentYear = new Date().getFullYear();
-
-  const SubscribeBlock = () => {
-    return (
-      <div className="container flex flex-col items-center my-[30px] space-y-[15px] lg:flex-row lg:justify-between">
-        <div className="flex flex-col space-y-[15px]">
-          <h1 className="font-bold text-[20px] lg:text-[32px]">
-            Be the first to know about the most delicious things!
-          </h1>
-          <p>
-            Subscribe to the newsletter and receive promotions and special
-            offers
-          </p>
-        </div>
-
-        <div className="flex items-center">
-          <Input
-            inputType="input"
-            placeholder="Enter your email"
-            background="amberOrange"
-            className="rounded-md"
-          />
-          <Button
-            text="Subscribe"
-            background="white"
-            className="rounded-md ml-[-10px] py-[15px]"
-          />
-        </div>
-      </div>
-    );
-  };
 
   const FooterMain = () => {
     return (
@@ -147,9 +115,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
   };
 
   return (
-    <footer className="bg-black text-white pt-[10px]">
-      <SubscribeBlock />
-      <hr className="max-w-[1150px] h-[1px] bg-amberOrange border-0 m-auto" />
+    <footer className={`${className} bg-black text-white pt-[10px]`}>
       <FooterMain />
       <div className="bg-amberOrange p-[30px] text-center">
         Oasis © {currentYear} by Oleksandra Shapovaliuk. All rights reserved

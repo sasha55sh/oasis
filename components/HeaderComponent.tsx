@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon } from "@mantine/core";
 import { useCart } from "@/hooks/useCart";
+import { Popover } from "flowbite-react";
 
 import Button from "@/components/ButtonComponent";
 import Heart from "@/images/header/nav-heart.svg";
@@ -46,12 +47,54 @@ const Header: FC<{ className?: string }> = ({ className }) => {
   const HeaderButtons = () => {
     return (
       <div className="flex gap-[10px]">
-        <button
-          className="flex items-center justify-center border-oldSilver border-[1px] p-[10px] rounded-xl lg:hidden"
-          aria-label="telephone-number"
+        <Popover
+          aria-labelledby="phone-popover"
+          content={
+            <div className="shadow-xl rounded-xl flex flex-col space-y-[10px] p-[10px]">
+              <p className="text-amberOrange font-semibold">
+                Call us from 11:00 to 22:00, seven days a week
+              </p>
+              <ul className="text-darkLiver flex flex-col space-y-[10px] items-center">
+                <li>+380 (68) 68 68 686</li>
+                <li>+380 (99) 00 00 000</li>
+                <li>+380 (67) 67 67 676</li>
+              </ul>
+            </div>
+          }
+          arrow={false}
         >
-          <Image src={Phone} alt="Phone"></Image>
-        </button>
+          <button
+            className="flex items-center justify-center border-oldSilver border-[1px] p-[10px] rounded-xl xl:hidden"
+            aria-label="telephone-number"
+          >
+            <Image src={Phone} alt="Phone"></Image>
+          </button>
+        </Popover>
+
+        <Popover
+          aria-labelledby="phone-popover"
+          content={
+            <div className="shadow-xl rounded-xl flex flex-col space-y-[10px] p-[10px]">
+              <p className="text-amberOrange font-semibold">
+                Call us from 11:00 to 22:00, seven days a week
+              </p>
+              <ul className="text-darkLiver flex flex-col space-y-[10px] items-center">
+                <li>+380 (68) 68 68 686</li>
+                <li>+380 (99) 00 00 000</li>
+              </ul>
+            </div>
+          }
+          arrow={false}
+        >
+          <div
+            className="hidden items-center justify-center space-x-[10px] mx-[20px] xl:flex"
+            aria-label="telephone-number"
+          >
+            <Image src={Phone} alt="Phone"></Image>
+            <p>+380 (67) 67 67 676</p>
+          </div>
+        </Popover>
+
         <button
           aria-label="liked"
           className="border-oldSilver border-[1px] p-[10px] rounded-xl"
@@ -168,16 +211,6 @@ const Header: FC<{ className?: string }> = ({ className }) => {
               />
             ))}
           </div>
-
-          {/* <div className="flex flex-col gap-[7px] text-amberOrange text-[20px] text-center">
-              <p className="text-darkLiver">Place an order</p>
-              <p>+380 (68) 68 68 686</p>
-              <p>+380 (99) 00 00 000</p>
-              <p>+380 (67) 67 67 676</p>
-              <p className="text-darkLiver">
-                Call us from 11:00 to 21:30, seven days a week
-              </p>
-            </div> */}
         </Modal>
       </div>
     </header>
