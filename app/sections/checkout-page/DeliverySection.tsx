@@ -5,6 +5,8 @@ import { useForm } from "@mantine/form";
 import Input from "@/components/InputComponent";
 import Select from "@/components/SelectComponent";
 import Info from "@/images/vectors/info-icon.svg";
+import { Popover } from "flowbite-react";
+import MapComponent from "@/components/delivery-page/MapComponent";
 
 const generateDates = (days: number) => {
   const dates: { label: string; value: string }[] = [];
@@ -112,12 +114,19 @@ const DeliverySection: FC<{
     <Card className="rounded-xl shadow-xl" id="delivery">
       <div className="flex items-center justify-between">
         <h2 className="text-limeGreen text-[24px]">Delivery time</h2>
-        <div className="flex space-x-[8px]">
-          <p className="text-amberOrange">Delivery area</p>
-          <button>
-            <Image src={Info} alt="Info icon" />
-          </button>
-        </div>
+
+        <Popover
+          aria-labelledby="delivery-popover"
+          content={<MapComponent />}
+          arrow={false}
+        >
+          <div className="flex space-x-[8px]">
+            <p className="text-amberOrange">Delivery area</p>
+            <button>
+              <Image src={Info} alt="Info icon" />
+            </button>
+          </div>
+        </Popover>
       </div>
 
       <div className="flex flex-col space-y-[20px] items-center sm:flex-row sm:space-y-0 lg:flex-col lg:space-y-[20px]">
