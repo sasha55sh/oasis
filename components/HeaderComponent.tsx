@@ -1,12 +1,13 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon } from "@mantine/core";
 import { useCart } from "@/hooks/useCart";
 import { Popover } from "flowbite-react";
-
+import AuthModal from "@/components/account-page/LoginComponent";
 import Button from "@/components/ButtonComponent";
+
 import Heart from "@/images/header/nav-heart.svg";
 import Burger from "@/images/header/nav-list.svg";
 import Phone from "@/images/header/nav-phone.svg";
@@ -23,6 +24,7 @@ const navData = [
 ];
 
 const Header: FC<{ className?: string }> = ({ className }) => {
+  const [openModal, setOpenModal] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const { products, changeOpenState, isOpen } = useCart();
 
@@ -102,11 +104,13 @@ const Header: FC<{ className?: string }> = ({ className }) => {
           <Image src={Heart} alt="Heart"></Image>
         </button>
         <button
+          onClick={() => setOpenModal(true)}
           aria-label="user"
           className="border-oldSilver border-[1px] p-[10px] rounded-xl"
         >
           <Image src={User} alt="User"></Image>
         </button>
+        <AuthModal openModal={openModal} setOpenModal={setOpenModal} />
 
         {products.length > 0 ? (
           <>
