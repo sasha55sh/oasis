@@ -14,7 +14,6 @@ export const getProducts = async (
           "Content-Type": "application/json",
         },
       });
-
       if (response.status === 200) {
         return response.data;
       }
