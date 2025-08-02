@@ -57,7 +57,7 @@ export type Product = {
   quantity: number;
 };
 
-export type categoryButton = {
+export type CategoryButton = {
   className?: string;
   title: string;
   src: string;
@@ -75,4 +75,34 @@ export type News = {
   text: string;
   lowText: string;
   category: string;
+};
+
+export type User = {
+  _id: string;
+  uid: string;
+  firstName: string;
+  phone: string;
+  email: string;
+};
+
+export type OrderProduct = {
+  productId: string;
+  title: string;
+  image: string;
+  grams: number;
+  price: number;
+  quantity: number;
+  handle: string;
+};
+
+export type Order = {
+  _id: string;
+  orderId: string;
+  firstName: string;
+  phone: string;
+  selectedDate: string;
+  selectedTime: string;
+  method: string;
+  totalAmount: string;
+  products: OrderProduct[];
 };
