@@ -112,7 +112,7 @@ const LoginComponent: FC<{
     }
     setLoading(false);
   };
-
+  
   const handleVerifyCode = async (values: typeof codeForm.values) => {
     setLoading(true);
     setError("");
@@ -120,10 +120,11 @@ const LoginComponent: FC<{
       const result = await confirmationResult.confirm(values.code);
       const user = result.user;
       const idToken = await user.getIdToken();
-
+      
       const backendRes = await verifyCodeBackend(idToken);
       localStorage.setItem("token", backendRes.token);
       router.push("/account");
+      setOpenModal(false);
     } catch (error) {
       setError("Invalid code");
     }
