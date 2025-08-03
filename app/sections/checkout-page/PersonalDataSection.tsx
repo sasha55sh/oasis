@@ -2,6 +2,7 @@ import React, { FC, useEffect } from "react";
 import { hasLength, useForm } from "@mantine/form";
 import { Card } from "flowbite-react";
 import Input from "@/components/InputComponent";
+import { getUser } from "@/service/UserService";
 
 const CheckoutSection: FC<{
   setPersonalData: any;
@@ -46,7 +47,7 @@ const CheckoutSection: FC<{
   });
 
   useEffect(() => {
-    const tokenAccess = localStorage.getItem("accessToken");
+    const token = localStorage.getItem("token");
     const localValues = localStorage.getItem("personalData");
     const result = localValues
       ? JSON.parse(localValues)
@@ -54,24 +55,25 @@ const CheckoutSection: FC<{
     form.setValues(result);
     setPersonalData(result);
 
-    // if (tokenAccess && tokenAccess != "") {
-    //   const fetchUserData = async () => {
-    //     try {
-    //       const { user } = await getUser();
-    //       form.setValues({
-    //         firstName: user.firstName || "",
-    //         phone: user.phone || "",
-    //       });
-    //       setPersonalData({
-    //         firstName: user.firstName || "",
-    //         phone: user.phone || "",
-    //       });
-    //     } catch (error) {
-    //       console.error("Failed to fetch user data", error);
-    //     }
-    //   };
-    //   fetchUserData();
-    // }
+    if (!token) return;
+
+    const fetchUserData = async () => {
+      try {
+        const data = await getUser(); 
+        form.setValues({
+          firstName: data.firstName || "",
+          phone: data.phone || "",
+        });
+        setPersonalData({
+          firstName: data.firstName || "",
+          phone: data.phone || "",
+        });
+      } catch (error) {
+        console.error("Failed to fetch user data", error);
+      }
+    };
+
+    fetchUserData();
   }, []);
 
   useEffect(() => {

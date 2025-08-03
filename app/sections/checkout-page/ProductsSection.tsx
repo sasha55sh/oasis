@@ -1,7 +1,7 @@
 "use client";
-
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
+import { Loader } from "@mantine/core";
 import { useCart } from "@/hooks/useCart";
 import { Product } from "@/config/types";
 import { useRouter } from "next/navigation";
@@ -12,7 +12,7 @@ import { createOrder } from "@/service/OrderService";
 import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
 import CartProduct from "@/components/cart-component/CartProduct";
 import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
-import EmptyCart from "@/images/vectors/cart-empty.svg";
+import EmptyCart from "@/images/shop-page/cart-empty.svg";
 
 const ProductsSection: FC<{
   validateAll: any;
@@ -78,6 +78,7 @@ const ProductsSection: FC<{
         grams: product.grams,
         price: product.price,
         quantity: product.quantity,
+        handle: product.handle,
       })),
     };
 
@@ -86,12 +87,21 @@ const ProductsSection: FC<{
       localStorage.removeItem("cartProducts");
       localStorage.removeItem("deliveryData");
       localStorage.removeItem("commentsData");
+      localStorage.removeItem("personalData");
       router.push(`/checkout/${newOrderId}`);
     } catch (error) {
       console.error("Order creation failed", error);
       setError(true);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-[80vh] w-full ">
+        <Loader className="animate-spin rounded-full border-[5px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col space-y-[15px]">

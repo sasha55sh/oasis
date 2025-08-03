@@ -12,7 +12,7 @@ const SuccessfulOrderSection: FC<{ orderId: string }> = ({ orderId }) => {
         Please, wait for a call from the manager
       </p>
       <Button
-        text="Return to the catalog"
+        text="Return to the shop"
         background="amberOrange"
         href="/shop"
         tag="a"
