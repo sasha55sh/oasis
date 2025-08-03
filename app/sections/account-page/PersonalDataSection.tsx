@@ -49,24 +49,21 @@ const PersonalDataSection = () => {
 
   const handleSave = async () => {
     setIsLoading(true);
-    try {
-      const values = form.values;
-      const updateData: { firstName?: string; email?: string } = {};
 
-      if (values.firstName.trim() !== user?.firstName) {
-        updateData.firstName = values.firstName.trim();
-      }
+    const values = form.values;
+    const updateData: { firstName?: string; email?: string } = {};
 
-      if (values.email.trim() !== user?.email) {
-        updateData.email = values.email.trim();
-      }
-
-      const updated = await updateUser(updateData);
-      setUser(updated);
-      setOpenModal(false);
-    } catch (err) {
-      console.error("Update error", err);
+    if (values.firstName.trim() !== user?.firstName) {
+      updateData.firstName = values.firstName.trim();
     }
+
+    if (values.email.trim() !== user?.email) {
+      updateData.email = values.email.trim();
+    }
+
+    const updated = await updateUser(updateData);
+    setUser(updated);
+    setOpenModal(false);
     setIsLoading(false);
   };
 

@@ -14,14 +14,10 @@ const FavoritesSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchFavorites = async () => {
-    try {
-      const data = await getFavorites();
-      setFavorites(data);
-    } catch (error) {
-      console.error("Failed to load favorites", error);
-    } finally {
-      setIsLoading(false);
-    }
+    setIsLoading(true);
+    const data = await getFavorites();
+    setFavorites(data || []);
+    setIsLoading(false);
   };
 
   useEffect(() => {

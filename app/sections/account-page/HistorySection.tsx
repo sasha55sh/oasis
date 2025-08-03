@@ -14,16 +14,15 @@ const HistorySection = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      try {
-        const data = await getOrders();
+      setIsLoading(true);
+      const data = await getOrders();
+      if (data) {
         setOrders(data);
-      } catch (error) {
-        console.error("Failed to load orders", error);
-      } finally {
-        setIsLoading(false);
+      } else {
+        setOrders([]);
       }
+      setIsLoading(false);
     };
-
     fetchOrders();
   }, []);
 
