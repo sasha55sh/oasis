@@ -16,16 +16,16 @@ module.exports = {
       },
       colors: {
         amberOrange: "#FF9F0D",
-        goldenBrown: "#AF872F",
-        sandstone: "#BC9A6C",
         warmWhite: "#EDEAE3",
-        mossGray: "#999966",
         romance: "#FAF7F2",
         white: "#FFFFFF",
         black: "#0D0D0D",
         darkLiver: "#4F4F4F",
         darkCharcoal: "#333333",
         oldSilver: "#828282",
+        gainsboro: "#e0e0e0",
+        limeGreen: "#4fb045",
+        electricRed: "#e30000"
       },
       backgroundImage: {},
       fontFamily: {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import SaleCard from "@/components/home-page/SaleCardComponent";
 import { Carousel } from "flowbite-react";
 
@@ -9,16 +9,35 @@ import Donuts from "@/images/home-page/food-category/donuts.svg";
 
 const cardsData = [
   {
-    title: "Diet food",
+    title: "Breakfast",
     discount: "save 30%",
     src: ChickenRoll,
     alt: "chicken roll",
+    href: "/shop",
   },
-  { title: "Fast food", discount: "save 10%", src: Burger, alt: "burger" },
-  { title: "Healthy food", discount: "save 20%", src: Salad, alt: "salad" },
-  { title: "Baking", discount: "save 5%", src: Donuts, alt: "donuts" },
+  {
+    title: "Main",
+    discount: "save 10%",
+    src: Burger,
+    alt: "burger",
+    href: "/shop",
+  },
+  {
+    title: "Bowl",
+    discount: "save 20%",
+    src: Salad,
+    alt: "salad",
+    href: "/shop",
+  },
+  {
+    title: "Dessert",
+    discount: "save 5%",
+    src: Donuts,
+    alt: "donuts",
+    href: "/shop",
+  },
 ];
-const FoodCategoryComponent = () => {
+const FoodCategoryComponent: FC = () => {
   return (
     <section className="container flex flex-col space-y-[15px] items-center my-[50px] lg:my-[70px] lg:space-y-[30px]">
       <p className="text-amberOrange font-vibes text-[32px]">Food category</p>
@@ -34,6 +53,7 @@ const FoodCategoryComponent = () => {
             title={card.title}
             imageScr={card.src}
             imageAlt={card.alt}
+            href={card.href}
           />
         ))}
       </div>
@@ -47,6 +67,7 @@ const FoodCategoryComponent = () => {
               title={card.title}
               imageScr={card.src}
               imageAlt={card.alt}
+              href={card.href}
             />
           ))}
         </Carousel>

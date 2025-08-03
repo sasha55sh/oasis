@@ -1,19 +1,19 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import Button from "@/components/ButtonComponent";
+import Link from "next/link";
 
-import background from "@/images/home-page/backgrounds/active-process-section.svg";
-import playIcon from "@/images/vectors/play-icon.svg";
+import Background from "@/images/home-page/backgrounds/active-process-section.svg";
+import PlayIcon from "@/images/home-page/play-icon.svg";
 
 const ActiveProcessSection: FC = () => {
   return (
     <section className="relative flex justify-center items-center my-[50px] lg:justify-end lg:my-[120px] ">
       <Image
-        src={background}
+        src={Background}
         alt="Background"
-        className="hidden -z-10 lg:scale-y-[120%] lg:block xl:scale-none"
+        className="hidden z-1 lg:scale-y-[120%] lg:block xl:scale-none"
       />
-      <div className="container flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
+      <div className="container z-2 flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
         <p className="text-amberOrange font-vibes text-[32px]">
           Restaurant Active Process
         </p>
@@ -22,20 +22,21 @@ const ActiveProcessSection: FC = () => {
           process untile it is saved
         </h1>
         <p className="max-w-[650px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna,
+          We capture every detail of the culinary journey, from the freshest
+          ingredients to the final presentation on your plate. Our commitment to
+          transparency ensures you enjoy not only great taste but also trust in
+          every dish we serve
         </p>
 
         <div className="flex max-w-[390px] items-center space-x-[20px]">
-          <Button text="Read more" bordered />
-
-          <button
+          <Link
+            href="https://www.youtube.com/@JoshuaWeissman"
+            target="_blank"
             className="bg-amberOrange rounded-full p-[15px] hover:bg-amberOrange/60"
             aria-label="play"
           >
-            <Image src={playIcon} alt="play" />
-          </button>
+            <Image src={PlayIcon} alt="Play" />
+          </Link>
           <span>Play Video</span>
         </div>
       </div>

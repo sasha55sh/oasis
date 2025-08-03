@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import Button from "../ButtonComponent";
 
 interface cardProps {
   className?: string;
@@ -7,6 +8,7 @@ interface cardProps {
   discount: string;
   imageScr: string;
   imageAlt: string;
+  href: string;
 }
 const SaleCardComponent: FC<cardProps> = ({
   className,
@@ -14,6 +16,7 @@ const SaleCardComponent: FC<cardProps> = ({
   discount,
   imageAlt,
   imageScr,
+  href,
 }) => {
   return (
     <div className={`${className} relative group flex justify-center`}>
@@ -23,9 +26,13 @@ const SaleCardComponent: FC<cardProps> = ({
         <p className="text-amberOrange py-[5px] px-[15px] bg-white">
           {discount}
         </p>
-        <button className="hover:text-amberOrange px-[25px] py-[10px] hover:bg-white bg-amberOrange text-white">
-          {title}
-        </button>
+
+        <Button
+          text={title}
+          className="py-[10px] px-[20px]"
+          tag="a"
+          href={href}
+        />
       </div>
     </div>
   );

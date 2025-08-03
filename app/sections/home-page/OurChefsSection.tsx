@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import Button from "@/components/ButtonComponent";
 import { Carousel } from "flowbite-react";
 
 import Estwood from "@/images/home-page/our-chefs/d-estwood.svg";
@@ -48,8 +47,6 @@ const OurChefsSection: FC = () => {
           ))}
         </Carousel>
       </div>
-
-      <Button text="See more" bordered />
     </section>
   );
 };

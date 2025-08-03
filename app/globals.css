@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +9,7 @@
 
 html {
   height: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -16,23 +19,59 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black
 }
 
 footer {
   margin-top: auto;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgb(228, 228, 228);
-  border-radius: 5px;
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgb(139, 139, 139);
-  border-radius: 10px;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.my-swiper .swiper-button-prev {
+  left: -1px;
+}
+
+.my-swiper .swiper-button-next {
+  right: 20px;
+}
+
+@media (min-width: 1440px) {
+  .my-swiper .swiper-button-next {
+    right: 0px;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(255, 191, 0, 1);
+  width: 50px;
+  height: 50px;
+  padding: 30px 20px;
+  border-radius: 20%;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #fff;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(255, 191, 0, 0.8);
 }

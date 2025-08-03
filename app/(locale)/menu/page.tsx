@@ -13,11 +13,7 @@ export const generateViewport = () => ({
 });
 
 const Page = () => {
-  return (
-    <>
-      <MenuSection />
-    </>
-  );
+  return <MenuSection />;
 };
 
 export default Page;

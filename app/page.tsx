@@ -7,7 +7,6 @@ import ChooseAndPickSection from "@/app/sections/home-page/Choose&PickSection";
 import OurChefsSection from "@/app/sections/home-page/OurChefsSection";
 import TestimonialsSection from "@/app/sections/home-page/TestimonialsSection";
 import ActiveProcessSection from "@/app/sections/home-page/ActiveProcessSection";
-import BlogSection from "@/app/sections/home-page/BlogSection";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <OurChefsSection />
       <TestimonialsSection />
       <ActiveProcessSection />
-      <BlogSection />
     </>
   );
 }
