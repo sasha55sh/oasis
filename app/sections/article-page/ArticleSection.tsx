@@ -41,14 +41,7 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
   return (
     <section>
       <div className="max-w-[200px] mt-[30px] ml-[20px] ">
-        <Button
-          text="Back to news"
-          icon="back"
-          tag="a"
-          href="/news
-        "
-          bordered
-        />
+        <Button text="Back to news" icon="back" tag="a" href="/news" bordered />
       </div>
       <div className="container my-[50px] space-y-[15px]">
         <h1 className="text-amberOrange font-bold text-[26px] lg:text-[40px]">
