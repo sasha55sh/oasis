@@ -1,0 +1,15 @@
+user-agent: *,
+
+disallow: /account,
+disallow: /checkout,
+
+allow: /,
+allow: /shop,
+allow: /shop/*,
+allow: /menu,
+allow: /faq,
+allow: /delivery, 
+allow: /news,
+allow: /news/*
+
+crawl-delay: 10
