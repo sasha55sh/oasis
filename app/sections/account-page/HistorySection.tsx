@@ -57,7 +57,8 @@ const HistorySection = () => {
             </p>
             <div className="grid grid-cols-1 gap-[15px] md:grid-cols-3 lg:grid-cols-2">
               {order.products.map((product) => (
-                <div
+                <a
+                  href={`/shop/${product.handle}`}
                   key={product.productId}
                   className="flex gap-[15px] items-center border p-[10px] rounded-lg"
                 >
@@ -81,7 +82,7 @@ const HistorySection = () => {
                       </span>
                     </p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
