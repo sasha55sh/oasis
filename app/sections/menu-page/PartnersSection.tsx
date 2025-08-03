@@ -7,7 +7,6 @@ import ForkAndSpoon from "@/images/menu-page/fork&spoon-logo.svg";
 import WolfCoffee from "@/images/menu-page/wolf-coffee-logo.svg";
 import Bistro from "@/images/menu-page/bistro-logo.svg";
 import Bakery from "@/images/menu-page/bakery-logo.svg";
-import { Carousel } from "flowbite-react";
 
 const partnersData = [
   { src: Restaurant, alt: "Restaurant logo" },
