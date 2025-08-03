@@ -2,7 +2,7 @@ import React, { FC, memo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import History from "@/images/vectors/path-icon.svg";
+import History from "@/images/delivery-page/path-icon.svg";
 import Heart from "@/images/vectors/heart-icon.svg";
 
 interface tabProps {
