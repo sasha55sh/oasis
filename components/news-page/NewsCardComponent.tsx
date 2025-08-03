@@ -21,6 +21,7 @@ const NewsCardComponent: FC<News & { className?: string }> = ({
           height={170}
           src={image}
           alt={handle}
+          priority
           className="h-[170px] w-full rounded-b-lg object-cover"
         />
       )}
