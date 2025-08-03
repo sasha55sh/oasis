@@ -1,39 +1,36 @@
 "use client";
 import React, { FC, useEffect, useState } from "react";
+import Button from "@/components/ButtonComponent";
 import { getNewsByHandle } from "@/service/NewsService";
 import { useAlert } from "@/hooks/alertContext";
 import { Loader } from "@mantine/core";
 import { News } from "@/config/types";
 import Image from "next/image";
-
 interface articleProps {
   articleHandle: string;
 }
 
 const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
-  const [article, setArticle] = useState<News>();
-  const [loading, setLoading] = useState<boolean>(true);
+  const [article, setArticle] = useState<News | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { setInfoMessage } = useAlert();
 
   useEffect(() => {
     const fetchArticle = async () => {
-      try {
-        const articleData: News = await getNewsByHandle(
-          articleHandle,
-          setInfoMessage
-        );
+      setIsLoading(true);
+      const articleData = await getNewsByHandle(articleHandle, setInfoMessage);
+      if (articleData) {
         setArticle(articleData);
-      } catch (error) {
-        console.error("Failed to fetch article data: ", error);
-      } finally {
-        setLoading(false);
+      } else {
+        setArticle(null);
       }
+      setIsLoading(false);
     };
     fetchArticle();
   }, [articleHandle]);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
         <Loader className="animate-spin rounded-full border-[5px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
@@ -43,6 +40,9 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
 
   return (
     <section>
+      <div className="max-w-[200px] mt-[30px] ml-[20px] ">
+        <Button text="Back to news" icon="back" tag="a" href="/news" bordered />
+      </div>
       <div className="container my-[50px] space-y-[15px]">
         <h1 className="text-amberOrange font-bold text-[26px] lg:text-[40px]">
           {article?.title ?? "Article title"}

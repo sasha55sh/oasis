@@ -15,8 +15,8 @@ interface productProps {
 }
 
 const ProductSection: FC<productProps> = ({ productHandle }) => {
-  const [product, setProduct] = useState<Product>();
-  const [loading, setLoading] = useState<boolean>(true);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { setInfoMessage } = useAlert();
   const { addToCart, products, removeFromCart } = useCart();
@@ -27,23 +27,23 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      try {
-        const productData: Product = await getProductByHandle(
-          productHandle,
-          setInfoMessage
-        );
+      setIsLoading(true);
+      const productData: Product = await getProductByHandle(
+        productHandle,
+        setInfoMessage
+      );
+      if (productData) {
         setProduct(productData);
-      } catch (error) {
-        console.error("Failed to fetch product data:", error);
-      } finally {
-        setLoading(false);
+      } else {
+        setProduct(null);
       }
+      setIsLoading(false);
     };
 
     fetchProduct();
   }, [productHandle]);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
         <Loader className="animate-spin rounded-full border-[5px] border-amberOrange border-b-transparent w-[40px] h-[40px]" />
@@ -74,7 +74,10 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
 
   return (
     <section>
-      <div className="container flex flex-col items-center my-[30px] lg:grid lg:grid-cols-2">
+      <div className="max-w-[200px] mt-[20px] ml-[20px]">
+        <Button text="Back to shop" icon="back" tag="a" href="/shop" bordered />
+      </div>
+      <div className="container flex flex-col items-center my-[30px] lg:grid lg:grid-cols-2 lg:items-start">
         {product?.discount ?? 0 > 0 ? (
           <div className="relative inline-block">
             <span className="absolute p-[10px] bg-electricRed text-white top-[-10px] left-[-15px] rounded-xl ">
@@ -85,6 +88,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
               width={275}
               height={275}
               alt="Product Image"
+              priority
               className=" rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
             />
           </div>
@@ -94,11 +98,12 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
             width={275}
             height={275}
             alt="Product Image"
+            priority
             className="rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
           />
         )}
 
-        <div className="flex flex-col space-y-[15px] mt-[30px] items-center text-center lg:items-start lg:text-left">
+        <div className="flex flex-col space-y-[15px] mt-[30px] items-center text-center lg:items-start lg:text-left lg:mt-0">
           <h2 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px] ">
             {product?.title ?? "Product Title"}
           </h2>

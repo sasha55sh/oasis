@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import FilterIcon from "@/images/vectors/filter-icon.svg";
 import BasketIcon from "@/images/vectors/basket.svg";
+import SignOutIcon from "@/images/vectors/sign-out-icon.svg";
+import Back from "@/images/vectors/back-arrow.svg";
 
 interface ButtonProps {
   className?: string;
@@ -15,7 +17,7 @@ interface ButtonProps {
   bordered?: boolean;
   href?: string;
   tag?: "a" | "button";
-  icon?: "filter" | "basket";
+  icon?: "filter" | "basket" | "signOut" | "back";
 }
 
 const Button: FC<ButtonProps> = ({
@@ -50,7 +52,7 @@ const Button: FC<ButtonProps> = ({
       : finalBackground === "limeGreen"
       ? "text-white"
       : bordered
-      ? "text-white"
+      ? "text-amberOrange"
       : "";
   const borderClass = bordered ? "border border-amberOrange border-solid" : "";
   const widthClass = fullWidth ? "w-[100%]" : "";
@@ -59,9 +61,10 @@ const Button: FC<ButtonProps> = ({
       ? "hover:bg-amberOrange/50 duration-300"
       : finalBackground === "white"
       ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
-      : finalBackground === "limeGreen" ? "hover:bg-limeGreen/50 duration-300"
+      : finalBackground === "limeGreen"
+      ? "hover:bg-limeGreen/50 duration-300"
       : bordered
-      ? "hover:bg-amberOrange transition-colors duration-300"
+      ? "hover:bg-amberOrange/20 transition-colors duration-300"
       : "";
 
   const renderIcon = () => {
@@ -81,6 +84,28 @@ const Button: FC<ButtonProps> = ({
         <Image
           src={BasketIcon}
           alt="Basket icon"
+          width={20}
+          height={20}
+          className="ml-[8px] inline-block"
+        />
+      );
+    }
+    if (icon === "signOut") {
+      return (
+        <Image
+          src={SignOutIcon}
+          alt="Sign out icon"
+          width={20}
+          height={20}
+          className="ml-[8px] inline-block fill-[#fff]"
+        />
+      );
+    }
+    if (icon === "back") {
+      return (
+        <Image
+          src={Back}
+          alt="Back arrow"
           width={20}
           height={20}
           className="ml-[8px] inline-block"

@@ -23,7 +23,7 @@ const MenuCategoryComponent: FC<menuProps> = ({
     <div
       className={`${className} flex flex-col space-y-[30px] items-center lg:gap-x-[40px] lg:flex-row xl:gap-x-[70px]`}
     >
-      <Image src={imageSrc} alt={imageAlt} />
+      <Image src={imageSrc} alt={imageAlt} priority />
       <div className="w-full">
         <Image src={CoffeeIcon} alt="coffe icon" className="hidden md:block" />
         <h1 className="text-[36px] text-darkCharcoal font-bold text-center md:text-left lg:text-[48px]">

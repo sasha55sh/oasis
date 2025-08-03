@@ -1,24 +1,24 @@
 import React, { FC } from "react";
 import Image from "next/image";
 
-import background from "@/images/home-page/backgrounds/benefit-section-bg.svg";
-import pizza from "@/images/vectors/pizza-benefit.svg";
-import tools from "@/images/vectors/spoon-fork-benefit.svg";
-import cap from "@/images/vectors/cap-benefit.svg";
-import food from "@/images/vectors/food-benefit.svg";
+import Background from "@/images/home-page/backgrounds/benefit-section-bg.svg";
+import Pizza from "@/images/home-page/pizza-benefit.svg";
+import Tools from "@/images/home-page/spoon-fork-benefit.svg";
+import Cap from "@/images/home-page/cap-benefit.svg";
+import Food from "@/images/home-page/food-benefit.svg";
 
 const data = [
-  { src: cap, alt: "cap", title: "Professional chefs", quantity: 10 },
-  { src: food, alt: "food", title: "Items of food", quantity: 320 },
-  { src: tools, alt: "tools", title: "Years of experienced", quantity: 5 },
-  { src: pizza, alt: "pizza", title: "Happy customers", quantity: 2000 },
+  { src: Cap, alt: "Cap", title: "Professional chefs", quantity: 10 },
+  { src: Food, alt: "food", title: "Items of food", quantity: 320 },
+  { src: Tools, alt: "Tools", title: "Years of experienced", quantity: 5 },
+  { src: Pizza, alt: "Pizza", title: "Happy customers", quantity: 2000 },
 ];
 
 const BenefitSection: FC = () => {
   return (
     <section className="hidden my-[50px] justify-center items-center lg:flex lg:my-[120px]">
       <Image
-        src={background}
+        src={Background}
         alt="Background"
         className="relative z-1 lg:scale-y-[130%] xl:scale-none"
       />

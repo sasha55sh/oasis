@@ -16,10 +16,7 @@ module.exports = {
       },
       colors: {
         amberOrange: "#FF9F0D",
-        goldenBrown: "#AF872F",
-        sandstone: "#BC9A6C",
         warmWhite: "#EDEAE3",
-        mossGray: "#999966",
         romance: "#FAF7F2",
         white: "#FFFFFF",
         black: "#0D0D0D",

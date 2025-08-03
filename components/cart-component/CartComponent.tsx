@@ -1,10 +1,9 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import CartProduct from "./CartProduct";
 import { useCart } from "@/hooks/useCart";
-import EmptyCart from "@/images/vectors/cart-empty.svg";
+import EmptyCart from "@/images/shop-page/cart-empty.svg";
 import { Drawer, DrawerItems, DrawerHeader } from "flowbite-react";
 
 const CartComponent = () => {

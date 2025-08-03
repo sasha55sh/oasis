@@ -2,20 +2,20 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import tacoImage from "@/images/home-page/why-choose-us/taco-image.svg";
-import burgerImage from "@/images/home-page/why-choose-us/burger-image.svg";
-import chickenImage from "@/images/home-page/why-choose-us/chicken-image.svg";
-import cheeseburgerImage from "@/images/home-page/why-choose-us/cheeseburger-image.svg";
-import potatoImage from "@/images/home-page/why-choose-us/potato-image.svg";
-import fishImage from "@/images/home-page/why-choose-us/fish-image.svg";
-import burgerIcon from "@/images/vectors/burger.svg";
-import cookieIcon from "@/images/vectors/сookie.svg";
-import wineIcon from "@/images/vectors/wine.svg";
+import Taco from "@/images/home-page/why-choose-us/taco-image.svg";
+import Burger from "@/images/home-page/why-choose-us/burger-image.svg";
+import Chicken from "@/images/home-page/why-choose-us/chicken-image.svg";
+import Cheeseburger from "@/images/home-page/why-choose-us/cheeseburger-image.svg";
+import Potato from "@/images/home-page/why-choose-us/potato-image.svg";
+import Fish from "@/images/home-page/why-choose-us/fish-image.svg";
+import BurgerIcon from "@/images/home-page/why-choose-us/burger.svg";
+import CookieIcon from "@/images/home-page/why-choose-us/сookie.svg";
+import WineIcon from "@/images/home-page/why-choose-us/wine.svg";
 
 const buttonsItems = [
-  { src: burgerIcon, alt: "burger-icon", title: "Breakfast", href: "/shop" },
-  { src: cookieIcon, alt: "cookie-icon", title: "Dessert", href: "/shop" },
-  { src: wineIcon, alt: "wine-icon", title: "Main", href: "/shop" },
+  { src: BurgerIcon, alt: "Burger icon", title: "Breakfast", href: "/shop" },
+  { src: CookieIcon, alt: "Cookie icon", title: "Dessert", href: "/shop" },
+  { src: WineIcon, alt: "Wine icon", title: "Main", href: "/shop" },
 ];
 
 const WhyChooseUsSection = () => {
@@ -23,35 +23,35 @@ const WhyChooseUsSection = () => {
     <section className="container flex flex-col justify-between my-[50px] lg:my-[70px] lg:gap-[50px] lg:flex-row xl:gap-0">
       <div className="hidden grid-cols-3 auto-rows-auto gap-[10px] max-w-[640px] scale-[95%] lg:grid">
         <Image
-          src={tacoImage}
+          src={Taco}
           alt="Tacos"
           className="col-span-2 row-span-1 justify-self-end place-self-end duration-300 hover:scale-105 "
         />
         <div className="flex justify-center items-end">
           <Image
-            src={burgerImage}
+            src={Burger}
             alt="Burger"
             className="row-span-1 duration-300 hover:scale-105"
           />
         </div>
         <Image
-          src={chickenImage}
-          alt="Chicken Strips"
+          src={Chicken}
+          alt="Chicken strips"
           className="row-span-1 duration-300 hover:scale-105"
         />
         <Image
-          src={cheeseburgerImage}
-          alt="Cheesy Burger"
+          src={Cheeseburger}
+          alt="Cheesy burger"
           className="duration-300 hover:scale-105"
         />
         <div className="flex flex-col gap-4 items-center">
           <Image
-            src={potatoImage}
+            src={Potato}
             alt="Burger with fries"
             className="rounded-xl w-[90%] duration-300 hover:scale-105"
           />
           <Image
-            src={fishImage}
+            src={Fish}
             alt="Salmon plate"
             className="rounded-xl w-[90%] duration-300 hover:scale-105"
           />

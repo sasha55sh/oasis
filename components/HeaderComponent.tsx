@@ -1,12 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, ActionIcon } from "@mantine/core";
 import { useCart } from "@/hooks/useCart";
 import { Popover } from "flowbite-react";
-
+import AuthModal from "@/components/account-page/LoginComponent";
 import Button from "@/components/ButtonComponent";
+import { useRouter } from "next/navigation";
+
 import Heart from "@/images/header/nav-heart.svg";
 import Burger from "@/images/header/nav-list.svg";
 import Phone from "@/images/header/nav-phone.svg";
@@ -23,8 +25,32 @@ const navData = [
 ];
 
 const Header: FC<{ className?: string }> = ({ className }) => {
+  const [openModal, setOpenModal] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const { products, changeOpenState, isOpen } = useCart();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleAccount = () => {
+    if (isLoggedIn) {
+      router.push("/account");
+    } else {
+      setOpenModal(true);
+    }
+  };
+
+  const hangeFavorite = () => {
+    if (isLoggedIn) {
+      router.push("/account/favorites");
+    } else {
+      setOpenModal(true);
+    }
+  };
 
   const HeaderNavigation = () => {
     return (
@@ -96,17 +122,20 @@ const Header: FC<{ className?: string }> = ({ className }) => {
         </Popover>
 
         <button
+          onClick={hangeFavorite}
           aria-label="liked"
           className="border-oldSilver border-[1px] p-[10px] rounded-xl"
         >
           <Image src={Heart} alt="Heart"></Image>
         </button>
         <button
+          onClick={handleAccount}
           aria-label="user"
           className="border-oldSilver border-[1px] p-[10px] rounded-xl"
         >
           <Image src={User} alt="User"></Image>
         </button>
+        <AuthModal openModal={openModal} setOpenModal={setOpenModal} />
 
         {products.length > 0 ? (
           <>

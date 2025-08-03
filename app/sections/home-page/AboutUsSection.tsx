@@ -1,16 +1,15 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import Button from "@/components/ButtonComponent";
 
-import listIcon from "@/images/vectors/list-image.svg";
-import image1 from "@/images/home-page/about-us/image-1.svg";
-import image2 from "@/images/home-page/about-us/image-2.svg";
-import image3 from "@/images/home-page/about-us/image-3.svg";
+import ListIcon from "@/images/home-page/about-us/list-image.svg";
+import Image1 from "@/images/home-page/about-us/image-1.svg";
+import Image2 from "@/images/home-page/about-us/image-2.svg";
+import Image3 from "@/images/home-page/about-us/image-3.svg";
 
 const listItems = [
-  "Lacus nisi, et ac dapibus sit eu velit in consequat",
-  "Quisque diam pellentesque bibendum non dui volutpat fringilla",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  "Fresh, locally sourced ingredients for every dish",
+  "Cozy and elegant atmosphere perfect for family dinners",
+  "Exclusive seasonal menus and chef’s specials every week",
 ];
 
 const AboutUsSection: FC = () => {
@@ -32,24 +31,16 @@ const AboutUsSection: FC = () => {
         <ul className="list-none">
           {listItems.map((item, index) => (
             <li key={index} className="flex">
-              <Image src={listIcon} alt="list-icon" className="m-[5px]" />
+              <Image src={ListIcon} alt="list-icon" className="m-[5px]" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
-
-        <Button
-          text="Read more"
-          fullWidth
-          className="max-w-[190px]"
-          tag="a"
-          href="/about-us"
-        />
       </div>
       <div className="hidden grid-cols-2 gap-[20px] mt-[30px] max-w-[660px] content-center mx-auto md:grid xl:ml-[90px]">
-        <Image src={image1} alt="egg-toast" className="col-span-2" />
-        <Image src={image2} alt="salad" />
-        <Image src={image3} alt="salat-toast" />
+        <Image src={Image1} alt="Egg toast" className="col-span-2" />
+        <Image src={Image2} alt="Salad" />
+        <Image src={Image3} alt="Salat and toast" />
       </div>
     </section>
   );

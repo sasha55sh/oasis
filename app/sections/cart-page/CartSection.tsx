@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
 import { Product } from "@/config/types";
 import { getProducts } from "@/service/ProductService";
-import EmptyCart from "@/images/vectors/cart-empty.svg";
+import EmptyCart from "@/images/shop-page/cart-empty.svg";
 import Title from "@/components/TitleComponent";
 import CartProduct from "@/components/cart-component/CartProduct";
 import CardComponent from "@/components/shop-page/CardComponent";

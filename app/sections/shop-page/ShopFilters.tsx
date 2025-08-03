@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, FC } from "react";
 import Image from "next/image";
-import { categoryButton } from "@/config/types";
+import { CategoryButton } from "@/config/types";
 import { useDebounce } from "@/hooks/useDebounce";
 import SearchInput from "@/components/SearchInputComponent";
 import Select from "@/components/SelectComponent";
@@ -13,19 +13,24 @@ import {
   getSortedProducts,
 } from "@/service/ProductService";
 
-import Bowl from "@/images/vectors/bowl-icon.svg";
-import Breakfast from "@/images/vectors/breakfast-icon.svg";
-import Dessert from "@/images/vectors/dessert-icon.svg";
-import Main from "@/images/vectors/mainDish-icon.svg";
-import Soup from "@/images/vectors/soup-icon.svg";
-import NotFound from "@/images/vectors/not-found.svg";
+import Bowl from "@/images/shop-page/bowl-icon.svg";
+import Breakfast from "@/images/shop-page/breakfast-icon.svg";
+import Dessert from "@/images/shop-page/dessert-icon.svg";
+import Main from "@/images/shop-page/mainDish-icon.svg";
+import Soup from "@/images/shop-page/soup-icon.svg";
+import NotFound from "@/images/shop-page/not-found.svg";
 
-const menuData: categoryButton[] = [
-  { title: "Bowl", src: Bowl, alt: "bowl icon", value: "bowl" },
-  { title: "Breakfast", src: Breakfast, alt: "breakfast icon", value: "breakfast" },
-  { title: "Dessert", src: Dessert, alt: "dessert icon", value: "dessert" },
-  { title: "Main", src: Main, alt: "main dish icon", value: "main" },
-  { title: "Soup", src: Soup, alt: "soup icon", value: "soup" },
+const menuData: CategoryButton[] = [
+  { title: "Bowl", src: Bowl, alt: "Bowl icon", value: "bowl" },
+  {
+    title: "Breakfast",
+    src: Breakfast,
+    alt: "breakfast icon",
+    value: "breakfast",
+  },
+  { title: "Dessert", src: Dessert, alt: "Dessert icon", value: "dessert" },
+  { title: "Main", src: Main, alt: "Main dish icon", value: "main" },
+  { title: "Soup", src: Soup, alt: "Soup icon", value: "soup" },
 ];
 
 const optionsData = [
@@ -41,6 +46,8 @@ const ShopFilters: FC<{
 }> = ({ setProducts, products, isLoading }) => {
   const [searchedText, setSearchedText] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+  const [selectedValue, setSelectedValue] = useState<string>("");
+
   const debouncedQuery = useDebounce(searchedText, 600);
 
   const handleCategoryClick = async (category: string) => {
@@ -100,10 +107,12 @@ const ShopFilters: FC<{
               {category}
             </h2>
             <Select
+              options={optionsData}
+              value={selectedValue}
               onSelect={(value) => {
+                setSelectedValue(value);
                 handleSort(value);
               }}
-              options={optionsData}
             />
           </div>
 

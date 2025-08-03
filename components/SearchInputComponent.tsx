@@ -32,7 +32,7 @@ const SearchInputComponent: FC<searchProps> = ({
 
       {value && (
         <button onClick={() => onChange("")}>
-          <Image src={Close} alt="close icon" />
+          <Image src={Close} alt="Close icon" />
         </button>
       )}
     </div>
