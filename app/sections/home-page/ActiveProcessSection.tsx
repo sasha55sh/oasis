@@ -2,14 +2,14 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import background from "@/images/home-page/backgrounds/active-process-section.svg";
-import playIcon from "@/images/vectors/play-icon.svg";
+import Background from "@/images/home-page/backgrounds/active-process-section.svg";
+import PlayIcon from "@/images/home-page/play-icon.svg";
 
 const ActiveProcessSection: FC = () => {
   return (
     <section className="relative flex justify-center items-center my-[50px] lg:justify-end lg:my-[120px] ">
       <Image
-        src={background}
+        src={Background}
         alt="Background"
         className="hidden z-1 lg:scale-y-[120%] lg:block xl:scale-none"
       />
@@ -35,7 +35,7 @@ const ActiveProcessSection: FC = () => {
             className="bg-amberOrange rounded-full p-[15px] hover:bg-amberOrange/60"
             aria-label="play"
           >
-            <Image src={playIcon} alt="play" />
+            <Image src={PlayIcon} alt="Play" />
           </Link>
           <span>Play Video</span>
         </div>

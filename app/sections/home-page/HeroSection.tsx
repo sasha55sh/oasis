@@ -6,7 +6,7 @@ import Button from "@/components/ButtonComponent";
 import Facebook from "@/images/vectors/facebook-logo.svg";
 import Instagram from "@/images/vectors/instagram-logo.svg";
 import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import mainDish from "@/images/home-page/hero/main-dish.svg";
+import MainDish from "@/images/home-page/hero/main-dish.svg";
 
 interface heroProps {
   className?: string;
@@ -72,9 +72,10 @@ const HeroSection: FC = () => {
       </div>
       <Links className="lg:order-1" />
       <Image
-        src={mainDish}
-        alt="mainDish"
+        src={MainDish}
+        alt="Main dish"
         className="w-[600px] lg:w-[430px] lg:order-3 xl:w-[600px]"
+        priority
       />
     </section>
   );
