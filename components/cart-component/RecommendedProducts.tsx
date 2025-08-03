@@ -12,13 +12,26 @@ interface productProps {
 const RecommendedProduct: FC<productProps> = ({ product, className }) => {
   const { addQuantity, products, addToCart } = useCart();
 
+  const discountedPrice = (
+    Number(product.price) -
+    Number(product.price) * Number(product.discount)
+  ).toFixed(2);
+
+  const finalPrice =
+    product.discount && product.discount > 0
+      ? Number(discountedPrice)
+      : Number(product.price);
+
   const handleAddToCart = (product: Product) => {
     const existingProduct = products.find((p) => p.id === product.id);
 
     if (existingProduct) {
       addQuantity(product.id);
     } else {
-      addToCart({ ...product, quantity: 1, maxQuantity: 100 }, 1);
+      addToCart(
+        { ...product, price: finalPrice, quantity: 1, maxQuantity: 100 },
+        1
+      );
     }
   };
 
@@ -42,12 +55,20 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
       </div>
 
       <div className="flex justify-between w-full items-center px-[5px]">
-        <p className="text-oldSilver">
-          <span className="text-amberOrange font-bold text-[24px]">
-            {product.price}
-          </span>{" "}
-          $
-        </p>
+        {product.discount && product.discount > 0 ? (
+          <div className="flex gap-[10px] items-center">
+            <p className="text-[24px] text-electricRed font-bold">
+              {discountedPrice} $
+            </p>
+            <p className="text-amberOrange font-medium line-through">
+              {Number(product.price).toFixed(2)} $
+            </p>
+          </div>
+        ) : (
+          <p className="text-[24px] text-amberOrange font-bold">
+            {Number(product.price).toFixed(2)} $
+          </p>
+        )}
 
         <button
           onClick={() => handleAddToCart(product)}

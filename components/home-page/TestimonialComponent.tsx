@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 
-import flowersBg from "@/images/home-page/testimonials/flowers-bg.svg";
-import quotes from "@/images/home-page/testimonials/quotes.svg";
+import Quotes from "@/images/home-page/testimonials/quotes.svg";
 
 interface testimonialProps {
   className?: string;
@@ -26,7 +25,7 @@ const TestimonialComponent: FC<testimonialProps> = ({
     >
       <div className="z-10 flex flex-col items-center space-y-[20px]">
         <Image src={reviewerSrc} alt="reviewer photo" />
-        <Image src={quotes} alt="quotes" />
+        <Image src={Quotes} alt="Quotes" />
         <p className="text-[18px] text-darkLiver text-center max-w-[700px]">
           {responseText}
         </p>

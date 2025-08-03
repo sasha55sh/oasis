@@ -1,11 +1,9 @@
 "use client";
-
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { MantineProvider } from "@mantine/core";
 import { CartProvider } from "@/hooks/useCart";
 import { AlertProvider } from "@/hooks/alertContext";
-
 import Header from "@/components/HeaderComponent";
 import MiniCart from "@/components/cart-component/MiniCartComponent";
 import DeliveryLine from "@/components/DeliveryLineComponent";

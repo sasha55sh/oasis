@@ -1,5 +1,5 @@
 "use client";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Card } from "flowbite-react";
 import { CardProps } from "@/config/types";
@@ -7,9 +7,17 @@ import { useCart } from "@/hooks/useCart";
 import Counter from "@/components/CounterComponent";
 
 import Heart from "@/images/vectors/heart-icon.svg";
+import HeartFilled from "@/images/vectors/filled-heard-icon.svg";
 import Plus from "@/images/vectors/plus-icon.svg";
+import { toggleFavorite } from "@/service/UserService";
 
-const CardComponent: FC<CardProps & { className?: string }> = ({
+const CardComponent: FC<
+  CardProps & {
+    className?: string;
+    initialFavorite?: boolean;
+    onFavoriteChange?: () => void;
+  }
+> = ({
   className,
   id,
   handle,
@@ -19,12 +27,39 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
   image,
   description,
   grams,
+  initialFavorite = false,
+  onFavoriteChange,
 }) => {
   const { addToCart, products, removeFromCart } = useCart();
+  const [isFavorite, setIsFavorite] = useState(initialFavorite);
 
   const cartProduct = products.find((p) => p.id === id);
   const quantity = cartProduct?.quantity || 0;
   const maxQuantity = cartProduct?.maxQuantity || 100;
+
+  useEffect(() => setIsFavorite(initialFavorite), [initialFavorite]);
+
+  const handleToggleFavorite = async () => {
+    try {
+      await toggleFavorite({
+        id,
+        handle,
+        title,
+        price,
+        image,
+        grams,
+        description,
+        discount,
+      });
+      setIsFavorite(!isFavorite);
+
+      if (onFavoriteChange) {
+        onFavoriteChange(); // Повідомляємо батьківський компонент
+      }
+    } catch (error) {
+      console.error("Failed to toggle favorite", error);
+    }
+  };
 
   const handleAddToCart = () => {
     addToCart(
@@ -58,6 +93,7 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
           height={385}
           src={image}
           alt={handle}
+          priority
           className="h-[380px] rounded-t-lg object-cover"
         />
       )}
@@ -102,11 +138,13 @@ const CardComponent: FC<CardProps & { className?: string }> = ({
         ) : (
           <div className="flex gap-[10px]">
             <button
+              onClick={handleToggleFavorite}
               className="p-[10px] rounded-xl bg-oldSilver/10 w-[56px] h-[56px] flex items-center justify-center"
               aria-label="like-button"
             >
-              <Image src={Heart} alt="heart-icon" />
+              <Image src={isFavorite ? HeartFilled : Heart} alt="heart-icon" />
             </button>
+
             <button
               className="w-[56px] h-[56px] rounded-xl flex items-center justify-center bg-amberOrange/50 hover:bg-amberOrange transition-colors group"
               onClick={handleAddToCart}

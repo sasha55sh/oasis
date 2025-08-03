@@ -12,7 +12,13 @@ const TitleComponent: FC<titleProps> = ({ className, title }) => {
     <div
       className={`${className} relative flex items-center justify-center w-full h-[150px] `}
     >
-      <Image src={Background} alt="Background" className="object-cover" fill />
+      <Image
+        src={Background}
+        alt="Background"
+        className="object-cover"
+        fill
+        priority
+      />
       <h1 className="capitalize font-bold text-[48px] text-white z-0">
         {title}
       </h1>

@@ -26,6 +26,8 @@ const DeliveryLineComponent: FC = () => {
           text="Delivery zones"
           className="w-[75%] mini:w-[40%] md:w-[30%] lg:w-[20%]"
           background="limeGreen"
+          tag="a"
+          href="/delivery"
         />
       </div>
     </section>
