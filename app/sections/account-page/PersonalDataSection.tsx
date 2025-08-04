@@ -19,6 +19,23 @@ const PersonalDataSection = () => {
   const [openModal, setOpenModal] = useState(false);
   const router = useRouter();
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await getUser();
+      setUser(data);
+    };
+    fetchUser();
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      form.setValues({
+        email: user.email || "",
+        firstName: user.firstName || "",
+      });
+    }
+  }, [user]);
+
   const form = useForm({
     initialValues: {
       email: "",
@@ -29,25 +46,6 @@ const PersonalDataSection = () => {
       firstName: hasLength({ min: 2 }, "Too short"),
     },
   });
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      router.push("/");
-      return;
-    }
-
-    const fetchUser = async () => {
-      const data = await getUser();
-      setUser(data);
-      form.setValues({
-        email: data.email || "",
-        firstName: data.firstName || "",
-      });
-    };
-
-    fetchUser();
-  }, [router, form]);
 
   const handleSave = async () => {
     setIsLoading(true);
@@ -69,12 +67,6 @@ const PersonalDataSection = () => {
     setIsLoading(false);
   };
 
-  const handleLogout = () => {
-    logoutUser();
-    setUser(null);
-    router.push("/");
-  };
-
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[80vh] w-full ">
@@ -82,6 +74,11 @@ const PersonalDataSection = () => {
       </div>
     );
   }
+
+  const handleLogout = () => {
+    logoutUser();
+    router.push("/");
+  };
 
   return (
     <>
