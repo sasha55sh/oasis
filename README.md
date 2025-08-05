@@ -1,36 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Oasis Restaurant is a full-stack web application designed to provide an interactive and seamless food ordering experience. It includes a responsive user interface, a robust backend, and cloud-based data storage.  
+Customers can view the restaurant menu, browse the catalog of dishes, add them to favorites and to the cart. Then on Checkout page you can choose appropriate date and time for the delivery, delivery method. The user can log in to account using phone number and SMS code. On the Account page customer can view order history and liked products. There are also Delivery, News and FAQ pages.
 
-## Getting Started
+# Tech Stack
 
-First, run the development server:
+- Frontend: React.js, TypeScript, Next.js - routing between pages and server-side rendering, Tailwind CSS – for responsive styling, Axios – handles HTTP requests between frontend and backend, Flowbite React – prebuilt Tailwind-based UI components, Mantine – UI components and hooks for building responsive interfaces.
+- Backend: Node.js, JavaScript,  Express.js – API handling.
+- Database: MongoDB – stores all application data.
+- Cloud Services: Cloudinary – stores and optimizes images, Firebase – implements phone authentication via SMS code (currently running in free test mode). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Deployment: 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+( https://oasis-restaurant.vercel.app ) – Frontend hosting on Vercel
+( https://oasis-restaurant.up.railway.app )- Backend hosting on Railway 
