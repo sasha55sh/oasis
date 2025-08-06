@@ -45,7 +45,7 @@ const TestimonialsSection: FC = () => {
       </h1>
 
       <div className="w-full">
-        <Carousel slide={false} indicators={true}>
+        <Carousel slide={false} indicators={true} draggable>
           {TestimonialsData.map((testimonial, index) => (
             <TestimonialComponent
               key={index}

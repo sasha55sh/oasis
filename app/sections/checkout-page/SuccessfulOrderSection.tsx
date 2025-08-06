@@ -4,7 +4,7 @@ import Button from "@/components/ButtonComponent";
 const SuccessfulOrderSection: FC<{ orderId: string }> = ({ orderId }) => {
   return (
     <section className="py-[200px] rounded-xl shadow-xl flex flex-col items-center space-y-[20px]">
-      <h1 className="text-[24px] text-limeGreen font-bold">
+      <h1 className="text-[24px] text-limeGreen font-bold text-center">
         Your order <span className="text-darkLiver">#{orderId}</span> has been
         successfully created!
       </h1>

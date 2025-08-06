@@ -16,7 +16,11 @@ const ChooseAndPickSection: FC = () => {
       const data = await getProducts();
       if (data?.length) {
         const shuffled = [...data].sort(() => 0.5 - Math.random());
-        setRandomProducts(shuffled.slice(0, 4));
+        let count = 2;
+        const width = window.innerWidth;
+        if (width >= 1024) count = 3;
+        else if (width >= 768) count = 2; 
+        setRandomProducts(shuffled.slice(0, count));
       }
       setIsLoading(false);
     };
@@ -30,10 +34,10 @@ const ChooseAndPickSection: FC = () => {
         <span className="text-amberOrange">Fr</span>om our menu
       </h1>
 
-      <div className="hidden md:grid gap-[20px] justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
-        {isLoading ? (
+      <div className="hidden gap-[20px] justify-center place-items-center w-full md:grid md:grid-cols-2 lg:grid-cols-3">
+        {isLoading ? ( 
           <>
-            {Array.from({ length: 4 }, (_, index) => (
+            {Array.from({ length: 3 }, (_, index) => (
               <ProductSceleton key={index} />
             ))}
           </>
@@ -47,7 +51,7 @@ const ChooseAndPickSection: FC = () => {
       </div>
 
       <div className="md:hidden w-full mx-auto flex items-center">
-        <Carousel slide={false} indicators={true}>
+        <Carousel slide={false} indicators={true} draggable>
           {randomProducts?.map((product, index) => (
             <CardComponent key={index} {...product} />
           ))}

@@ -112,7 +112,7 @@ const LoginComponent: FC<{
     }
     setLoading(false);
   };
-  
+
   const handleVerifyCode = async (values: typeof codeForm.values) => {
     setLoading(true);
     setError("");
@@ -120,7 +120,7 @@ const LoginComponent: FC<{
       const result = await confirmationResult.confirm(values.code);
       const user = result.user;
       const idToken = await user.getIdToken();
-      
+
       const backendRes = await verifyCodeBackend(idToken);
       localStorage.setItem("token", backendRes.token);
       router.push("/account");
@@ -139,7 +139,12 @@ const LoginComponent: FC<{
   };
 
   return (
-    <Modal show={openModal} onClose={onCloseModal} size="md" popup>
+    <Modal
+      show={openModal}
+      onClose={onCloseModal}
+      size="md"
+      popup
+    >
       <ModalHeader />
       <ModalBody>
         <div id="recaptcha-container"></div>

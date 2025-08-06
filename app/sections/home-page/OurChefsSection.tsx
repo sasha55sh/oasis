@@ -39,7 +39,7 @@ const OurChefsSection: FC = () => {
       </div>
 
       <div className="max-w-[500px] mx-auto lg:hidden">
-        <Carousel slide={false} indicators={true}>
+        <Carousel slide={false} indicators={true} draggable>
           {chefsData.map((chef, index) => (
             <div key={index} className="relative flex justify-center">
               <Image src={chef.src} alt={chef.alt} />

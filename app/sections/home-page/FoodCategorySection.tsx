@@ -10,28 +10,28 @@ import Donuts from "@/images/home-page/food-category/donuts.svg";
 const cardsData = [
   {
     title: "Breakfast",
-    discount: "save 30%",
+    discount: "Save 30%",
     src: ChickenRoll,
     alt: "chicken roll",
     href: "/shop",
   },
   {
     title: "Main",
-    discount: "save 10%",
+    discount: "Save 10%",
     src: Burger,
     alt: "burger",
     href: "/shop",
   },
   {
     title: "Bowl",
-    discount: "save 20%",
+    discount: "Save 20%",
     src: Salad,
     alt: "salad",
     href: "/shop",
   },
   {
     title: "Dessert",
-    discount: "save 5%",
+    discount: "Save 5%",
     src: Donuts,
     alt: "donuts",
     href: "/shop",
@@ -59,7 +59,7 @@ const FoodCategoryComponent: FC = () => {
       </div>
 
       <div className="max-w-[500px] mx-auto lg:hidden">
-        <Carousel slide={false} indicators={true}>
+        <Carousel slide={false} indicators={true} draggable>
           {cardsData.map((card, index) => (
             <SaleCard
               key={index}

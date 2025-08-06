@@ -89,7 +89,7 @@ const ShopFilters: FC<{
               <button
                 key={index}
                 onClick={() => handleCategoryClick(item.value)}
-                className="rounded-lg flex items-center space-x-[10px] shadow-md p-[10px] hover:bg-amberOrange flex-shrink-0"
+                className="rounded-lg flex items-center space-x-[10px] shadow-md p-[10px] hover:bg-amberOrange/60 flex-shrink-0"
               >
                 <Image src={item.src} alt={item.alt} />
                 <p className="font-bold">{item.title}</p>
