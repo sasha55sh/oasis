@@ -11,4 +11,4 @@ Customers can view the restaurant menu, browse the catalog of dishes, add them t
 # Deployment: 
 
 ( https://oasis-restaurant.vercel.app ) – Frontend hosting on Vercel
-( https://oasis-restaurant.up.railway.app )- Backend hosting on Railway 
+( https://oasis-server-cg33.onrender.com )- Backend hosting on Render 
