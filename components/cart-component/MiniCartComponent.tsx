@@ -13,11 +13,11 @@ const MiniCartComponent: FC = () => {
 
   if (products.length === 0) return null;
 
-  let buttonText = "Сontinue";
+  let buttonText = "Продовжити";
   let buttonLink = "/cart";
 
   if (pathname === "/cart") {
-    buttonText = "Place an order";
+    buttonText = "Оформити замовлення";
     buttonLink = "/checkout";
   } else if (pathname === "/checkout") {
     return null;
@@ -26,7 +26,7 @@ const MiniCartComponent: FC = () => {
   return (
     <div className="fixed bottom-0 right-0 bg-limeGreen text-white px-[15px] z-[50] rounded-xl my-[10px] mx-[10px] items-center flex lg:hidden">
       <p>
-        {totalItems} goods, {totalAmount.toFixed(2)} $
+        {totalItems} товарів, {totalAmount.toFixed(2)} грн
       </p>
       <Link href={buttonLink}>
         <Button background="limeGreen" text={buttonText} icon="basket" />

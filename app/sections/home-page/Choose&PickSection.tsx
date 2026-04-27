@@ -19,7 +19,7 @@ const ChooseAndPickSection: FC = () => {
         let count = 2;
         const width = window.innerWidth;
         if (width >= 1024) count = 3;
-        else if (width >= 768) count = 2; 
+        else if (width >= 768) count = 2;
         setRandomProducts(shuffled.slice(0, count));
       }
       setIsLoading(false);
@@ -29,13 +29,15 @@ const ChooseAndPickSection: FC = () => {
 
   return (
     <section className="container flex flex-col my-[50px] items-center space-y-[15px] lg:space-y-[30px] lg:my-[70px]">
-      <p className="text-amberOrange font-vibes text-[32px]">Choose & pick</p>
+      <p className="text-amberOrange font-vibes text-[32px]">
+        Оберіть та замовте
+      </p>
       <h1 className="font-bold text-white leading-none text-[48px] text-center">
-        <span className="text-amberOrange">Fr</span>om our menu
+        <span className="text-amberOrange">З</span> нашого меню
       </h1>
 
       <div className="hidden gap-[20px] justify-center place-items-center w-full md:grid md:grid-cols-2 lg:grid-cols-3">
-        {isLoading ? ( 
+        {isLoading ? (
           <>
             {Array.from({ length: 3 }, (_, index) => (
               <ProductSceleton key={index} />

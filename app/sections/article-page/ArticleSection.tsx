@@ -41,15 +41,21 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
   return (
     <section>
       <div className="max-w-[200px] mt-[30px] ml-[20px] ">
-        <Button text="Back to news" icon="back" tag="a" href="/news" bordered />
+        <Button
+          text="Повернутися"
+          icon="back"
+          tag="a"
+          href="/news"
+          bordered
+        />
       </div>
       <div className="container my-[50px] space-y-[15px]">
         <h1 className="text-amberOrange font-bold text-[26px] lg:text-[40px]">
-          {article?.title ?? "Article title"}
+          {article?.title ?? "Назва статті"}
         </h1>
         <div className="flex justify-between items-center text-darkLiver mini:justify-start mini:space-x-[30px]">
           <p className="bg-oldSilver/30 rounded-lg px-[10px] py-[5px] font-bold">
-            {article?.category ?? "Sale"}
+            {article?.category ?? "Знижки"}
           </p>
           <p className="text-[14px]">{article?.date ?? "29/07/2025"}</p>
         </div>
@@ -60,14 +66,14 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
           }
           width={1300}
           height={630}
-          alt={article?.handle ?? "Article image"}
+          alt={article?.handle ?? "Зображення статті"}
           className="w-full h-auto rounded-xl"
         />
         <p className="text-[18px] text-darkCharcoal font-semibold">
-          {article?.highText ?? "High text"}
+          {article?.highText ?? "Текст заголовок"}
         </p>
         <p>{article?.text ?? "Text"}</p>
-        <p>{article?.lowText ?? "Low text"}</p>
+        <p>{article?.lowText ?? "Основний текст"}</p>
       </div>
     </section>
   );

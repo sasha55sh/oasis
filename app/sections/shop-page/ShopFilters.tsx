@@ -20,23 +20,31 @@ import Main from "@/images/shop-page/mainDish-icon.svg";
 import Soup from "@/images/shop-page/soup-icon.svg";
 import NotFound from "@/images/shop-page/not-found.svg";
 
+const categoryMap: Record<string, string> = {
+  bowl: "Боули",
+  breakfast: "Cніданки",
+  dessert: "Десерти",
+  main: "Основні страви",
+  soup: "Супи",
+};
+
 const menuData: CategoryButton[] = [
-  { title: "Bowl", src: Bowl, alt: "Bowl icon", value: "bowl" },
+  { title: "Боули", src: Bowl, alt: "Bowl icon", value: "bowl" },
   {
-    title: "Breakfast",
+    title: "Сніданки",
     src: Breakfast,
     alt: "breakfast icon",
     value: "breakfast",
   },
-  { title: "Dessert", src: Dessert, alt: "Dessert icon", value: "dessert" },
-  { title: "Main", src: Main, alt: "Main dish icon", value: "main" },
-  { title: "Soup", src: Soup, alt: "Soup icon", value: "soup" },
+  { title: "Десерти", src: Dessert, alt: "Dessert icon", value: "dessert" },
+  { title: "Основні страви", src: Main, alt: "Main dish icon", value: "main" },
+  { title: "Супи", src: Soup, alt: "Soup icon", value: "soup" },
 ];
 
 const optionsData = [
-  { value: "new", label: "New" },
-  { value: "lprice", label: "From cheap to expensive" },
-  { value: "hprice", label: "From expensive to cheap" },
+  { value: "new", label: "Нове" },
+  { value: "lprice", label: "Від дешевого до дорогого" },
+  { value: "hprice", label: "Від дорогого до дешевого" },
 ];
 
 const ShopFilters: FC<{
@@ -100,11 +108,11 @@ const ShopFilters: FC<{
           <SearchInput
             value={searchedText}
             onChange={setSearchedText}
-            placeholder="Enter product or ingredient name"
+            placeholder="Введіть назву страви або інгредієнта"
           />
           <div className="md:container md:flex md:items-center md:justify-between">
             <h2 className="hidden capitalize text-[24px] text-darkLiver font-bold md:inline">
-              {category}
+              {categoryMap[category]}
             </h2>
             <Select
               options={optionsData}
@@ -121,10 +129,10 @@ const ShopFilters: FC<{
               <Image src={NotFound} alt="Not found" width={600} height={600} />
               <div>
                 <p className="text-[30px] font-medium text-amberOrange md:text-[42px]">
-                  Nothing found
+                  Нічого не знайдено
                 </p>
                 <p className="text-[22px] text-oldSilver">
-                  Try selecting other filters
+                  Спробуйте обрати інші фільтри
                 </p>
               </div>
             </div>

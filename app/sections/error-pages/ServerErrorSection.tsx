@@ -9,7 +9,6 @@ const ServerErrorSection = ({
   error?: Error & { digest?: string };
   reset?: () => void;
 }) => {
-  
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -19,20 +18,20 @@ const ServerErrorSection = ({
   };
   return (
     <section>
-      <Title title="505 Error" />
+      <Title title="505 Помилка" />
       <div className="container flex flex-col items-center justify-center space-y-[15px] my-[50px] text-center lg:space-y-[30px] lg:my-[70px]">
         <h1 className="text-amberOrange text-[64px] font-bold leading-none lg:text-[96px]">
           505
         </h1>
         <h2 className="text-darkCharcoal text-[24px] font-bold lg:text-[32px]">
-          Oops! Look likes something going wrong
+          Упс! Здається, щось пішло не так
         </h2>
         <p className="text-darkLiver">
-          Server error! We’ll have it figured out in no time.
-          <br /> Try to update page:
+          Помилка сервера! Ми вже працюємо над її вирішенням.
+          <br /> Спробуйте оновити сторінку:
         </p>
         <Button
-          text="Try again"
+          text="Спробувати знову"
           background="amberOrange"
           tag="button"
           type="reset"

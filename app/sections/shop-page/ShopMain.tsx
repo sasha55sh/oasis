@@ -32,7 +32,7 @@ const ShopMain: FC = () => {
 
   return (
     <ProductsContext.Provider value={products}>
-      <Title title="Shop" />
+      <Title title="Замовити" />
       <ShopFilters
         setProducts={setProducts}
         products={products}

@@ -15,17 +15,17 @@ const ActiveProcessSection: FC = () => {
       />
       <div className="container z-2 flex flex-col text-white text-center items-center space-y-[20px] lg:text-right lg:items-end lg:absolute">
         <p className="text-amberOrange font-vibes text-[32px]">
-          Restaurant Active Process
+          Як ми працюємо
         </p>
         <h1 className="font-bold text-[48px] max-w-[750px] leading-none">
-          <span className="text-amberOrange">We </span>document every food bean
-          process untile it is saved
+          <span className="text-amberOrange">Ми</span> фіксуємо кожен етап
+          приготування страв — від початку до подачі
         </h1>
         <p className="max-w-[650px]">
-          We capture every detail of the culinary journey, from the freshest
-          ingredients to the final presentation on your plate. Our commitment to
-          transparency ensures you enjoy not only great taste but also trust in
-          every dish we serve
+          Ми фіксуємо кожну деталь кулінарного процесу — від найсвіжіших
+          інгредієнтів до фінальної подачі на вашому столі. Наша відданість
+          прозорості дозволяє вам насолоджуватися не лише чудовим смаком, а й
+          бути впевненими у якості кожної страви, яку ми подаємо.
         </p>
 
         <div className="flex max-w-[390px] items-center space-x-[20px]">
@@ -37,7 +37,7 @@ const ActiveProcessSection: FC = () => {
           >
             <Image src={PlayIcon} alt="Play" />
           </Link>
-          <span>Play Video</span>
+          <span>Переглянути відео</span>
         </div>
       </div>
     </section>

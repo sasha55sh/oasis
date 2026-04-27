@@ -2,9 +2,9 @@ import MenuSection from "@/app/sections/menu-page/MenuSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis - Menu",
-  description: "Exclusive restaurant menu",
-  icons: { icon: "//шлях до фавікону" },
+  title: "Oasis - Меню",
+  description: "Ексклюзивне меню ресторану",
+  icons: { icon: "@/app/favicon.ico" },
 };
 
 export const generateViewport = () => ({

@@ -21,14 +21,19 @@ const PartnersSection: FC = () => {
   return (
     <section className="my-[50px] lg:my-[70px]">
       <div className="flex flex-col items-center justify-center space-y-[15px] text-darkCharcoal">
-        <p className="text-[18px] capitalize">partners & clients</p>
+        <p className="text-[18px] capitalize">Партнери та клієнти</p>
         <h2 className="text-[36px] font-bold text-center lg:text-[48px] ">
-          We work with the best people
+          Ми працюємо з найкращими людьми
         </h2>
 
         <div className="hidden justify-between w-full lg:flex">
           {partnersData.map((partner, index) => (
-            <Image key={index} src={partner.src} alt={partner.alt} className="lg:px-[20px] xl:px-0" />
+            <Image
+              key={index}
+              src={partner.src}
+              alt={partner.alt}
+              className="lg:px-[20px] xl:px-0"
+            />
           ))}
         </div>
 

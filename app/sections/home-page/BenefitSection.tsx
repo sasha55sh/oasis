@@ -8,10 +8,10 @@ import Cap from "@/images/home-page/cap-benefit.svg";
 import Food from "@/images/home-page/food-benefit.svg";
 
 const data = [
-  { src: Cap, alt: "Cap", title: "Professional chefs", quantity: 10 },
-  { src: Food, alt: "food", title: "Items of food", quantity: 320 },
-  { src: Tools, alt: "Tools", title: "Years of experienced", quantity: 5 },
-  { src: Pizza, alt: "Pizza", title: "Happy customers", quantity: 2000 },
+  { src: Cap, alt: "Cap", title: "Професійних кухарів", quantity: 10 },
+  { src: Food, alt: "food", title: "Страв у меню", quantity: 320 },
+  { src: Tools, alt: "Tools", title: "Років досвіду", quantity: 5 },
+  { src: Pizza, alt: "Pizza", title: "Задоволених клієнтів", quantity: 2000 },
 ];
 
 const BenefitSection: FC = () => {
@@ -30,9 +30,7 @@ const BenefitSection: FC = () => {
             key={index}
           >
             <Image src={item.src} alt={item.alt} />
-            <h5 className="font-bold lg:text-[24px]">
-              {item.title}
-            </h5>
+            <h5 className="font-bold lg:text-[24px]">{item.title}</h5>
             <h3 className="font-bold text-[28px] lg:text-[40px]">
               {item.quantity}
             </h3>

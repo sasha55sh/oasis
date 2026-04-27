@@ -34,13 +34,13 @@ const CheckoutSection: FC<{
       phone: "",
     },
     validate: {
-      firstName: hasLength({ min: 2 }, "Incorrect name"),
+      firstName: hasLength({ min: 2 }, "Некоректне ім'я"),
       phone: (value) => {
-        if (!value) return "Phone is required";
-        if (!/^\+38\d{10}$/.test(value)) return "Incorrect phone format";
+        if (!value) return "Номер телефону обов'язковий";
+        if (!/^\+38\d{10}$/.test(value)) return "Некоректний формат номеру";
         const operatorCode = value.slice(3, 6);
         if (!validOperators.includes(operatorCode))
-          return "Invalid operator code";
+          return "Неправильний код оператора";
         return null;
       },
     },
@@ -59,7 +59,7 @@ const CheckoutSection: FC<{
 
     const fetchUserData = async () => {
       try {
-        const data = await getUser(); 
+        const data = await getUser();
         form.setValues({
           firstName: data.firstName || "",
           phone: data.phone || "",
@@ -101,12 +101,12 @@ const CheckoutSection: FC<{
   }, []);
   return (
     <Card className="rounded-xl shadow-xl" id="info">
-      <h2 className="text-limeGreen text-[24px]">Personal data</h2>
+      <h2 className="text-limeGreen text-[24px]">Персональні дані</h2>
 
       <form className="flex flex-col space-y-[20px] items-center sm:flex-row sm:space-y-0 sm:space-x-[10px] lg:flex-col lg:space-x-0 lg:space-y-[20px] xl:flex-row xl:space-x-[10px] xl:space-y-0">
         <Input
           inputType="input"
-          placeholder="Name"
+          placeholder="Ім'я"
           required
           {...form.getInputProps("firstName")}
           errorType="critical"
@@ -116,7 +116,7 @@ const CheckoutSection: FC<{
 
         <Input
           inputType="input"
-          placeholder="Phone"
+          placeholder="Номер телефону"
           required
           {...form.getInputProps("phone")}
           errorType="critical"

@@ -1,9 +1,9 @@
-import DeliverySection from "@/app/sections/delivery-page/DeliverySection";
+import NewsSection from "@/app/sections/news-page/NewsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis - Delivery",
-  description: "Сheck out our best delivery offers",
+  title: "Oasis - Новини",
+  description: "Дізнавайтеся першими про всі новини",
   icons: { icon: "@/app/favicon.ico" },
 };
 
@@ -13,7 +13,7 @@ export const generateViewport = () => ({
 });
 
 const Page = () => {
-  return <DeliverySection />;
+  return <NewsSection />;
 };
 
 export default Page;

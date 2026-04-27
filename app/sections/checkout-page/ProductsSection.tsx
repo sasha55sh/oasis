@@ -113,10 +113,10 @@ const ProductsSection: FC<{
         <div className="flex flex-col items-center shadow-xl rounded-xl space-y-[15px] py-[50px]">
           <Image src={EmptyCart} alt="Empty cart" width={400} height={400} />
           <p className="text-[24px] text-amberOrange font-bold sm:text-[30px] lg:text-[36px]">
-            Oops! Cart is empty
+            Упс! Корзина порожня
           </p>
           <p className="text-darkLiver font-bold text-[18px] sm:text-[22px]">
-            Choose something tasty
+            Давайте оберемо щось смачненьке!
           </p>
         </div>
       ) : (
@@ -128,7 +128,7 @@ const ProductsSection: FC<{
       )}
 
       <p className="hidden lg:block text-center text-[20px] text-amberOrange font-bold sm:text-[26px] lg:text-[30px]">
-        Oasis recommends
+        Oasis рекомендує
       </p>
 
       <div className="hidden w-full lg:block">
@@ -165,25 +165,25 @@ const ProductsSection: FC<{
       {error && (
         <p className="text-electricRed text-[20px] font-bold text-center">
           {totalAmount < 10
-            ? "Minimum order amount is 10$"
+            ? "Minimum order amount is 10грн"
             : "Fill all required fields"}
         </p>
       )}
 
       <div className="bg-warmWhite/50 flex items-center justify-between py-[10px] rounded-xl p-[10px]">
         <p className="text-darkLiver">
-          Total:{" "}
+          Всьго:{" "}
           <span className="text-amberOrange font-bold text-[18px]">
             {Number(totalAmount).toFixed(2)}
           </span>{" "}
-          $
+          грн
         </p>
 
         <button
           className="bg-limeGreen p-[10px] rounded-xl hover:bg-limeGreen/80 text-warmWhite"
           onClick={handleSubmit}
         >
-          Place an order
+          Створити замовлення
         </button>
       </div>
     </div>

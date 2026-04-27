@@ -17,11 +17,11 @@ import Cart from "@/images/header/nav-cart.svg";
 import Close from "@/images/vectors/close.svg";
 
 const navData = [
-  { link: "/menu", text: "Menu" },
-  { link: "/shop", text: "Shop" },
-  { link: "/delivery", text: "Delivery" },
+  { link: "/menu", text: "Меню" },
+  { link: "/shop", text: "Замовити" },
+  { link: "/delivery", text: "Доставка" },
   { link: "/faq", text: "FAQ" },
-  { link: "/news", text: "News" },
+  { link: "/news", text: "Новини" },
 ];
 
 const Header: FC<{ className?: string }> = ({ className }) => {
@@ -78,7 +78,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
           content={
             <div className="shadow-xl rounded-xl flex flex-col space-y-[10px] p-[10px]">
               <p className="text-amberOrange font-semibold">
-                Call us from 11:00 to 22:00, seven days a week
+                Телефонуйте нам з 11:00 до 22:00, без вихідних
               </p>
               <ul className="text-darkLiver flex flex-col space-y-[10px] items-center">
                 <li>+380 (68) 68 68 686</li>
@@ -102,7 +102,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
           content={
             <div className="shadow-xl rounded-xl flex flex-col space-y-[10px] p-[10px]">
               <p className="text-amberOrange font-semibold">
-                Call us from 11:00 to 22:00, seven days a week
+                Телефонуйте нам з 11:00 до 22:00, щодня
               </p>
               <ul className="text-darkLiver flex flex-col space-y-[10px] items-center">
                 <li>+380 (68) 68 68 686</li>
@@ -144,12 +144,12 @@ const Header: FC<{ className?: string }> = ({ className }) => {
               aria-label="cart"
               onClick={() => changeOpenState(true)}
             >
-              Cart
+              Корзина
               <Image src={Cart} alt="Cart" className="ml-[10px]"></Image>
               <div className="absolute top-[-10px] right-[-10px] rounded-full px-[8px] bg-amberOrange text-white">
                 {products.reduce(
                   (total, product) => total + product.quantity,
-                  0
+                  0,
                 )}
               </div>
             </button>
@@ -160,7 +160,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
             aria-label="cart"
             onClick={() => changeOpenState(true)}
           >
-            Cart
+            Корзина
             <Image src={Cart} alt="Cart" className="ml-[10px]"></Image>
           </button>
         )}
@@ -217,7 +217,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
           }}
         >
           <div className="container flex justify-between items-center py-[20px] mb-[40px]">
-            <h1 className="text-amberOrange text-[58px] font-bold">Menu</h1>
+            <h1 className="text-amberOrange text-[58px] font-bold">Меню</h1>
             <ActionIcon
               variant="transparent"
               onClick={close}

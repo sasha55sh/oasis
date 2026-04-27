@@ -16,10 +16,10 @@ const MenuItemComponent: FC<menuItemProps> = ({ className, item }) => {
           {item.title}
         </h2>
         <p className="text-darkLiver">{item.description}</p>
-        <p className="text-oldSilver">{item.cal} CAL</p>
+        <p className="text-oldSilver">{item.cal} ккал</p>
       </div>
       <p className="text-amberOrange text-[20px] text-nowrap font-bold md:text-[24px]">
-        {item.price} $
+        {item.price} грн
       </p>
     </div>
   );

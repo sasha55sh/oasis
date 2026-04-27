@@ -9,29 +9,29 @@ import Donuts from "@/images/home-page/food-category/donuts.svg";
 
 const cardsData = [
   {
-    title: "Breakfast",
-    discount: "Save 30%",
+    title: "Сніданки",
+    discount: "Знижка 30%",
     src: ChickenRoll,
     alt: "chicken roll",
     href: "/shop",
   },
   {
-    title: "Main",
-    discount: "Save 10%",
+    title: "Основні страви",
+    discount: "Знижка 10%",
     src: Burger,
     alt: "burger",
     href: "/shop",
   },
   {
-    title: "Bowl",
-    discount: "Save 20%",
+    title: "Боул",
+    discount: "Знижка 20%",
     src: Salad,
     alt: "salad",
     href: "/shop",
   },
   {
-    title: "Dessert",
-    discount: "Save 5%",
+    title: "Десерти",
+    discount: "Знижка  5%",
     src: Donuts,
     alt: "donuts",
     href: "/shop",
@@ -40,9 +40,9 @@ const cardsData = [
 const FoodCategoryComponent: FC = () => {
   return (
     <section className="container flex flex-col space-y-[15px] items-center my-[50px] lg:my-[70px] lg:space-y-[30px]">
-      <p className="text-amberOrange font-vibes text-[32px]">Food category</p>
+      <p className="text-amberOrange font-vibes text-[32px]">Категорії страв</p>
       <h1 className="font-bold leading-none text-[42px] text-white text-center lg:text-[60px]">
-        <span className="text-amberOrange">Ch</span>oose food item
+        <span className="text-amberOrange">Об</span>еріть страву
       </h1>
 
       <div className="hidden justify-between gap-[20px] lg:flex">

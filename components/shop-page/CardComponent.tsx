@@ -73,7 +73,7 @@ const CardComponent: FC<
   const handleAddToCart = () => {
     addToCart(
       { id, handle, title, price, image, grams, maxQuantity, quantity: 1 },
-      1
+      1,
     );
   };
 
@@ -84,14 +84,14 @@ const CardComponent: FC<
     else
       addToCart(
         { id, handle, title, price, image, grams, maxQuantity, quantity: 1 },
-        -1
+        -1,
       );
   };
 
   const discountedPrice = (
     Number(price) -
     Number(price) * Number(discount)
-  ).toFixed(2);
+  );
 
   return (
     <>
@@ -119,23 +119,23 @@ const CardComponent: FC<
           <h5 className="text-[22px] text-darkLiver font-bold leading-none h-[45px]">
             {title}
           </h5>
-          <p className="text-amberOrange">{grams} g</p>
-          <p className="text-oldSilver h-[80px]">{description}</p>
+          <p className="text-amberOrange">{grams} г</p>
+          <p className="text-oldSilver h-[80px]">{description.join(", ")}</p>
         </a>
 
         <div className="flex justify-between items-center">
           {discount !== 0 ? (
-            <div className="flex gap-[10px] items-center">
-              <p className="text-[24px] text-electricRed font-bold">
-                {discountedPrice} $
+            <div className="flex gap-[5px] items-center mr-[5px]">
+              <p className="text-[22px] text-electricRed whitespace-nowrap font-bold">
+                {discountedPrice} грн
               </p>
-              <p className="text-amberOrange font-medium line-through">
-                {Number(price).toFixed(2)} $
+              <p className="text-amberOrange font-medium whitespace-nowrap line-through">
+                {Number(price)} грн
               </p>
             </div>
           ) : (
-            <p className="text-[24px] text-amberOrange font-bold">
-              {Number(price).toFixed(2)} $
+            <p className="text-[22px] text-amberOrange font-bold">
+              {Number(price)} грн
             </p>
           )}
 

@@ -13,9 +13,9 @@ import CookieIcon from "@/images/home-page/why-choose-us/сookie.svg";
 import WineIcon from "@/images/home-page/why-choose-us/wine.svg";
 
 const buttonsItems = [
-  { src: BurgerIcon, alt: "Burger icon", title: "Breakfast", href: "/shop" },
-  { src: CookieIcon, alt: "Cookie icon", title: "Dessert", href: "/shop" },
-  { src: WineIcon, alt: "Wine icon", title: "Main", href: "/shop" },
+  { src: BurgerIcon, alt: "Burger icon", title: "Сніданок", href: "/shop" },
+  { src: CookieIcon, alt: "Cookie icon", title: "Десерти", href: "/shop" },
+  { src: WineIcon, alt: "Wine icon", title: "Основні страви", href: "/shop" },
 ];
 
 const WhyChooseUsSection = () => {
@@ -59,17 +59,19 @@ const WhyChooseUsSection = () => {
       </div>
 
       <div className="flex flex-col items-center text-white space-y-[15px] my-[50px] lg:my-[70px] lg:space-y-[30px] lg:items-start">
-        <p className="text-amberOrange font-vibes text-[32px]">Why Choose us</p>
+        <p className="text-amberOrange font-vibes text-[32px]">
+          Чому обирають нас
+        </p>
         <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-[60px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
-          <span className="text-amberOrange">Ex</span>tra ordinary taste and
-          experienced
+          <span className="text-amberOrange">Ви</span>шуканий смак і професійний
+          досвід — більш преміум
         </h1>
-        <p className="text-center max-w-[550px] lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
-          At Oasis, we blend passion with perfection to create dishes that
-          delight your senses. Every recipe is crafted with the finest
-          ingredients, ensuring a burst of authentic flavors in every bite. Our
-          commitment to quality and exceptional service makes every visit
-          unforgettable.
+        <p className="text-center max-w-[550px] text-pretty lg:my-[50px] lg:text-left lg:max-w-[450px] xl:max-w-[550px]">
+          У ресторані Oasis ми поєднуємо пристрасть і досконалість, створюючи
+          страви, що дарують справжню насолоду вашим відчуттям. Кожен рецепт
+          готується з найкращих інгредієнтів, щоб у кожному шматочку розкривався
+          насичений автентичний смак. Наша відданість якості та бездоганному
+          сервісу робить кожен візит незабутнім.
         </p>
         <div className="flex space-x-[20px]">
           {buttonsItems.map((item, index) => (
@@ -97,8 +99,8 @@ const WhyChooseUsSection = () => {
           <div className="flex items-center bg-white py-[15px] px-[34px] text-black rounded-r-lg">
             <h2 className="text-amberOrange text-[48px] font-bold">30+</h2>
             <div className="leading-tight ml-[20px]">
-              <span className="text-[20px]">Years of</span>
-              <span className="block text-[24px] font-bold">Experienced</span>
+              <span className="text-[20px]">років</span>
+              <span className="block text-[24px] font-bold">досвіду та майстерності</span>
             </div>
           </div>
         </div>

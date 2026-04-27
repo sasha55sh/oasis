@@ -1,9 +1,9 @@
-import Checkout from "@/app/sections/checkout-page/CheckoutSection";
+import Cart from "@/app/sections/cart-page/CartSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis  - Checkout",
-  description: "Quick order processing",
+  title: "Oasis - Корзина",
+  description: "Усі найсмачніші страви вже у кошику",
   icons: { icon: "@/app/favicon.ico" },
 };
 
@@ -15,7 +15,7 @@ export const generateViewport = () => ({
 const Page = () => {
   return (
     <>
-      <Checkout />
+      <Cart />
     </>
   );
 };

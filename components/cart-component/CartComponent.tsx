@@ -29,10 +29,10 @@ const CartComponent = () => {
                 height={400}
               />
               <p className="text-amberOrange font-bold text-[36px]">
-                Oops! Cart is empty
+                Упс! Корзина порожня
               </p>
               <p className="text-darkLiver font-bold text-[22px]">
-                Сhoose something tasty
+                Оберіть щось смачненьке
               </p>
 
               <Link
@@ -40,7 +40,7 @@ const CartComponent = () => {
                 href="/shop"
                 onClick={() => changeOpenState(false)}
               >
-                Back to shop
+                Повернутися до замовлення
               </Link>
             </div>
           ) : (
@@ -53,11 +53,11 @@ const CartComponent = () => {
 
               <div className="mt-[100px] bg-warmWhite/50 flex items-center justify-between py-[10px] rounded-xl p-[10px]">
                 <p className="text-darkLiver">
-                  Total:{" "}
+                  Всього:{" "}
                   <span className="text-amberOrange font-bold text-[18px]">
                     {Number(totalAmount).toFixed(2)}
                   </span>{" "}
-                  $
+                  грн
                 </p>
 
                 <Link
@@ -65,7 +65,7 @@ const CartComponent = () => {
                   href="/checkout"
                   onClick={() => changeOpenState(false)}
                 >
-                  Continue
+                  Продовжити
                 </Link>
               </div>
             </>

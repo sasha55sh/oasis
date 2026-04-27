@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "tailwind.config.js",
-    "app/(locale)/account/history"
+    "app/(pages)/account/history"
   ],
   "exclude": ["node_modules"]
 }

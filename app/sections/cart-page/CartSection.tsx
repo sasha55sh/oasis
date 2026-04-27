@@ -31,10 +31,10 @@ const CartSection: FC = () => {
 
   return (
     <section>
-      <Title title="Cart" />
+      <Title title="Корзина" />
       <div className="container my-[30px] space-y-[25px]">
         <h1 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px]">
-          Your order
+          Твоє замовлення
         </h1>
 
         {isLoading ? (
@@ -50,10 +50,10 @@ const CartSection: FC = () => {
           <div className="flex flex-col items-center shadow-xl rounded-xl space-y-[15px] py-[50px]">
             <Image src={EmptyCart} alt="Empty cart" width={400} height={400} />
             <p className="text-[24px] text-amberOrange font-bold sm:text-[30px] lg:text-[36px]">
-              Oops! Cart is empty
+              Упс! Корзина порожня
             </p>
             <p className="text-darkLiver font-bold text-[18px] sm:text-[22px]">
-              Choose something tasty
+              Оберіть щось смачненьке
             </p>
           </div>
         ) : (
@@ -65,7 +65,7 @@ const CartSection: FC = () => {
         )}
 
         <p className="text-center text-[20px] text-amberOrange font-bold sm:text-[26px] lg:text-[30px]">
-          Oasis recommends
+          Oasis рекомендує
         </p>
 
         <div className="grid gap-[20px] grid-cols-1 justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

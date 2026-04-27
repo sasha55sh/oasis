@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import Button from "./ButtonComponent";
 
 const deliveryData = [
-  { title: "Up to 45 minutes", description: "in the green zone" },
-  { title: "Up to 59 minutes", description: "in the yellow zone" },
-  { title: "Free shipping", description: "from 20$" },
-  { title: "To the suburban area", description: "minimum order $30" },
+  { title: "До 45 хвилин", description: "у зеленій зоні" },
+  { title: "До 59 хвилин", description: "у жовтій зоні" },
+  { title: "Безкоштовна доставка", description: "від 500 грн" },
+  { title: "У передмістя", description: "мінімально від 600 грн" },
 ];
 
 const DeliveryLineComponent: FC = () => {
@@ -23,7 +23,7 @@ const DeliveryLineComponent: FC = () => {
           ))}
         </div>
         <Button
-          text="Delivery zones"
+          text="Зони доставки"
           className="w-[75%] mini:w-[40%] md:w-[30%] lg:w-[20%]"
           background="limeGreen"
           tag="a"

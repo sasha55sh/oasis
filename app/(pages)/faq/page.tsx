@@ -3,8 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Oasis - FAQ",
-  description: "Frequently asked questions",
-  icons: { icon: "//шлях до фавікону" },
+  description: "Поширені запитання",
+  icons: { icon: "@/app/favicon.ico" },
 };
 
 export const generateViewport = () => ({

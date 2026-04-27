@@ -30,7 +30,7 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
     } else {
       addToCart(
         { ...product, price: finalPrice, quantity: 1, maxQuantity: 100 },
-        1
+        1,
       );
     }
   };
@@ -51,22 +51,22 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
         <p className="text-[18px] font-bold text-darkLiver h-[55px]">
           {product.title}
         </p>
-        <p className="text-oldSilver">{product.grams} g</p>
+        <p className="text-oldSilver">{product.grams} г</p>
       </div>
 
       <div className="flex justify-between w-full items-center px-[5px]">
         {product.discount && product.discount > 0 ? (
           <div className="flex gap-[10px] items-center">
             <p className="text-[24px] text-electricRed font-bold">
-              {discountedPrice} $
+              {discountedPrice} грн
             </p>
             <p className="text-amberOrange font-medium line-through">
-              {Number(product.price).toFixed(2)} $
+              {Number(product.price).toFixed(2)} грн
             </p>
           </div>
         ) : (
           <p className="text-[24px] text-amberOrange font-bold">
-            {Number(product.price).toFixed(2)} $
+            {Number(product.price).toFixed(2)} грн
           </p>
         )}
 

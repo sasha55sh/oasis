@@ -13,55 +13,55 @@ import Leaf from "@/images/delivery-page/leaf-icon.svg";
 const DeliverySection: FC = () => {
   return (
     <section>
-      <Title title="delivery" />
+      <Title title="Доставка" />
 
       <div className="container flex flex-col my-[50px] items-center space-y-[50px]">
         <MapComponent />
         <div className="flex flex-col space-y-[30px] w-full">
           <h2 className="text-[26px] text-darkCharcoal font-bold">
-            How to place an order?
+            Як оформити замовлення?
           </h2>
           <div className="flex flex-col my-[30px] gap-[30px] md:flex-row md:justify-between">
-            <Card src={Cursor} title="On the website" />
-            <Card src={Smartphone} title="By phone" />
+            <Card src={Cursor} title="На сайті" />
+            <Card src={Smartphone} title="За телефоном" />
           </div>
         </div>
 
         <div className="flex flex-col space-y-[30px] w-full">
           <h2 className="text-[26px] text-darkCharcoal font-bold">
-            How to receive an order
+            Як отримати замовлення
           </h2>
           <div className="flex flex-col my-[30px] gap-[30px] md:flex-row md:justify-between">
             <Card
               src={Path}
-              title="Delivery by courier"
-              description="Average delivery time 90 min"
+              title="Доставка кур’єром"
+              description="Середній час доставки — 90 хв"
             />
             <Card
               src={Pin}
-              title="Self-pickup"
-              description="From our restaurant"
+              title="Самовивіз"
+              description="Безпосередньо з нашого ресторану"
             />
           </div>
         </div>
 
         <div className="flex flex-col w-full">
           <h2 className="text-[26px] text-darkCharcoal font-bold">
-            Additional options
+            Додаткові опції
           </h2>
           <p className="text-[18px] text-oldSilver">
-            Oasis takes care of your comfort
+            Oasis піклується про ваш комфорт
           </p>
           <div className="flex flex-col my-[30px] gap-[30px] md:flex-row md:justify-between">
             <Card
               src={Alarm}
-              title="Pre-order for the specified time"
-              description="Order in advance, so you don't forget"
+              title="Попереднє замовлення на обраний час"
+              description="Замовляйте заздалегідь, щоб не забути"
             />
             <Card
               src={Leaf}
-              title="Fresh products"
-              description="We use only environmentally friendly products - grown on farms"
+              title="Свіжі продукти"
+              description="Ми використовуємо лише екологічно чисті продукти, вирощені на фермах"
             />
           </div>
         </div>

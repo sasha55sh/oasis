@@ -49,12 +49,12 @@ const CartProduct = ({ product }: { product: CartProductProps }) => {
         <h2 className="text-darkLiver font-bold leading-none">
           {product.title}
         </h2>
-        <p className="text-oldSilver text-[14px]"> {product.grams} g</p>
+        <p className="text-oldSilver text-[14px]"> {product.grams} г</p>
 
         <div className="flex w-full justify-between items-center">
           <p className="text-amberOrange font-bold text-[24px]">
             {Number(product.price).toFixed(2)}
-            <span className="text-[16px] text-oldSilver"> $</span>
+            <span className="text-[16px] text-oldSilver"> грн</span>
           </p>
 
           <Counter

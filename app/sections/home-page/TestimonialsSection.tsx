@@ -9,39 +9,40 @@ import ReviewerPhoto from "@/images/home-page/testimonials/reviewer.svg";
 const TestimonialsData = [
   {
     src: ReviewerPhoto,
-    text: "Oasis turned an ordinary dinner into an unforgettable experience! The flavors were rich, the ingredients fresh, and the service absolutely amazing",
+    text: "Oasis перетворив звичайну вечерю на незабутній досвід! Смаки були насиченими, інгредієнти — свіжими, а сервіс просто неймовірний.",
     rating: FourStars,
     name: "Alamin Hasan",
-    occupation: "Food Specialist",
+    occupation: "Фуд-експерт",
   },
   {
     src: ReviewerPhoto,
-    text: "Incredible taste and excellent presentation! Oasis really knows how to make dining a delightful experience. Highly recommended!",
+    text: "Неймовірний смак і чудова подача! В Oasis точно знають, як зробити відвідування ресторану справжнім задоволенням. Щиро рекомендую!",
     rating: FiveStars,
     name: "John Brown",
-    occupation: "Programmer",
+    occupation: "Програміст",
   },
   {
     src: ReviewerPhoto,
-    text: "Fantastic service and delicious meals. From appetizers to dessert, everything was cooked to perfection. Will definitely come back soon!",
+    text: "Найкращий ресторан, який я відвідував цього року! Кожна страва — справжній шедевр, а затишна атмосфера змушує почуватися як удома.",
     rating: FiveStars,
     name: "Alan White",
-    occupation: "Manager",
+    occupation: "Адміністратор рецепції",
   },
   {
     src: ReviewerPhoto,
-    text: "The best restaurant I’ve visited this year! Every dish was a masterpiece, and the cozy atmosphere made me feel at home",
+    text: "Чудовий сервіс і дуже смачні страви. Від закусок до десертів — усе було приготовано ідеально. Обов’язково повернуся знову!",
     rating: FourStars,
     name: "David Smith",
-    occupation: "Receptionist",
+    occupation: "Менеджер",
   },
 ];
 const TestimonialsSection: FC = () => {
   return (
     <section className="container flex flex-col items-center justify-center my-[50px] space-y-[15px] lg:my-[70px] lg:space-y-[30px]">
-      <p className="text-amberOrange font-vibes text-[32px]">Festimonials</p>
+      <p className="text-amberOrange font-vibes text-[32px]">Відгуки</p>
       <h1 className="font-bold text-white leading-none text-[42px] text-center lg:text-[60px]">
-        <span className="text-amberOrange">Wh</span>at our client are saying
+        <span className="text-amberOrange">Що </span>наші клієнти говорять про
+        нас
       </h1>
 
       <div className="w-full">

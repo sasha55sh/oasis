@@ -23,7 +23,7 @@ type SelectProps = {
 
 const CustomSelect: FC<SelectProps> = ({
   options,
-  placeholder = "Sort from...",
+  placeholder = "Сортувати за...",
   onSelect,
   disabled = false,
   className,

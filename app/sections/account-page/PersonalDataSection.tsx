@@ -42,8 +42,8 @@ const PersonalDataSection = () => {
       firstName: "",
     },
     validate: {
-      email: isEmail("Incorrect email"),
-      firstName: hasLength({ min: 2 }, "Too short"),
+      email: isEmail("Неправильний емейл"),
+      firstName: hasLength({ min: 2 }, "Мінімум 2 літери"),
     },
   });
 
@@ -95,13 +95,13 @@ const PersonalDataSection = () => {
 
             <div className="space-y-[10px]">
               <p className="font-semibold text-darkCharcoal">
-                {user?.firstName ?? "Guest"}
+                {user?.firstName ?? "Гість"}
               </p>
               <p className="text-darkLiver text-[14px] break-all">
-                {user?.email ?? "Email"}
+                {user?.email ?? "Емейл"}
               </p>
 
-              <p className="text-[14px]">{user?.phone ?? "Phone"}</p>
+              <p className="text-[14px]">{user?.phone ?? "Телефон"}</p>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ const PersonalDataSection = () => {
             <Image src={Pencil} alt="Pencil icon" />
           </button>
         </div>
-        <Button text="Exit" bordered icon="signOut" onClick={handleLogout} />
+        <Button text="Вийти" bordered icon="signOut" onClick={handleLogout} />
       </div>
 
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
@@ -123,12 +123,12 @@ const PersonalDataSection = () => {
             className="flex flex-col space-y-[20px] items-center"
           >
             <h1 className="text-limeGreen text-[26px] font-bold">
-              Personal data
+              Персональні дані
             </h1>
-            <p>Do you want to change something?</p>
+            <p>Хочете щось змінити?</p>
             <Input
               inputType="input"
-              placeholder="Enter new name"
+              placeholder="Введіть нове ім'я"
               required
               {...form.getInputProps("firstName")}
               errorType="critical"
@@ -139,7 +139,7 @@ const PersonalDataSection = () => {
 
             <Input
               inputType="input"
-              placeholder="Enter new email"
+              placeholder="Введіть новий емейл"
               required
               {...form.getInputProps("email")}
               errorType="critical"
@@ -147,7 +147,7 @@ const PersonalDataSection = () => {
               background="warmWhite"
               className="placeholder-darkLiver"
             />
-            <Button text="Save changes" type="submit" />
+            <Button text="Зберегти зміни" type="submit" />
           </form>
         </ModalBody>
       </Modal>

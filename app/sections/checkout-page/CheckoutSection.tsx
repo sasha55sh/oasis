@@ -25,7 +25,7 @@ const CheckoutSection = () => {
 
   return (
     <section>
-      <Title title="Checkout" />
+      <Title title="Оформлення замовлення" />
 
       <div className="container py-[30px] flex flex-col space-y-[20px] lg:flex lg:flex-row lg:space-y-0 lg:space-x-[20px]">
         <div className="flex flex-col space-y-[20px] lg:w-2/5">

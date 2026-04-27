@@ -50,22 +50,21 @@ const HeroSection: FC = () => {
     <section className="container flex flex-col items-center justify-between py-[30px] lg:py-[70px] lg:flex-row">
       <div className="flex flex-col justify-center items-center text-white space-y-[15px] lg:space-y-[30px] lg:items-start lg:order-2">
         <p className="text-amberOrange font-vibes text-[32px]">
-          Welcome to Oasis restaurant!
+          Ласкаво просимо до ресторану Oasis!
         </p>
         <h1 className="font-bold leading-none max-w-[550px] text-[42px] text-center lg:text-left lg:max-w-[450px] lg:text-[60px] xl:max-w-[550px]">
-          <span className="text-amberOrange">Di</span>scover the taste of
-          elegance
+          <span className="text-amberOrange">По</span>риньте у смак вишуканості
         </h1>
-        <p className="text-center max-w-[550px] lg:text-left lg:my-[50px] lg:max-w-[450px] xl:max-w-[550px]">
-          Exquisite dishes, warm ambiance, and unforgettable moments await you
-          <br />
-          Where passion meets the plate and each meal becomes a moment to savor
+        <p className="text-center text-pretty max-w-[550px] lg:text-left lg:my-[50px] lg:max-w-[450px] xl:max-w-[550px]">
+          Вишукані страви, затишна атмосфера та незабутні моменти чекають на
+          вас. Де пристрасть зустрічається зі смаком, а кожна страва дарує
+          справжню насолоду.
         </p>
         <Button
-          text="See menu"
+          text="Переглянути меню"
           background="amberOrange"
           fullWidth
-          className="max-w-[190px]"
+          className="max-w-[200px]"
           href="/menu"
           tag="a"
         />

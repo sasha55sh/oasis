@@ -2,8 +2,8 @@ import { redirect } from "next/navigation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis - Account",
-  description: "View all important information on this page",
+  title: "Oasis - Мій вкаунт",
+  description: "Уся важлива інформація зібрана тут",
   icons: { icon: "@/app/favicon.ico" },
 };
 

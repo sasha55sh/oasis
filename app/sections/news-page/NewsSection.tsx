@@ -26,7 +26,7 @@ const NewsSection: FC = () => {
 
   return (
     <section>
-      <Title title="News" />
+      <Title title="Новини" />
 
       <div className="container my-[50px] grid gap-[20px] grid-cols-1 justify-center place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {isLoading ? (

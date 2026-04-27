@@ -34,17 +34,18 @@ const FaqSection: FC = () => {
 
   return (
     <section>
-      <Title title="FAQ Page" />
+      <Title title="FAQ" />
       <div className="container flex flex-col space-y-[15px] my-[50px] lg:my-[70px] items-center text-center lg:space-y-[30px]">
         <h2 className="text-[48px] text-amberOrange font-bold leading-0">
-          Frequently asked questions
+          Поширені запитання
         </h2>
         <p className="text-darkLiver ">
-          On this page you can find all answers. We try to update it frequently
+          На цій сторінці ви знайдете всі відповіді. Ми регулярно оновлюємо
+          інформацію
         </p>
         <div className="grid grid-cols-1 gap-[15px] md:grid-cols-2 lg:grid-cols-3">
-          {faqItems.map((faq) => (
-            <FaqItemComponent key={faq.id} item={faq} />
+          {faqItems.map((faq, index) => (
+            <FaqItemComponent key={index} item={faq} />
           ))}
         </div>
       </div>

@@ -2,8 +2,8 @@ import SuccessfulOrderSection from "@/app/sections/checkout-page/SuccessfulOrder
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Oasis  - Successful order",
-  description: "Quick order processing",
+  title: "Oasis  - Успішне замовлення",
+  description: "Оперативна обробка замовлень",
   icons: { icon: "@/app/favicon.ico" },
   other: { "Cache-Control": "no-store" },
 };

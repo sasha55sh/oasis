@@ -34,10 +34,10 @@ const NewsCardComponent: FC<News & { className?: string }> = ({
           <p className="text-[10px] md:text-[12px] xl:text-[14px]">{date}</p>
         </div>
 
-        <h5 className="text-amberOrange text-[18px] font-bold h-[55px]">
+        <h5 className="text-amberOrange text-[18px] font-bold h-[79px]">
           {title}
         </h5>
-        <p className="text-[12px] text-limeGreen xl:text-[14px]">Read more</p>
+        <p className="text-[12px] text-limeGreen xl:text-[14px]">Переглянути більше</p>
       </a>
     </Card>
   );

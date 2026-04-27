@@ -21,7 +21,7 @@ export type CardProps = {
   discount: number;
   image: string;
   grams: number;
-  description: string;
+  description: string[];
 };
 
 export type CartProductProps = {
@@ -45,7 +45,7 @@ export type Product = {
   title: string;
   handle: string;
   grams: number;
-  description: string;
+  description: string[];
   price: number;
   image: string;
   category: string;

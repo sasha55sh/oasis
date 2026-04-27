@@ -4,7 +4,7 @@ interface cardProps {
   className?: string;
   quantity: number;
   title: string;
-  type: "g" | "cal";
+  type: "г" | "ккал";
 }
 
 const EnergyCardComponent: FC<cardProps> = ({

@@ -16,11 +16,11 @@ const socialObjects = [
 ];
 
 const mainLinks = [
-  { href: "menu", text: "Menu" },
-  { href: "shop", text: "Shop" },
-  { href: "delivery", text: "Delivery" },
+  { href: "menu", text: "Меню" },
+  { href: "shop", text: "Замовити" },
+  { href: "delivery", text: "Доставка" },
   { href: "faq", text: "FAQ" },
-  { href: "news", text: "News" },
+  { href: "news", text: "Новини" },
 ];
 
 const numbersData = [
@@ -36,11 +36,11 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
     return (
       <div className="container flex flex-col justify-between my-[30px] space-y-[15px] sm:grid sm:grid-cols-2 sm:gap-[20px] lg:grid-cols-4">
         <div className="space-y-[10px]">
-          <h2 className="font-bold text-[24px] text-amberOrange">About Us</h2>
+          <h2 className="font-bold text-[24px] text-amberOrange">Про нас</h2>
           <p className="max-w-[310px]">
-            A restaurant with exquisite dishes, where every visit is a new
-            gastronomic experience, unique flavors and an impeccable atmosphere
-            for true gourmets
+            Ресторан із вишуканими стравами, де кожен візит стає новим
+            гастрономічним досвідом, унікальними смаками та бездоганною
+            атмосферою для справжніх гурманів.
           </p>
           <div className="flex space-x-[15px] ">
             <button
@@ -50,13 +50,13 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
               <Image src={Clockwise} alt="clockwise" height={40} width={40} />
             </button>
             <div className="flex flex-col text-[14px]">
-              <p className="text-[18px]">Opening hours:</p>
+              <p className="text-[18px]">Години роботи:</p>
               <p>
-                Monday - Friday(<time dateTime="11:00">11:00</time> -
+                Понеділок - П'ятниця(<time dateTime="11:00">11:00</time> -
                 <time dateTime="22:00"> 22:00)</time>
               </p>
               <p>
-                Saturday - Sunday(<time dateTime="10:00">10:00</time> -
+                Субота - Неділя(<time dateTime="10:00">10:00</time> -
                 <time dateTime="22:00"> 22:00)</time>
               </p>
             </div>
@@ -65,7 +65,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
 
         <div className="sm:justify-self-center">
           <h2 className="font-bold text-[24px] text-amberOrange">
-            Place an order
+            Оформити замовлення
           </h2>
           <ul className="space-y-[8px] mt-[10px] flex flex-col">
             {numbersData.map((number, index) => (
@@ -76,7 +76,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
 
         <div className="hidden sm:block lg:justify-self-center">
           <h2 className="font-bold text-[24px] text-amberOrange">
-            Useful links
+            Корисні посилання
           </h2>
           <ul className="space-y-[8px] mt-[20px] grid grid-cols-3 lg:grid-cols-1 lg:justify-self-center lg:text-center">
             {mainLinks.map(({ href, text }, index) => (
@@ -92,7 +92,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
 
         <div className="sm:justify-self-center">
           <h2 className="font-bold text-[24px] text-amberOrange whitespace-nowrap">
-            We are on social media
+            Наші соціальні мережі
           </h2>
           <ul className="flex mt-[20px] space-x-[20px] sm:justify-center">
             {socialObjects.map((obj, index) => (
@@ -118,7 +118,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
     <footer className={`${className} bg-black text-white pt-[10px]`}>
       <FooterMain />
       <div className="bg-amberOrange p-[30px] text-center">
-        Oasis © {currentYear} by Oleksandra Shapovaliuk. All rights reserved
+        Oasis © {currentYear} by Oleksandra Shapovaliuk. Усі права захищенно
       </div>
     </footer>
   );

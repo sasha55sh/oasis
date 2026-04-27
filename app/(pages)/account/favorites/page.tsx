@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import AccountSection from "@/app/sections/account-page/AccountSection";
 
 export const metadata: Metadata = {
-  title: "Oasis - Favorites",
-  description: "View all your favorites products on this page",
+  title: "Oasis - Улюблене",
+  description: "Перегляньте всі улюблені товари на цій сторінці",
   icons: { icon: "@/app/favicon.ico" },
 };
 
@@ -17,4 +17,3 @@ const FavoritesPage = () => {
 };
 
 export default FavoritesPage;
-

@@ -56,13 +56,13 @@ const FavoritesSection = () => {
             priority
           />
           <p className="text-center text-[24px] text-amberOrange font-bold sm:text-[30px] lg:text-[36px]">
-            You don't have any favorite products yet?
+            У вас ще немає улюблених товарів?
           </p>
           <p className="text-darkLiver font-bold text-[18px] sm:text-[22px]">
-            Add some to see them here!
+            Додайте їх, щоб побачити тут!
           </p>
           <Button
-            text="Back to shop"
+            text="Повернутися"
             tag="a"
             href="/shop"
             background="limeGreen"

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import ArticleSection from "@/app/sections/article-page/ArticleSection";
 
 export const metadata: Metadata = {
-  title: "Oasis - Article",
-  description: "This article has the latest information!",
+  title: "Oasis - Стаття",
+  description: "Ця новина містить найсвіжішу інформацію!",
   icons: { icon: "@/app/favicon.ico" },
 };
 
@@ -17,7 +17,7 @@ const Page = ({ params }: { params: any }) => {
 
   return (
     <>
-    <ArticleSection articleHandle={articleHandle}/>
+      <ArticleSection articleHandle={articleHandle} />
     </>
   );
 };

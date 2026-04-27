@@ -25,9 +25,9 @@ const chefsData = [
 const OurChefsSection: FC = () => {
   return (
     <section className="container flex flex-col my-[30px] space-y-[20px] items-center">
-      <p className="text-amberOrange font-vibes text-[32px]">Chefs</p>
+      <p className="text-amberOrange font-vibes text-[32px]">Наші кухарі</p>
       <h1 className="font-bold text-[42px] text-white leading-none text-center lg:text-[60px]">
-        <span className="text-amberOrange ">Me</span>et our chefs
+        <span className="text-amberOrange ">Наша</span> команда шеф-кухарів
       </h1>
 
       <div className="hidden justify-between gap-[20px] lg:flex">

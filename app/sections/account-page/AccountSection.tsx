@@ -13,7 +13,7 @@ interface AccountSectionProps {
 const AccountSection: FC<AccountSectionProps> = ({ activeTab }) => {
   return (
     <section>
-      <Title title="My Account" />
+      <Title title="Мій акаунт" />
       <div className="container my-[30px] flex flex-col space-y-[30px] lg:flex-row lg:space-y-0 lg:gap-x-[15px]">
         <div className="flex flex-col space-y-[30px]">
           <PersonalDataSection />

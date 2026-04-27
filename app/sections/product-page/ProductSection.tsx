@@ -30,7 +30,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
       setIsLoading(true);
       const productData: Product = await getProductByHandle(
         productHandle,
-        setInfoMessage
+        setInfoMessage,
       );
       if (productData) {
         setProduct(productData);
@@ -75,26 +75,26 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   return (
     <section>
       <div className="max-w-[200px] mt-[20px] ml-[20px]">
-        <Button text="Back to shop" icon="back" tag="a" href="/shop" bordered />
+        <Button text="Повернутися" icon="back" tag="a" href="/shop" bordered />
       </div>
       <div className="container flex flex-col items-center my-[30px] lg:grid lg:grid-cols-2 lg:items-start">
-        {product?.discount ?? 0 > 0 ? (
+        {(product?.discount ?? 0 > 0) ? (
           <div className="relative inline-block">
             <span className="absolute p-[10px] bg-electricRed text-white top-[-10px] left-[-15px] rounded-xl ">
               -{Number(product?.discount) * 100}%
             </span>
             <Image
-              src={product?.image ?? "Product Image"}
+              src={product?.image ?? "Зображення товару"}
               width={275}
               height={275}
               alt="Product Image"
               priority
-              className=" rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
+              className="rounded-xl mini:w-[370px] md:w-[415px] lg:w-[440px] xl:w-[550px]"
             />
           </div>
         ) : (
           <Image
-            src={product?.image ?? "Product Image"}
+            src={product?.image ?? "Зображення товару"}
             width={275}
             height={275}
             alt="Product Image"
@@ -105,32 +105,32 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
 
         <div className="flex flex-col space-y-[15px] mt-[30px] items-center text-center lg:items-start lg:text-left lg:mt-0">
           <h2 className="text-[24px] text-darkLiver font-bold sm:text-[30px] lg:text-[36px] ">
-            {product?.title ?? "Product Title"}
+            {product?.title ?? "Назва товару"}
           </h2>
           <p className="text-oldSilver md:text-[18px]">
-            {product?.description ?? "Description"}
+            {product?.description?.join(", ") ?? "Опис"}
           </p>
 
           <hr className="w-full h-[2px]" />
 
           <div className="flex flex-col whitespace-nowrap space-y-[15px] w-full items-center mini:space-y-0 mini:flex-row mini:justify-center mini:space-x-[20px] sm:justify-around">
             <div className="flex items-center space-x-[20px]">
-              {product?.discount ?? 0 > 0 ? (
+              {(product?.discount ?? 0 > 0) ? (
                 <div className="flex items-center space-x-[5px]">
                   <p className="text-[22px] text-electricRed font-bold md:text-[24px]">
-                    {discountedPrice} $
+                    {discountedPrice} грн
                   </p>
                   <p className="text-amberOrange font-medium line-through">
-                    {Number(product?.price).toFixed(2) ?? "0.00"} $
+                    {Number(product?.price).toFixed(2) ?? "0.00"} грн
                   </p>
                 </div>
               ) : (
                 <p className="text-[22px] text-amberOrange font-bold md:text-[24px]">
-                  {Number(product?.price).toFixed(2) ?? "0.00"} $
+                  {Number(product?.price).toFixed(2) ?? "0.00"} грн
                 </p>
               )}
 
-              <p className="text-oldSilver">{product?.grams ?? "0"} g</p>
+              <p className="text-oldSilver">{product?.grams ?? "0"} г</p>
             </div>
 
             {quantity > 0 ? (
@@ -142,7 +142,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
               />
             ) : (
               <Button
-                text="I want it"
+                text="Хочу це"
                 icon="basket"
                 onClick={handleAddToCart}
                 className="w-[80%] mini:w-[50%]"
@@ -154,29 +154,29 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
 
           <div className="flex flex-col space-y-[15px] text-center">
             <p className="text-[18px] text-darkLiver md:pt-[10px] lg:text-left">
-              Energy value of the product:
+              Енергетична цінність продукту:
             </p>
 
             <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:grid-cols-3 md:grid-cols-4 md:grid-rows-1 lg:grid-cols-3 xl:grid-cols-4">
               <EnergyCard
                 quantity={product?.cal ?? 0}
-                title="Calories"
-                type="cal"
+                title="Калорії"
+                type="ккал"
               />
               <EnergyCard
                 quantity={product?.proteins ?? 0}
-                title="Proteins"
-                type="g"
+                title="Білок"
+                type="г"
               />
-              <EnergyCard quantity={product?.fats ?? 0} title="Fats" type="g" />
+              <EnergyCard quantity={product?.fats ?? 0} title="Жири" type="г" />
               <EnergyCard
                 quantity={product?.carbohydrates ?? 0}
-                title="Carbohydrates"
-                type="g"
+                title="Вуглеводи"
+                type="г"
               />
             </div>
             <p className="text-[14px] text-oldSilver/50 lg:text-left">
-              Energy value is indicated per <b>100g</b>
+              Енергетична цінність вказана на <b>100г</b>
             </p>
           </div>
         </div>

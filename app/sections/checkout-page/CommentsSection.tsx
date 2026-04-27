@@ -32,12 +32,12 @@ const CommentsSection: FC<{ setCommentsData: any }> = ({ setCommentsData }) => {
 
   return (
     <Card className="rounded-xl shadow-xl" id="comments">
-      <h2 className="text-limeGreen text-[24px]">Comments</h2>
+      <h2 className="text-limeGreen text-[24px]">Коментарі</h2>
 
       <form className="flex flex-col items-center space-y-[15px]">
         <Input
           inputType="input"
-          placeholder="Number of cutlery"
+          placeholder="Кількість приборів"
           required
           {...form.getInputProps("cutleryQuantity")}
           fullWidth
@@ -46,7 +46,7 @@ const CommentsSection: FC<{ setCommentsData: any }> = ({ setCommentsData }) => {
 
         <Input
           inputType="textarea"
-          placeholder="Order note"
+          placeholder="Нотатка до замовлення"
           {...form.getInputProps("comments")}
           fullWidth
           background="warmWhite"

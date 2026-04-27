@@ -13,8 +13,8 @@ const TabSectionComponent: FC<tabProps> = ({ activeTab }) => {
   const router = useRouter();
 
   const tabs = [
-    { id: "history", title: "History", src: History, alt: "History icon" },
-    { id: "favorites", title: "Favorites", src: Heart, alt: "Heart icon" },
+    { id: "history", title: "Історія", src: History, alt: "History icon" },
+    { id: "favorites", title: "Улюблене", src: Heart, alt: "Heart icon" },
   ];
 
   return (

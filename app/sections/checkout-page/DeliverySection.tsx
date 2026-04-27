@@ -18,7 +18,7 @@ const generateDates = (days: number) => {
 
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const label = i === 0 ? "Today" : `${day}.${month}`;
+    const label = i === 0 ? "Сьогодні" : `${day}.${month}`;
 
     dates.push({
       label,
@@ -113,7 +113,7 @@ const DeliverySection: FC<{
   return (
     <Card className="rounded-xl shadow-xl" id="delivery">
       <div className="flex items-center justify-between">
-        <h2 className="text-limeGreen text-[24px]">Delivery time</h2>
+        <h2 className="text-limeGreen text-[24px]">Дата доставки</h2>
 
         <Popover
           aria-labelledby="delivery-popover"
@@ -121,7 +121,7 @@ const DeliverySection: FC<{
           arrow={false}
         >
           <div className="flex space-x-[8px]">
-            <p className="text-amberOrange">Delivery area</p>
+            <p className="text-amberOrange">Зона доставки</p>
             <button>
               <Image src={Info} alt="Info icon" />
             </button>
@@ -138,12 +138,14 @@ const DeliverySection: FC<{
               setSelectedDate(value);
               setSelectedTime("");
             }}
-            placeholder="Choose delivery day"
+            placeholder="Оберіть дату доставки"
             className="max-w-[300px] mini:max-w-[450px] sm:max-w-[280px] md:max-w-[340px]
         "
           />
           {isSubmitted && !selectedDate && (
-            <p className="text-electricRed m-[10px]">Please select a date</p>
+            <p className="text-electricRed m-[10px]">
+              Будь ласка, оберіть дату
+            </p>
           )}
         </div>
 
@@ -151,7 +153,7 @@ const DeliverySection: FC<{
           <Select
             options={[
               ...(selectedDate && availableTimes.length > 0
-                ? [{ label: "Closest", value: "closest" }]
+                ? [{ label: "Найближчий", value: "closest" }]
                 : []),
               ...availableTimes.map((time) => ({
                 label: time,
@@ -167,11 +169,11 @@ const DeliverySection: FC<{
               }
             }}
             disabled={!selectedDate}
-            placeholder="Choose delivery time"
+            placeholder="Оберіть час доставки"
             className="max-w-[300px] mini:max-w-[450px] sm:max-w-[280px] md:max-w-[340px]"
           />
           {isSubmitted && !selectedTime && (
-            <p className="text-electricRed m-[10px]">Please select a time</p>
+            <p className="text-electricRed m-[10px]">Будь ласка, оберіть час</p>
           )}
         </div>
       </div>
@@ -186,7 +188,7 @@ const DeliverySection: FC<{
             className="w-[25px] h-[25px] text-amberOrange bg-oldSilver/20 border-oldSilver/50 focus:ring-amberOrange focus:ring-2"
           />
           <label htmlFor="self-pickup" className="ml-[10px] ">
-            Self pickup
+            Самовивіз
           </label>
         </div>
 
@@ -199,11 +201,11 @@ const DeliverySection: FC<{
             className="w-[25px] h-[25px] text-amberOrange bg-oldSilver/20 border-oldSilver/50 focus:ring-amberOrange focus:ring-2"
           />
           <label htmlFor="courier" className="ml-[10px] ">
-            Сourier delivery
+            Кур'єрська доставка
           </label>
         </div>
         {isSubmitted && !selectedOption && (
-          <p className="text-electricRed m-[10px]">Choose a delivery method</p>
+          <p className="text-electricRed m-[10px]">Оберіть метод доставки</p>
         )}
       </div>
 
@@ -211,7 +213,7 @@ const DeliverySection: FC<{
         <form className="flex flex-col items-center space-y-[20px]">
           <Input
             inputType="input"
-            placeholder="Street"
+            placeholder="Вулиця"
             required
             {...form.getInputProps("street")}
             errorType="critical"
@@ -221,7 +223,7 @@ const DeliverySection: FC<{
           <div className="w-full space-y-[20px] flex flex-col items-center mini:flex-row mini:space-y-0 mini:space-x-[10px]">
             <Input
               inputType="input"
-              placeholder="House"
+              placeholder="Будинок"
               required
               {...form.getInputProps("house")}
               errorType="critical"
@@ -231,7 +233,7 @@ const DeliverySection: FC<{
 
             <Input
               inputType="input"
-              placeholder="Flat (optionally)"
+              placeholder="Квартира(необов'язково)"
               {...form.getInputProps("flat")}
               fullWidth
               background="warmWhite"

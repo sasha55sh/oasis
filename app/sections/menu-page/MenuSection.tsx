@@ -48,16 +48,16 @@ const MenuList = () => {
 
   return (
     <section>
-      <TitleComponent title="our menu" />
+      <TitleComponent title="Наше меню" />
       <div className="container flex flex-col space-y-[70px] my-[70px]">
         <MenuCategory
-          sectionTitle="Starter Menu"
+          sectionTitle="Закуски"
           imageSrc={Starter}
           imageAlt="Udon"
           items={starterItems}
         />
         <MenuCategory
-          sectionTitle="Main Course"
+          sectionTitle="Основні страви"
           imageSrc={MainDish}
           imageAlt="Cheessburger"
           items={mainItems}
@@ -68,13 +68,13 @@ const MenuList = () => {
       <BenefitSection />
       <div className="container flex flex-col space-y-[70px] my-[70px]">
         <MenuCategory
-          sectionTitle="Dessert"
+          sectionTitle="Десерти"
           imageSrc={Dessert}
           imageAlt="Pastry"
           items={dessertItems}
         />
         <MenuCategory
-          sectionTitle="Drinks"
+          sectionTitle="Напої"
           imageSrc={Drinks}
           imageAlt="Cocktail"
           items={drinksItems}

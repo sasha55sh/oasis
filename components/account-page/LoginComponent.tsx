@@ -52,11 +52,11 @@ const LoginComponent: FC<{
     },
     validate: {
       phone: (value) => {
-        if (!value) return "Phone is required";
-        if (!/^\+38\d{10}$/.test(value)) return "Incorrect phone format";
+        if (!value) return "Номер телефону обов'язковий";
+        if (!/^\+38\d{10}$/.test(value)) return "Неправильний формат телефону";
         const operatorCode = value.slice(3, 6);
         if (!validOperators.includes(operatorCode))
-          return "Invalid operator code";
+          return "Неправильний код оператора";
         return null;
       },
     },
@@ -68,7 +68,7 @@ const LoginComponent: FC<{
     },
     validate: {
       code: (value) =>
-        value.length === 6 ? null : "Code must contain 6 digits",
+        value.length === 6 ? null : "Код повинен містити 6 цифр",
     },
   });
 
@@ -89,7 +89,7 @@ const LoginComponent: FC<{
         "recaptcha-container",
         {
           size: "invisible",
-        }
+        },
       );
     }
   };
@@ -102,13 +102,13 @@ const LoginComponent: FC<{
       const confirmation = await signInWithPhoneNumber(
         auth,
         values.phone,
-        window.recaptchaVerifier
+        window.recaptchaVerifier,
       );
       setConfirmationResult(confirmation);
       setPhoneValue(values.phone);
       setStep("code");
     } catch (error) {
-      setError("Failed to send code");
+      setError("Невдалося надіслати код");
     }
     setLoading(false);
   };
@@ -126,7 +126,7 @@ const LoginComponent: FC<{
       router.push("/account");
       setOpenModal(false);
     } catch (error) {
-      setError("Invalid code");
+      setError("Неправильний код");
     }
     setLoading(false);
   };
@@ -139,12 +139,7 @@ const LoginComponent: FC<{
   };
 
   return (
-    <Modal
-      show={openModal}
-      onClose={onCloseModal}
-      size="md"
-      popup
-    >
+    <Modal show={openModal} onClose={onCloseModal} size="md" popup>
       <ModalHeader />
       <ModalBody>
         <div id="recaptcha-container"></div>
@@ -153,10 +148,10 @@ const LoginComponent: FC<{
             onSubmit={phoneForm.onSubmit(handleSendCode)}
             className="flex flex-col space-y-[20px] my-[50px] items-center"
           >
-            <h1 className="text-limeGreen text-[26px] font-bold">Log in</h1>
+            <h1 className="text-limeGreen text-[26px] font-bold">Увійти</h1>
             <Input
               inputType="input"
-              placeholder="Enter your phone number"
+              placeholder="Введіть номер телефону"
               required
               {...phoneForm.getInputProps("phone")}
               errorType="critical"
@@ -165,12 +160,12 @@ const LoginComponent: FC<{
               className="placeholder-darkLiver"
             />
             <p className="text-center text-oldSilver">
-              Warning: working in testing mode, so try to enter{" "}
+              Увага: система працює в тестовому режимі, спробуйте ввести дані{" "}
               <span className="font-bold">0680000000</span>
             </p>
             <Button
               type="submit"
-              text={loading ? "Sending..." : "Get code"}
+              text={loading ? "Надсилається..." : "Отримати код"}
               disabled={loading}
             />
             <p className="text-electricRed text-[14px]">{error}</p>
@@ -181,12 +176,12 @@ const LoginComponent: FC<{
             className="flex flex-col space-y-[20px] my-[50px] items-center"
           >
             <p className="text-darkCharcoal text-[22px]">
-              Code sent to{" "}
+              Код надіслано до{" "}
               <span className="text-amberOrange font-bold">{phoneValue}</span>
             </p>
             <Input
               inputType="input"
-              placeholder="Enter code"
+              placeholder="Введіть код"
               required
               {...codeForm.getInputProps("code")}
               errorType="critical"
@@ -198,17 +193,17 @@ const LoginComponent: FC<{
               onClick={() => setStep("phone")}
               className="text-electricRed text-[14px] underline"
             >
-              Change number
+              Змінити номер
             </button>
             <p className="text-center text-oldSilver">
-              Warning: working in testing mode, so try to enter{" "}
+              Увага: система працює в тестовому режимі. Спробуйте ввести дані.{" "}
               <span className="font-bold">111111</span>
             </p>
             <Button
               type="submit"
               background="limeGreen"
               disabled={loading}
-              text={loading ? "Verifying..." : "Confirm"}
+              text={loading ? "Підтвердження..." : "Підтвердити"}
             />
             <p className="text-electricRed text-[14px]">{error}</p>
           </form>

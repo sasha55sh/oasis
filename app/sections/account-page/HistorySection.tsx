@@ -43,16 +43,17 @@ const HistorySection = () => {
             className="p-[15px] border border-oldSilver/30 rounded-xl"
           >
             <h3 className="font-bold text-[18px] mb-[8px]">
-              Order <span className="text-amberOrange">#{order.orderId}</span> —{" "}
+              Замовлення{" "}
+              <span className="text-amberOrange">#{order.orderId}</span> —{" "}
               {order.selectedTime} {order.selectedDate}
             </h3>
             <p className="text-oldSilver">
-              Method: <span className="font-medium">{order.method}</span>
+              Метод: <span className="font-medium">{order.method}</span>
             </p>
             <p className="my-[10px] text-darkCharcoal">
-              Total:{" "}
+              Всього:{" "}
               <span className="text-electricRed font-bold">
-                {Number(order.totalAmount).toFixed(2)} $
+                {Number(order.totalAmount).toFixed(2)} грн
               </span>
             </p>
             <div className="grid grid-cols-1 gap-[15px] md:grid-cols-3 lg:grid-cols-2">
@@ -73,9 +74,9 @@ const HistorySection = () => {
                     <p className="font-bold text-darkCharcoal">
                       {product.title}
                     </p>
-                    <p className="text-darkLiver">{product.grams} g</p>
+                    <p className="text-darkLiver">{product.grams} г</p>
                     <p className="text-amberOrange font-medium">
-                      {product.price.toFixed(2)} ${" "}
+                      {product.price.toFixed(2)} грн{" "}
                       <span className="text-darkLiver text-[14px]">
                         {" "}
                         × {product.quantity}
@@ -97,13 +98,13 @@ const HistorySection = () => {
             priority
           />
           <p className="text-[24px] text-amberOrange font-bold sm:text-[30px] lg:text-[36px]">
-            No orders found
+            Замовлень не знайдено
           </p>
           <p className="text-darkLiver font-bold text-[18px] sm:text-[22px]">
-            Let's choose something!
+            Давайте щось оберемо!
           </p>
           <Button
-            text="Back to shop"
+            text="Повернутися"
             tag="a"
             href="/shop"
             background="limeGreen"

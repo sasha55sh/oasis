@@ -5,20 +5,20 @@ import Title from "@/components/TitleComponent";
 const NotFoundSection: FC = () => {
   return (
     <section>
-      <Title title="404 Error" />
+      <Title title="404 Помилка" />
       <div className="container flex flex-col items-center justify-center space-y-[15px] my-[50px] text-center lg:space-y-[30px] lg:my-[70px]">
         <h1 className="text-amberOrange text-[64px] font-bold leading-none lg:text-[96px]">
           404
         </h1>
         <h2 className="text-darkCharcoal text-[24px] font-bold lg:text-[32px]">
-          Oops! Look likes something going wrong
+          Упс! Здається, щось пішло не так
         </h2>
         <p className="text-darkLiver">
-          Page cannot be found! We’ll have it figured out in no time.
-          <br /> Menwhile, cheek out these fresh ideas:
+          Сторінку не знайдено! Ми вже працюємо над вирішенням цієї проблеми.
+          <br /> А поки що перегляньте ці цікаві пропозиції:
         </p>
         <Button
-          text="Go to home"
+          text="На головну"
           background="amberOrange"
           href="/"
           tag="a"

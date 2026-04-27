@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import AccountSection from "@/app/sections/account-page/AccountSection";
 
 export const metadata: Metadata = {
-  title: "Oasis - History",
-  description: "View all your orders history on this page",
+  title: "Oasis - Історія замовлень",
+  description: "Перегляньте всю історію замовлень",
   icons: { icon: "@/app/favicon.ico" },
 };
 
@@ -13,7 +13,6 @@ export const generateViewport = () => ({
 });
 
 export const revalidate = 60;
-
 
 const HistoryPage = () => {
   return <AccountSection activeTab="history" />;
