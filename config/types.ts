@@ -106,3 +106,20 @@ export type Order = {
   totalAmount: string;
   products: OrderProduct[];
 };
+
+export type CalorieOptions = {
+  kcal: number;
+  proteins: number;
+  fats: number;
+  carbohydrates: number;
+  prices: number[];
+
+}
+export type NutritionProgram = {
+  _id: string;
+  title: string;
+  mainDescription: string;
+  forWhomDescription: string;
+  compositionDescription: string;
+  calorieOptions: CalorieOptions[]
+}

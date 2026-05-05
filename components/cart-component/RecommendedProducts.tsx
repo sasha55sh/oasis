@@ -37,7 +37,7 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
 
   return (
     <li
-      className={`${className} rounded-md p-[10px] shadow-md flex flex-col items-center max-w-[250px]`}
+      className={`${className} rounded-md p-[10px] shadow-md flex flex-col max-w-[250px]`}
     >
       <div className="flex flex-col space-y-[8px]">
         <Image
@@ -45,10 +45,10 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
           alt={product.title}
           width={100}
           height={100}
-          className="rounded-xl object-fill w-[220px] h-[220px]"
+          className="rounded-xl object-cover w-[220px] h-[220px] self-center"
         />
 
-        <p className="text-[18px] font-bold text-darkLiver h-[55px]">
+        <p className="text-[18px] font-bold text-darkLiver text-left h-[55px]">
           {product.title}
         </p>
         <p className="text-oldSilver">{product.grams} г</p>

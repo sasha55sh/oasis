@@ -18,10 +18,10 @@ const ServerErrorSection = ({
   };
   return (
     <section>
-      <Title title="505 Помилка" />
+      <Title title="500 Помилка" />
       <div className="container flex flex-col items-center justify-center space-y-[15px] my-[50px] text-center lg:space-y-[30px] lg:my-[70px]">
         <h1 className="text-amberOrange text-[64px] font-bold leading-none lg:text-[96px]">
-          505
+          500
         </h1>
         <h2 className="text-darkCharcoal text-[24px] font-bold lg:text-[32px]">
           Упс! Здається, щось пішло не так

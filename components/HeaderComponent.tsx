@@ -19,9 +19,10 @@ import Close from "@/images/vectors/close.svg";
 const navData = [
   { link: "/menu", text: "Меню" },
   { link: "/shop", text: "Замовити" },
+  { link: "/nutrition-programs", text: "Програми харчування" },
   { link: "/delivery", text: "Доставка" },
-  { link: "/faq", text: "FAQ" },
   { link: "/news", text: "Новини" },
+  { link: "/faq", text: "FAQ" },
 ];
 
 const Header: FC<{ className?: string }> = ({ className }) => {
