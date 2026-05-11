@@ -27,6 +27,7 @@ export interface RequestData {
   kcal: number;
   days: number;
   totalPrice: number;
+  comments: string;
 }
 
 const ProgramDescription = ({
@@ -291,7 +292,6 @@ const ProgramDescription = ({
               openModal={openModal}
               setOpenModal={setOpenModal}
               requestData={requestData}
-            
             />
           </Tabs>
         </TabsContent>

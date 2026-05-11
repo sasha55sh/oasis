@@ -1,6 +1,6 @@
 import { User } from "@/config/types";
 import { getUser } from "@/service/UserService";
-import { hasLength, isEmail, useForm } from "@mantine/form";
+import { hasLength, useForm } from "@mantine/form";
 import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Input from "@/components/InputComponent";
@@ -57,6 +57,7 @@ const RequestOrderModal = ({
     initialValues: {
       firstName: "",
       phoneNumber: "",
+      comments: "",
       street: "",
       house: "",
       flat: "",
@@ -109,6 +110,7 @@ const RequestOrderModal = ({
         street: result.street || "",
         house: result.house || "",
         flat: result.flat || "",
+        comments: result.comments || "",
       });
     }
   }, []);
@@ -139,24 +141,21 @@ const RequestOrderModal = ({
 
       const payload = {
         userData: {
+          uid: user?._id,
           firstName: values.firstName,
           phoneNumber: values.phoneNumber,
-
+          method: selectedOption,
           street: selectedOption === "courier" ? values.street : "",
-
           house: selectedOption === "courier" ? values.house : "",
-
           flat: selectedOption === "courier" ? values.flat : "",
-
-          uid: user?._id,
         },
-
         programData: {
           title: requestData.program,
           kcal: requestData.kcal,
           duration: requestData.days,
           totalPrice: requestData.totalPrice,
         },
+        comments: values.comments,
       };
 
       await createProgramRequest(payload);
@@ -234,6 +233,17 @@ const RequestOrderModal = ({
               errorType="critical"
               fullWidth
               background="warmWhite"
+              className="placeholder-darkLiver"
+            />
+
+            <Input
+              inputType="textarea"
+              placeholder="Коментарі"
+              {...form.getInputProps("comments")}
+              errorType="critical"
+              fullWidth
+              background="warmWhite"
+              className="placeholder-darkLiver"
             />
 
             <div className="text-darkLiver flex space-x-[15px]">

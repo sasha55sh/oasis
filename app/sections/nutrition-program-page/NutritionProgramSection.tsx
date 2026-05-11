@@ -8,7 +8,6 @@ import { getNutritionPrograms } from "@/service/NutritionProgramService";
 import ProgramDescription from "./ProgramDescription";
 import { getProducts } from "@/service/ProductService";
 import ProgramDescriptionSkeleton from "./ProgramDescriptionSceleton";
-import { getUser } from "@/service/UserService";
 
 const NutritionProgramSection: FC = () => {
   const [nutritionPrograms, setNutritionPrograms] = useState<
@@ -22,7 +21,6 @@ const NutritionProgramSection: FC = () => {
       setIsLoading(true);
       const programs = await getNutritionPrograms();
       const products = await getProducts();
-      const user = await getUser();
       if (programs.length) {
         setNutritionPrograms(programs);
         const shuffled = [...products].sort(() => 0.5 - Math.random());
