@@ -156,6 +156,7 @@ const RequestOrderModal = ({
           totalPrice: requestData.totalPrice,
         },
         comments: values.comments,
+        status: "активне",
       };
 
       await createProgramRequest(payload);
