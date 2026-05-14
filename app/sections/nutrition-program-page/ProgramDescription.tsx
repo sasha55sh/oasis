@@ -8,6 +8,7 @@ import { useState } from "react";
 import Button from "@/components/ButtonComponent";
 import { cn } from "@/libs/utils";
 import RequestOrderModal from "./RequestOrderModal";
+import { comment } from "postcss";
 
 const daysData = [
   { label: "Пробний день", value: 1 },
@@ -27,7 +28,6 @@ export interface RequestData {
   kcal: number;
   days: number;
   totalPrice: number;
-  comments: string;
 }
 
 const ProgramDescription = ({
