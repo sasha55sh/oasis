@@ -48,7 +48,7 @@ const HistorySection = () => {
               {order.selectedTime} {order.selectedDate}
             </h3>
             <p className="text-oldSilver">
-              Метод: <span className="font-medium">{order.method}</span>
+              Метод: <span className="font-medium">{order.method === "self-pickup" ? "Самовивіз" : "Кур'єрська доставка"}</span>
             </p>
             <p className="my-[10px] text-darkCharcoal">
               Всього:{" "}
