@@ -165,8 +165,8 @@ const ProductsSection: FC<{
       {error && (
         <p className="text-electricRed text-[20px] font-bold text-center">
           {totalAmount < 10
-            ? "Minimum order amount is 10грн"
-            : "Fill all required fields"}
+            ? "Мінімальне замовлення - 10грн"
+            : "Заповніть усі необхідні поля"}
         </p>
       )}
 
