@@ -14,12 +14,10 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
   const [article, setArticle] = useState<News | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const { setInfoMessage } = useAlert();
-
   useEffect(() => {
     const fetchArticle = async () => {
       setIsLoading(true);
-      const articleData = await getNewsByHandle(articleHandle, setInfoMessage);
+      const articleData = await getNewsByHandle(articleHandle);
       if (articleData) {
         setArticle(articleData);
       } else {

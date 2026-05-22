@@ -15,10 +15,17 @@ import RecommendedProducts from "@/components/cart-component/RecommendedProducts
 import EmptyCart from "@/images/shop-page/cart-empty.svg";
 
 const ProductsSection: FC<{
-  validateAll: any;
-  deliveryData: any;
-  personalData: any;
-  commentsData: any;
+  validateAll: () => boolean;
+  deliveryData: {
+    selectedDate: string;
+    selectedTime: string;
+    selectedOption: string;
+    street: string;
+    house: string;
+    flat: string;
+  };
+  personalData: { firstName: string; phone: string };
+  commentsData: { cutleryQuantity: string; comments: string };
 }> = ({ validateAll, deliveryData, personalData, commentsData }) => {
   const [randomProducts, setRandomProducts] = useState<Product[]>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -69,7 +76,7 @@ const ProductsSection: FC<{
       house: deliveryData.house,
       comments: commentsData.comments,
       cutleryQuantity: commentsData.cutleryQuantity,
-      totalAmount: totalAmount,
+      totalAmount: String(totalAmount),
 
       products: products.map((product) => ({
         productId: product.id,

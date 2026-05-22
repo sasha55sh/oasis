@@ -46,7 +46,14 @@ const generateTimes = () => {
 };
 
 const DeliverySection: FC<{
-  setDeliveryData: (data: any) => void;
+  setDeliveryData: (data: {
+    selectedDate: string;
+    selectedTime: string;
+    selectedOption: string;
+    street: string;
+    house: string;
+    flat: string;
+  }) => void;
 
   isSubmitted: boolean;
 }> = ({ setDeliveryData, isSubmitted }) => {

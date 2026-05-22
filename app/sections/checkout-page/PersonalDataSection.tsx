@@ -5,8 +5,8 @@ import Input from "@/components/InputComponent";
 import { getUser } from "@/service/UserService";
 
 const CheckoutSection: FC<{
-  setPersonalData: any;
-  registerValidation: any;
+  setPersonalData: (data: { firstName: string; phone: string }) => void;
+  registerValidation: (validator: () => boolean) => void;
 }> = ({ setPersonalData, registerValidation }) => {
   const validOperators = [
     "067",

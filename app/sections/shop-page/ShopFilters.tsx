@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, FC } from "react";
 import Image from "next/image";
-import { CategoryButton } from "@/config/types";
+import { CategoryButton, CardProps } from "@/config/types";
 import { useDebounce } from "@/hooks/useDebounce";
 import SearchInput from "@/components/SearchInputComponent";
 import Select from "@/components/SelectComponent";
@@ -48,8 +48,8 @@ const optionsData = [
 ];
 
 const ShopFilters: FC<{
-  setProducts: any;
-  products: any;
+  setProducts: (products: CardProps[]) => void;
+  products: CardProps[];
   isLoading: boolean;
 }> = ({ setProducts, products, isLoading }) => {
   const [searchedText, setSearchedText] = useState<string>("");

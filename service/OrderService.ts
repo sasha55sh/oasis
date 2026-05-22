@@ -1,9 +1,10 @@
 import axios from "axios";
 import { BASE_URL } from "@/config/config";
+import { Order } from "@/config/types";
 
-export const createOrder = async (orderData: any) => {
+export const createOrder = async (orderData: Omit<Order, "_id">) => {
   const token = localStorage.getItem("token");
-  const headers: any = {
+  const headers: Record<string, string> = {
     "Content-Type": "application/json",
   };
   if (token) {

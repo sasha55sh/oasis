@@ -12,8 +12,8 @@ export const generateViewport = () => ({
   width: "device-width",
 });
 
-const Page = ({ params }: { params: any }) => {
-  const articleHandle = params.articleHandle;
+const Page = async ({ params }: { params: Promise<{ articleHandle: string }> }) => {
+  const { articleHandle } = await params;
 
   return (
     <>

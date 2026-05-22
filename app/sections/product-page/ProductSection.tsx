@@ -18,7 +18,6 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const { setInfoMessage } = useAlert();
   const { addToCart, products, removeFromCart } = useCart();
 
   const cartProduct = products.find((p) => p.handle === productHandle);
@@ -28,10 +27,7 @@ const ProductSection: FC<productProps> = ({ productHandle }) => {
   useEffect(() => {
     const fetchProduct = async () => {
       setIsLoading(true);
-      const productData: Product = await getProductByHandle(
-        productHandle,
-        setInfoMessage,
-      );
+      const productData: Product = await getProductByHandle(productHandle);
       if (productData) {
         setProduct(productData);
       } else {

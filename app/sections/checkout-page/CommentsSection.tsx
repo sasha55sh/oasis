@@ -3,7 +3,7 @@ import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";
 import Input from "@/components/InputComponent";
 
-const CommentsSection: FC<{ setCommentsData: any }> = ({ setCommentsData }) => {
+const CommentsSection: FC<{ setCommentsData: (data: { cutleryQuantity: string; comments: string }) => void }> = ({ setCommentsData }) => {
   const form = useForm({
     initialValues: {
       cutleryQuantity: "",

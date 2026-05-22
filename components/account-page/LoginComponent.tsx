@@ -1,12 +1,12 @@
 "use client";
+import React, { FC, useEffect, useState } from "react";
+import { signInWithPhoneNumber, RecaptchaVerifier, ConfirmationResult } from "firebase/auth";
+
 declare global {
   interface Window {
-    recaptchaVerifier: any;
+    recaptchaVerifier: RecaptchaVerifier;
   }
 }
-
-import React, { FC, useEffect, useState } from "react";
-import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { verifyCodeBackend } from "@/service/AuthService";
 import { useRouter } from "next/navigation";
@@ -20,7 +20,7 @@ const LoginComponent: FC<{
   setOpenModal: (value: boolean) => void;
 }> = ({ openModal, setOpenModal }) => {
   const [step, setStep] = useState<"phone" | "code">("phone");
-  const [confirmationResult, setConfirmationResult] = useState<any>(null);
+  const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [phoneValue, setPhoneValue] = useState("");
   const [error, setError] = useState<string>("");
@@ -117,6 +117,7 @@ const LoginComponent: FC<{
     setLoading(true);
     setError("");
     try {
+      if (!confirmationResult) return;
       const result = await confirmationResult.confirm(values.code);
       const user = result.user;
       const idToken = await user.getIdToken();
