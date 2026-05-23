@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Product } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
 import { Plus } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface productProps {
   product: Product;
@@ -37,7 +38,10 @@ const RecommendedProduct: FC<productProps> = ({ product, className }) => {
 
   return (
     <li
-      className={`${className} rounded-md p-[10px] shadow-md flex flex-col max-w-[250px]`}
+      className={cn(
+        "rounded-md p-[10px] shadow-md flex flex-col max-w-[250px]",
+        className,
+      )}
     >
       <div className="flex flex-col space-y-[8px]">
         <Image

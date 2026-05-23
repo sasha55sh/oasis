@@ -10,6 +10,7 @@ import { Alert } from "flowbite-react";
 import { TfiAlert } from "react-icons/tfi";
 import { FiCheckCircle } from "react-icons/fi";
 import { InfoMessage } from "@/config/types";
+import { cn } from "@/lib/utils";
 
 type AlertContextType = {
   infoMessage: InfoMessage | null;
@@ -40,9 +41,11 @@ export const AlertProvider: FC<{ children: ReactNode }> = ({ children }) => {
             paddingRight: "25px",
           }}
           color={infoMessage.type === "success" ? "green" : "red"}
-          className={`fixed bottom-0 right-0 m-4 p-4 z-10 text-[16px] lg:text-[18px] ${
-            infoMessage.type === "success" ? "text-[green]" : "text-[red]"
-          }`}
+          className={cn(
+            "fixed bottom-0 right-0 m-4 p-4 z-10 text-[16px] lg:text-[18px]",
+            infoMessage.type === "success" ? "text-[green]" : "text-[red]",
+          )
+        }
         >
           <div className="flex items-center space-x-2 ">
             {infoMessage.type === "success" ? <FiCheckCircle /> : <TfiAlert />}

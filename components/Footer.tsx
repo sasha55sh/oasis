@@ -2,7 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Instagram, Pinterest, Facebook, Tiktok, Clockwise } from "@/components/icons";
+import {
+  Instagram,
+  Pinterest,
+  Facebook,
+  Tiktok,
+  Clockwise,
+} from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 const socialObjects = [
   { href: "https://www.instagram.com/", title: "Instagram", image: Instagram },
@@ -111,7 +118,7 @@ const Footer: FC<{ className?: string }> = ({ className }) => {
   };
 
   return (
-    <footer className={`${className} bg-black text-white pt-[10px]`}>
+    <footer className={cn("bg-black text-white pt-[10px]", className)}>
       <FooterMain />
       <div className="bg-amberOrange p-[30px] text-center">
         Oasis © {currentYear} by Oleksandra Shapovaliuk. Усі права захищенно

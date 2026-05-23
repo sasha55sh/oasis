@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Facebook, Instagram, Tiktok } from "@/components/icons";
 import { MainDish } from "@/public/home-page/hero";
 import { Button } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 interface heroProps {
   className?: string;
@@ -18,7 +19,7 @@ const SocialObject = [
 
 const Links: FC<heroProps> = ({ className }) => {
   return (
-    <div className={`${className} flex flex-col items-center space-y-[30px]`}>
+    <div className={cn("flex flex-col items-center space-y-[30px]", className)}>
       <hr className="hidden bg-white h-[100px] w-[1px] border-0 lg:block" />
       <div className="flex space-x-[50px] lg:flex-col lg:items-center lg:space-y-[50px] lg:space-x-0">
         {SocialObject.map((item, index) => (

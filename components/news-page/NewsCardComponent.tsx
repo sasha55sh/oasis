@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { Card } from "flowbite-react";
 import { News } from "@/config/types";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const NewsCardComponent: FC<News & { className?: string }> = ({
   className,
@@ -14,7 +15,7 @@ const NewsCardComponent: FC<News & { className?: string }> = ({
 }) => {
   return (
     <Card
-      className={`${className} w-full`}
+      className={cn("w-full", className)}
       renderImage={() => (
         <Image
           width={340}
@@ -37,7 +38,9 @@ const NewsCardComponent: FC<News & { className?: string }> = ({
         <h5 className="text-amberOrange text-[18px] font-bold h-[79px]">
           {title}
         </h5>
-        <p className="text-[12px] text-limeGreen xl:text-[14px]">Переглянути більше</p>
+        <p className="text-[12px] text-limeGreen xl:text-[14px]">
+          Переглянути більше
+        </p>
       </a>
     </Card>
   );

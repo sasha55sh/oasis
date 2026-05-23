@@ -4,9 +4,12 @@ import { usePathname } from "next/navigation";
 import { MantineProvider } from "@mantine/core";
 import { CartProvider } from "@/hooks/useCart";
 import { AlertProvider } from "@/hooks/alertContext";
-import MiniCart from "@/components/cart-component/MiniCartComponent";
-import CartComponent from "@/components/cart-component/CartComponent";
+import {
+  MiniCartComponent as MiniCart,
+  CartComponent,
+} from "@/components/cart-component";
 import { Header, DeliveryLine, Footer } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 export default function LayoutWrapper({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -16,7 +19,7 @@ export default function LayoutWrapper({ children }: { children: ReactNode }) {
     <CartProvider>
       <MantineProvider>
         <AlertProvider>
-          <div className={`${isHome ? "bg-black" : "bg-white"} `}>
+          <div className={cn(isHome ? "bg-black" : "bg-white")}>
             <Header />
             <CartComponent />
             <main className="font-inter">{children}</main>

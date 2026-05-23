@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import { FilterIcon, BasketIcon, SignOutIcon, Back } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface ButtonProps {
   className?: string;
@@ -36,33 +37,33 @@ const Button: FC<ButtonProps> = ({
     finalBackground === "amberOrange"
       ? "bg-amberOrange"
       : finalBackground === "white"
-      ? "bg-white border border-transparent"
-      : finalBackground === "limeGreen"
-      ? "bg-limeGreen border border-transparent"
-      : "bg-transparent";
+        ? "bg-white border border-transparent"
+        : finalBackground === "limeGreen"
+          ? "bg-limeGreen border border-transparent"
+          : "bg-transparent";
   const disabledBg = "disabled:bg-romance disabled:text-warmWhite";
   const textClass =
     finalBackground === "amberOrange"
       ? "text-white"
       : finalBackground === "white"
-      ? "text-amberOrange"
-      : finalBackground === "limeGreen"
-      ? "text-white"
-      : bordered
-      ? "text-amberOrange"
-      : "";
+        ? "text-amberOrange"
+        : finalBackground === "limeGreen"
+          ? "text-white"
+          : bordered
+            ? "text-amberOrange"
+            : "";
   const borderClass = bordered ? "border border-amberOrange border-solid" : "";
   const widthClass = fullWidth ? "w-[100%]" : "";
   const hoverClass =
     finalBackground === "amberOrange"
       ? "hover:bg-amberOrange/50 duration-300"
       : finalBackground === "white"
-      ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
-      : finalBackground === "limeGreen"
-      ? "hover:bg-limeGreen/50 duration-300"
-      : bordered
-      ? "hover:bg-amberOrange/20 transition-colors duration-300"
-      : "";
+        ? "hover:bg-transparent hover-white hover:border hover:border-amberOrange border-solid"
+        : finalBackground === "limeGreen"
+          ? "hover:bg-limeGreen/50 duration-300"
+          : bordered
+            ? "hover:bg-amberOrange/20 transition-colors duration-300"
+            : "";
 
   const renderIcon = () => {
     if (icon === "filter") {
@@ -113,7 +114,16 @@ const Button: FC<ButtonProps> = ({
   return (
     <>
       <Tag
-        className={`${className} ${disabledBg} ${backgroundClass} ${borderClass} ${textClass} ${widthClass} ${hoverClass} py-[12px] px-[24px] rounded-xl flex items-center justify-center disabled:cursor-not-allowed group`}
+        className={cn(
+          "py-[12px] px-[24px] rounded-xl flex items-center justify-center disabled:cursor-not-allowed group",
+          className,
+          disabledBg,
+          backgroundClass,
+          borderClass,
+          textClass,
+          widthClass,
+          hoverClass,
+        )}
         type={type}
         onClick={onClick}
         disabled={disabled}

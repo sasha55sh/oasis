@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import { Quotes } from "@/public/home-page/testimonials";
+import { cn } from "@/lib/utils";
 
 interface testimonialProps {
   className?: string;
@@ -21,7 +22,10 @@ const TestimonialComponent: FC<testimonialProps> = ({
 }) => {
   return (
     <div
-      className={`${className} relative bg-warmWhite py-[30px] px-[60px] rounded-lg max-w-[700px]`}
+      className={cn(
+        "relative bg-warmWhite py-[30px] px-[60px] rounded-lg max-w-[700px]",
+        className,
+      )}
     >
       <div className="z-10 flex flex-col items-center space-y-[20px]">
         <Image src={reviewerSrc} alt="reviewer photo" />

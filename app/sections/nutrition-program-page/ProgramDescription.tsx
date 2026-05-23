@@ -2,11 +2,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import ProductSceleton from "../shop-page/ProductSceleton";
-import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
+import { RecommendedProducts } from "@/components/cart-component";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import RequestOrderModal from "./RequestOrderModal";
-import { comment } from "postcss";
 import { Tabs, TabsContent, TabsList, TabsTrigger, Button } from "@/components/ui";
 
 const daysData = [

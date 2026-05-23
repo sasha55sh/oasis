@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import { Plus, Minus } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface counterProps {
   className?: string;
@@ -19,7 +20,7 @@ const CounterComponent: FC<counterProps> = ({
   maxQuantity,
 }) => {
   return (
-    <div className={`${className} flex items-center`}>
+    <div className={cn("flex items-center", className)}>
       <button
         onClick={onDecrease}
         className="w-[56px] h-[56px] bg-amberOrange/50 rounded-xl relative flex items-center justify-center transition-colors hover:bg-amberOrange group"
@@ -37,19 +38,21 @@ const CounterComponent: FC<counterProps> = ({
 
       <button
         onClick={onIncrease}
-        className={`w-[56px] h-[56px] rounded-xl relative flex items-center justify-center transition-colors group ${
+        className={cn(
+          "w-[56px] h-[56px] rounded-xl relative flex items-center justify-center transition-colors group",
           quantity < maxQuantity
             ? "bg-amberOrange/50 hover:bg-amberOrange"
-            : "bg-gray-200 opacity-50 cursor-not-allowed"
-        }`}
+            : "bg-gray-200 opacity-50 cursor-not-allowed",
+        )}
         disabled={quantity >= maxQuantity}
       >
         <Image
           src={Plus}
           alt="Plus Icon"
-          className={`transition-colors group-hover:filter group-hover:brightness-0 group-hover:invert ${
-            quantity >= maxQuantity ? "opacity-50 grayscale" : ""
-          }`}
+          className={cn(
+            "transition-colors group-hover:filter group-hover:brightness-0 group-hover:invert",
+            quantity >= maxQuantity ? "opacity-50 grayscale" : "",
+          )}
         />
       </button>
     </div>

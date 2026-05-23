@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import { Close, Search } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface searchProps {
   className?: string;
@@ -18,7 +19,10 @@ const SearchInputComponent: FC<searchProps> = ({
 }) => {
   return (
     <div
-      className={`${className} flex p-[15px] rounded-xl shadow-xl max-w-[350px]`}
+      className={cn(
+        "flex p-[15px] rounded-xl shadow-xl max-w-[350px]",
+        className,
+      )}
     >
       <Image src={Search} alt="search icon" width={30} height={30} />
       <input

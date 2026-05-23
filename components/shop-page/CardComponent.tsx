@@ -9,6 +9,7 @@ import AuthModal from "@/components/account-page/LoginComponent";
 
 import { Heart, HeartFilled, Plus } from "@/components/icons";
 import { Counter } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 const CardComponent: FC<
   CardProps & {
@@ -92,7 +93,7 @@ const CardComponent: FC<
     <>
       <AuthModal openModal={openModal} setOpenModal={setOpenModal} />
       <Card
-        className={`${className} max-w-sm relative`}
+        className={cn("max-w-sm relative", className)}
         renderImage={() => (
           <Image
             width={385}

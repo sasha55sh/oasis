@@ -6,7 +6,7 @@ import { useCart } from "@/hooks/useCart";
 import { Product } from "@/config/types";
 import { getProducts } from "@/service/productService";
 import { EmptyCart } from "@/public/shop-page";
-import CartProduct from "@/components/cart-component/CartProduct";
+import { CartProduct } from "@/components/cart-component";
 import CardComponent from "@/components/shop-page/CardComponent";
 import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
 import { Title } from "@/components/ui";

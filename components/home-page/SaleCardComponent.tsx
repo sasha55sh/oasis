@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Button from "../Button";
+import { cn } from "@/lib/utils";
 
 interface cardProps {
   className?: string;
@@ -19,7 +20,7 @@ const SaleCardComponent: FC<cardProps> = ({
   href,
 }) => {
   return (
-    <div className={`${className} relative group flex justify-center`}>
+    <div className={cn("relative group flex justify-center", className)}>
       <Image src={imageScr} alt={imageAlt} />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center space-y-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 *:rounded-md">

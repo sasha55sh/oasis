@@ -6,6 +6,7 @@ import {
   AccordionPanel,
   AccordionTitle,
 } from "flowbite-react";
+import { cn } from "@/lib/utils";
 
 interface faqProps {
   className?: string;
@@ -14,7 +15,7 @@ interface faqProps {
 
 const FaqItemComponent: FC<faqProps> = ({ className, item }) => {
   return (
-    <Accordion className={`${className} max-w-[650px] `} alwaysOpen>
+    <Accordion className={cn("max-w-[650px]", className)} alwaysOpen>
       <AccordionPanel>
         <AccordionTitle className="text-[18px] text-darkCharcoal">
           {item.question}

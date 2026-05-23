@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { Heart, Burger, Phone, User, Cart } from "@/public/header";
 import { Close } from "@/components/icons";
 import { Button } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 const navData = [
   { link: "/menu", text: "Меню" },
@@ -181,7 +182,7 @@ const Header: FC<{ className?: string }> = ({ className }) => {
   };
 
   return (
-    <header className={`${className} sticky top-0 z-10`}>
+    <header className={cn("sticky top-0 z-10", className)}>
       <div className="flex justify-between items-center p-[15px] text-white bg-black/80">
         <HeaderLogo />
         <HeaderNavigation />

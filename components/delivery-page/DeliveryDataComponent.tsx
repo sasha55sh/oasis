@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface deliveryProps {
   className?: string;
@@ -16,7 +17,10 @@ const DeliveryDataComponent: FC<deliveryProps> = ({
 }) => {
   return (
     <div
-      className={`${className} w-full p-[15px] rounded-xl border border-amberOrange flex justify-start space-x-[20px] items-center md:flex-col md:space-x-0 md:space-y-[20px] md:py-[50px]`}
+      className={cn(
+        "w-full p-[15px] rounded-xl border border-amberOrange flex justify-start space-x-[20px] items-center md:flex-col md:space-x-0 md:space-y-[20px] md:py-[50px]",
+        className,
+      )}
     >
       <Image
         src={src}

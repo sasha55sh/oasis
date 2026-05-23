@@ -1,6 +1,7 @@
 ﻿import React, { FC } from "react";
 import Image from "next/image";
 import { TitleBg as Background } from "@/public/home-page/backgrounds";
+import { cn } from "@/lib/utils";
 
 interface titleProps {
   className?: string;
@@ -10,7 +11,10 @@ interface titleProps {
 const TitleComponent: FC<titleProps> = ({ className, title }) => {
   return (
     <div
-      className={`${className} relative flex items-center justify-center w-full h-[150px] `}
+      className={cn(
+        "relative flex items-center justify-center w-full h-[150px]",
+        className,
+      )}
     >
       <Image
         src={Background}

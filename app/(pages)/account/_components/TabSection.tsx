@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Path as History } from "@/public/delivery-page";
 import { Heart } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface tabProps {
   activeTab: "history" | "favorites";
@@ -22,11 +23,12 @@ const TabSectionComponent: FC<tabProps> = ({ activeTab }) => {
         <button
           key={tab.id}
           onClick={() => router.push(`/account/${tab.id}`)}
-          className={`${
+          className={cn(
             activeTab === tab.id
               ? "text-limeGreen bg-oldSilver/5 rounded-lg border border-amberOrange"
-              : "text-darkLiver"
-          } flex flex-col items-center font-bold p-[20px] mini:flex-row mini:p-[10px]`}
+              : "text-darkLiver",
+            "flex flex-col items-center font-bold p-[20px] mini:flex-row mini:p-[10px]",
+          )}
         >
           <Image src={tab.src} alt={tab.alt} className="mini:mr-[10px]" />
           {tab.title}

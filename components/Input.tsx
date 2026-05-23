@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React, { ChangeEvent, FC } from "react";
 
 interface InputProps {
@@ -41,28 +42,35 @@ const InputComponent: FC<InputProps> = ({
     finalBackground === "amberOrange"
       ? "bg-amberOrange"
       : finalBackground === "warmWhite"
-      ? "bg-warmWhite/50"
-      : "bg-transparent";
+        ? "bg-warmWhite/50"
+        : "bg-transparent";
   const borderClass = bordered
     ? "border-[2px] border-white border-solid"
     : finalBackground === "warmWhite"
-    ? "border-[2px] border-transparent border-solid"
-    : "";
+      ? "border-[2px] border-transparent border-solid"
+      : "";
   const textClass =
     finalBackground === "amberOrange"
       ? "text-white"
       : finalBackground === "warmWhite"
-      ? "text-darkLiver"
-      : bordered
-      ? "text-white"
-      : "";
+        ? "text-darkLiver"
+        : bordered
+          ? "text-white"
+          : "";
 
   const inputContent = () => {
     if (inputType === "input") {
       return (
-        <div className={`${className} flex flex-col w-full`}>
+        <div className={cn("flex flex-col w-full", className)}>
           <input
-            className={`${className} ${textClass} ${backgroundClass} ${borderClass} ${widthClass} py-[16px] px-[30px] rounded-full placeholder-amberOrange focus:ring-0 focus:border-transparent`}
+            className={cn(
+              "py-[16px] px-[30px] rounded-full placeholder-amberOrange focus:ring-0 focus:border-transparent",
+              className,
+              textClass,
+              backgroundClass,
+              borderClass,
+              widthClass,
+            )}
             type={type}
             placeholder={placeholder}
             pattern={pattern}
@@ -75,9 +83,12 @@ const InputComponent: FC<InputProps> = ({
 
           {error && (
             <p
-              className={`text-[14px] p-[10px] ${
-                errorType === "critical" ? "text-electricRed" : "text-warmWhite"
-              }`}
+              className={cn(
+                "text-[14px] p-[10px]",
+                errorType === "critical"
+                  ? "text-electricRed"
+                  : "text-warmWhite",
+              )}
             >
               {error}
             </p>
@@ -93,13 +104,23 @@ const InputComponent: FC<InputProps> = ({
             value={value}
             disabled={disabled}
             onChange={onChange}
-            className={`${className} ${backgroundClass} ${borderClass} ${widthClass} ${textClass} py-[16px] px-[30px] resize-none h-[150px] rounded-[40px] placeholder-amberOrange focus:ring-0 focus:border-transparent`}
+            className={cn(
+              "py-[16px] px-[30px] resize-none h-[150px] rounded-[40px] placeholder-amberOrange focus:ring-0 focus:border-transparent",
+              className,
+              backgroundClass,
+              borderClass,
+              widthClass,
+              textClass,
+            )}
           />
           {error && (
             <p
-              className={`text-[14px] ${
-                errorType === "critical" ? "text-amberOrange" : "text-warmWhite"
-              }`}
+              className={cn(
+                "text-[14px]",
+                errorType === "critical"
+                  ? "text-amberOrange"
+                  : "text-warmWhite",
+              )}
             >
               {error}
             </p>

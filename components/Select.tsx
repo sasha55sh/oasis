@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Arrow, Close } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 type Option = {
   value: string;
@@ -65,14 +66,15 @@ const CustomSelect: FC<SelectProps> = ({
   };
 
   const selectedLabel = options.find(
-    (option) => option.value === selectedValue
+    (option) => option.value === selectedValue,
   )?.label;
 
   return (
     <div
-      className={`${className} relative w-[350px] lg:max-w-[320px] shadow-xl text-darkCharcoal rounded-xl text-center ${
-        disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-      }`}
+      className={cn(
+        "relative w-[350px] lg:max-w-[320px] shadow-xl text-darkCharcoal rounded-xl text-center",
+        disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer",
+      )}
       ref={selectRef}
       aria-disabled={disabled}
     >
@@ -86,16 +88,19 @@ const CustomSelect: FC<SelectProps> = ({
           src={Arrow}
           alt="Arrow"
           width={25}
-          className={`absolute top-1/2 -translate-y-1/2 transition-transform z-10 w-[30px] ${
-            isOpen ? "rotate-180" : "rotate-0"
-          } ${left ? "left-[15px]" : "right-[25px]"}`}
+          className={cn(
+            "absolute top-1/2 -translate-y-1/2 transition-transform z-10 w-[30px]",
+            isOpen ? "rotate-180" : "rotate-0",
+            left ? "left-[15px]" : "right-[25px]",
+          )}
         />
 
         {selectedValue && (
           <button
-            className={`absolute top-1/2 -translate-y-1/2 hover:rotate-180 duration-500 ${
-              left ? "right-[15px]" : "left-[25px]"
-            }`}
+            className={cn(
+              "absolute top-1/2 -translate-y-1/2 hover:rotate-180 duration-500",
+              left ? "right-[15px]" : "left-[25px]",
+            )}
             onClick={handleResetOption}
           >
             <Image

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Menu } from "@/config/types";
 import MenuItemComponent from "./MenuItemComponent";
 import { CoffeeIcon } from "@/public/menu-page";
+import { cn } from "@/lib/utils";
 
 interface menuProps {
   className?: string;
@@ -21,7 +22,10 @@ const MenuCategoryComponent: FC<menuProps> = ({
 }: menuProps) => {
   return (
     <div
-      className={`${className} flex flex-col space-y-[30px] items-center lg:gap-x-[40px] lg:flex-row xl:gap-x-[70px]`}
+      className={cn(
+        "flex flex-col space-y-[30px] items-center lg:gap-x-[40px] lg:flex-row xl:gap-x-[70px]",
+        className,
+      )}
     >
       <Image src={imageSrc} alt={imageAlt} priority />
       <div className="w-full">

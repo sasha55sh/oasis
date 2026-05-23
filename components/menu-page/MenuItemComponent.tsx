@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Menu } from "@/config/types";
+import { cn } from "@/lib/utils";
 
 interface menuItemProps {
   className?: string;
@@ -9,7 +10,10 @@ interface menuItemProps {
 const MenuItemComponent: FC<menuItemProps> = ({ className, item }) => {
   return (
     <div
-      className={`${className} flex justify-between max-w-[760px] xl:ml-[30px]`}
+      className={cn(
+        "flex justify-between max-w-[760px] xl:ml-[30px]",
+        className,
+      )}
     >
       <div className="space-y-[8px]">
         <h2 className="text-[20px] font-bold text-darkCharcoal capitalize md:text-[24px]">

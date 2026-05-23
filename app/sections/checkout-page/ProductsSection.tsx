@@ -10,8 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getProducts } from "@/service/productService";
 import { createOrder } from "@/service/orderService";
 import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
-import CartProduct from "@/components/cart-component/CartProduct";
-import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
+import { CartProduct, RecommendedProducts } from "@/components/cart-component";
 import { EmptyCart } from "@/public/shop-page";
 
 const ProductsSection: FC<{
