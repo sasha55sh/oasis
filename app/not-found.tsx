@@ -1,4 +1,4 @@
-import NotFoundSection from "@/app/sections/error-pages/NotFoundSection";
+import { NotFoundSection } from "@/app/(pages)/_components";
 
 export default function NotFound() {
   return (

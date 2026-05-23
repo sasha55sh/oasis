@@ -1,5 +1,5 @@
 "use client"
-import ServerErrorSection from "@/app/sections/error-pages/ServerErrorSection";
+import { ServerErrorSection } from "@/app/(pages)/_components";
 
 export default function ErrorPage() {
   return (

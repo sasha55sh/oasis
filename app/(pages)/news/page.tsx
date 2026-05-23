@@ -1,4 +1,4 @@
-import NewsSection from "@/app/sections/news-page/NewsSection";
+import NewsSection from "@/app/(pages)/news/_components/NewsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

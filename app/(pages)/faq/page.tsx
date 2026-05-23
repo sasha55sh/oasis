@@ -1,4 +1,4 @@
-import FaqSection from "@/app/sections/faq-page/FAQSection";
+import FaqSection from "@/app/(pages)/faq/_components/FAQSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

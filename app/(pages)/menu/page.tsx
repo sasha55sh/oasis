@@ -1,4 +1,4 @@
-import MenuSection from "@/app/sections/menu-page/MenuSection";
+import MenuSection from "@/app/(pages)/menu/_components/MenuSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

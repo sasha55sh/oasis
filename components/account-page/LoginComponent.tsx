@@ -15,9 +15,9 @@ import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { verifyCodeBackend } from "@/service/authService";
 import { useRouter } from "next/navigation";
 import { auth } from "@/config/firebise";
-import Button from "../Button";
+import Button from "../ui/Button";
 import { useForm } from "@mantine/form";
-import Input from "../Input";
+import Input from "../ui/Input";
 
 const LoginComponent: FC<{
   openModal: boolean;

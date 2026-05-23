@@ -1,9 +1,11 @@
 ﻿"use client";
 import React, { useRef, useState } from "react";
-import PersonalData from "./PersonalDataSection";
-import ProductsSection from "./ProductsSection";
-import CommentsSection from "./CommentsSection";
-import DeliverySection from "./DeliverySection";
+import {
+  PersonalDataSection as PersonalData,
+  ProductsSection,
+  CommentsSection,
+  DeliverySection,
+} from "./index";
 import { Title } from "@/components/ui";
 
 const CheckoutSection = () => {

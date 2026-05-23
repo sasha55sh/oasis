@@ -1,7 +1,8 @@
-﻿import { NutritionProgram, Product } from "@/config/types";
+﻿"use client"
+import { NutritionProgram, Product } from "@/config/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import ProductSceleton from "../../(pages)/shop/_components/ProductSceleton";
+import { ProductSceleton } from "@/app/(pages)/shop/_components";
 import { RecommendedProducts } from "@/components/cart-component";
 import { useState } from "react";
 import { cn } from "@/lib/utils";

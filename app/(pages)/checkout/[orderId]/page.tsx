@@ -1,4 +1,4 @@
-import SuccessfulOrderSection from "@/app/sections/checkout-page/SuccessfulOrderSection";
+import SuccessfulOrderSection from "@/app/(pages)/checkout/[orderId]/_components/SuccessfulOrderSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

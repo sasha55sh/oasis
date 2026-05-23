@@ -1,4 +1,4 @@
-import Checkout from "@/app/sections/checkout-page/CheckoutSection";
+import { CheckoutSection as Checkout } from "@/app/(pages)/checkout/_components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

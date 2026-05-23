@@ -1,4 +1,4 @@
-import Cart from "@/app/sections/cart-page/CartSection";
+import Cart from "@/app/(pages)/cart/_components/CartSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

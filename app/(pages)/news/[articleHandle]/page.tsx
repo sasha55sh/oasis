@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ArticleSection from "@/app/sections/article-page/ArticleSection";
+import ArticleSection from "@/app/(pages)/news/[articleHandle]/_components/ArticleSection";
 
 export const metadata: Metadata = {
   title: "Oasis - Стаття",

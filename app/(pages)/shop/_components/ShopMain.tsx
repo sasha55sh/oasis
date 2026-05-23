@@ -1,7 +1,6 @@
 ﻿"use client";
 import React, { FC, useState, useEffect, createContext } from "react";
-import ShopSection from "./ShopSection";
-import ShopFilters from "./ShopFilters";
+import { ShopSection, ShopFilters } from "./index";
 import { CardProps } from "@/config/types";
 import { getProducts } from "@/service/productService";
 import { Title } from "@/components/ui";

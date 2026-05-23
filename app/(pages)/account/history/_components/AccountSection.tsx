@@ -1,8 +1,7 @@
 ﻿"use client";
 import React, { FC } from "react";
 import TabSection from "@/app/(pages)/account/_components/TabSection";
-import HistorySection from "./HistorySection";
-import PersonalDataSection from "./PersonalDataSection";
+import { HistorySection, PersonalDataSection } from "./index";
 import FavoritesSection from "@/app/(pages)/account/favorites/_components/FavoritesSection";
 import { Title } from "@/components/ui";
 

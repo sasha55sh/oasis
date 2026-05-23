@@ -1,4 +1,5 @@
-﻿import React, { FC, useEffect } from "react";
+﻿"use client"
+import React, { FC, useEffect } from "react";
 import { hasLength, useForm } from "@mantine/form";
 import { Card } from "flowbite-react";
 import { getUser } from "@/service/userService";

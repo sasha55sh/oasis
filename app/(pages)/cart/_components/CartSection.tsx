@@ -8,7 +8,7 @@ import { getProducts } from "@/service/productService";
 import { EmptyCart } from "@/public/shop-page";
 import { CartProduct } from "@/components/cart-component";
 import CardComponent from "@/components/shop-page/CardComponent";
-import ProductSceleton from "@/app/(pages)/shop/_components/ProductSceleton";
+import { ProductSceleton } from "@/app/(pages)/shop/_components";
 import { Title } from "@/components/ui";
 
 const CartSection: FC = () => {

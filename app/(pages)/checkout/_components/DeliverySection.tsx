@@ -1,4 +1,5 @@
-﻿import React, { FC, useEffect, useState } from "react";
+﻿"use client"
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";

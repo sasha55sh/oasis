@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import AccountSection from "@/app/(pages)/account/history/_components/AccountSection";
+import { AccountSection } from "@/app/(pages)/account/history/_components";
 
 export const metadata: Metadata = {
   title: "Oasis - Історія замовлень",

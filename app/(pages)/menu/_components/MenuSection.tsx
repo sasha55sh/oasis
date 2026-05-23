@@ -4,7 +4,7 @@ import { Menu } from "@/config/types";
 import { Loader } from "@mantine/core";
 import { getMenuByCategory } from "@/service/menuService";
 import MenuCategory from "@/components/menu-page/MenuCategoryComponent";
-import BenefitSection from "@/app/sections/home-page/BenefitSection";
+import { BenefitSection } from "@/app/(pages)/_components";
 import PartnersSection from "./PartnersSection";
 
 import { Starter, MainDish, Dessert, Drinks } from "@/public/menu-page";

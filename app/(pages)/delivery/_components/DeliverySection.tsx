@@ -2,8 +2,8 @@
 import Card from "@/components/delivery-page/DeliveryDataComponent";
 import MapComponent from "@/components/delivery-page/MapComponent";
 
-import {
 import { Title } from "@/components/ui";
+import {
   Cursor,
   Smartphone,
   Path,

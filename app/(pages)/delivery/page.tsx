@@ -1,4 +1,4 @@
-import DeliverySection from "@/app/sections/delivery-page/DeliverySection";
+import DeliverySection from "@/app/(pages)/delivery/_components/DeliverySection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

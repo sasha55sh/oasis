@@ -1,7 +1,6 @@
 ﻿"use client";
 import React, { FC, useEffect, useState } from "react";
 import { getNewsByHandle } from "@/service/newsService";
-import { useAlert } from "@/hooks/alertContext";
 import { Loader } from "@mantine/core";
 import { News } from "@/config/types";
 import Image from "next/image";

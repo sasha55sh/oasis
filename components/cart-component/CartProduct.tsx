@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CartProductProps } from "@/config/types";
 import { CloseOrange } from "@/components/icons";
 import { useCart } from "@/hooks/useCart";
-import Counter from "../Counter";
+import Counter from "../ui/Counter";
 
 const CartProduct = ({ product }: { product: CartProductProps }) => {
   const {

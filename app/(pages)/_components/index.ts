@@ -1,0 +1,11 @@
+export { default as AboutUsSection } from './AboutUsSection';
+export { default as ActiveProcessSection } from './ActiveProcessSection';
+export { default as BenefitSection } from './BenefitSection';
+export { default as ChooseAndPickSection } from './Choose&PickSection';
+export { default as FoodCategoryComponent } from './FoodCategorySection';
+export { default as HeroSection } from './HeroSection';
+export { default as NotFoundSection } from './NotFoundSection';
+export { default as OurChefsSection } from './OurChefsSection';
+export { default as ServerErrorSection } from './ServerErrorSection';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as WhyChooseUsSection } from './WhyChooseUsSection';

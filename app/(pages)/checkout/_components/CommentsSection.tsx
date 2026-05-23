@@ -1,4 +1,5 @@
-﻿import React, { FC, useEffect } from "react";
+﻿"use client";
+import React, { FC, useEffect } from "react";
 import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";
 import { Input } from "@/components/ui";
