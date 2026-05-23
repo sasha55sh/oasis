@@ -1,11 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import { Carousel } from "flowbite-react";
 
-import Estwood from "@/images/home-page/our-chefs/d-estwood.svg";
-import Scoriesh from "@/images/home-page/our-chefs/d-scoriesh.svg";
-import William from "@/images/home-page/our-chefs/m-william.svg";
-import Readfrod from "@/images/home-page/our-chefs/w-readfrod.svg";
+import { Estwood, Scoriesh, William, Readfrod } from "@/public/home-page/our-chefs";
 
 const chefsData = [
   { src: Estwood, alt: "D Estwood" },

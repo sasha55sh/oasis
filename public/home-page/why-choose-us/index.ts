@@ -1,0 +1,9 @@
+export { default as Taco } from './taco-image.svg';
+export { default as Burger } from './burger-image.svg';
+export { default as Chicken } from './chicken-image.svg';
+export { default as Cheeseburger } from './cheeseburger-image.svg';
+export { default as Potato } from './potato-image.svg';
+export { default as Fish } from './fish-image.svg';
+export { default as BurgerIcon } from './burger.svg';
+export { default as CookieIcon } from './сookie.svg';
+export { default as WineIcon } from './wine.svg';

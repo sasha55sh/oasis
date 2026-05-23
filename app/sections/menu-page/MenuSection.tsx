@@ -1,17 +1,14 @@
-"use client";
+﻿"use client";
 import React, { useEffect, useState } from "react";
 import { Menu } from "@/config/types";
 import { Loader } from "@mantine/core";
-import { getMenuByCategory } from "@/service/MenuService";
+import { getMenuByCategory } from "@/service/menuService";
 import MenuCategory from "@/components/menu-page/MenuCategoryComponent";
 import TitleComponent from "@/components/TitleComponent";
 import BenefitSection from "@/app/sections/home-page/BenefitSection";
 import PartnersSection from "./PartnersSection";
 
-import Starter from "@/images/menu-page/udon.svg";
-import MainDish from "@/images/menu-page/cheessburger.svg";
-import Dessert from "@/images/menu-page/pastry.svg";
-import Drinks from "@/images/menu-page/cocktail.svg";
+import { Starter, MainDish, Dessert, Drinks } from "@/public/menu-page";
 
 const MenuList = () => {
   const [starterItems, setStarterItems] = useState<Menu[]>([]);

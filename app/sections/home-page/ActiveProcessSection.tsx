@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Background from "@/images/home-page/backgrounds/active-process-section.svg";
-import PlayIcon from "@/images/home-page/play-icon.svg";
+import { ActiveProcessBg as Background } from "@/public/home-page/backgrounds";
+import { PlayIcon } from "@/public/home-page";
 
 const ActiveProcessSection: FC = () => {
   return (

@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
 import { Product } from "@/config/types";
-import { getProducts } from "@/service/ProductService";
-import EmptyCart from "@/images/shop-page/cart-empty.svg";
+import { getProducts } from "@/service/productService";
+import { EmptyCart } from "@/public/shop-page";
 import Title from "@/components/TitleComponent";
 import CartProduct from "@/components/cart-component/CartProduct";
 import CardComponent from "@/components/shop-page/CardComponent";

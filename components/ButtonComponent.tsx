@@ -1,10 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import FilterIcon from "@/images/vectors/filter-icon.svg";
-import BasketIcon from "@/images/vectors/basket.svg";
-import SignOutIcon from "@/images/vectors/sign-out-icon.svg";
-import Back from "@/images/vectors/back-arrow.svg";
+import { FilterIcon, BasketIcon, SignOutIcon, Back } from "@/components/icons";
 
 interface ButtonProps {
   className?: string;

@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
-import Background from "@/images/home-page/backgrounds/title-bg.svg";
+import { TitleBg as Background } from "@/public/home-page/backgrounds";
 
 interface titleProps {
   className?: string;

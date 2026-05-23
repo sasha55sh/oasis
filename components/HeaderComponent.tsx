@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+﻿import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useDisclosure } from "@mantine/hooks";
@@ -9,12 +9,8 @@ import AuthModal from "@/components/account-page/LoginComponent";
 import Button from "@/components/ButtonComponent";
 import { useRouter } from "next/navigation";
 
-import Heart from "@/images/header/nav-heart.svg";
-import Burger from "@/images/header/nav-list.svg";
-import Phone from "@/images/header/nav-phone.svg";
-import User from "@/images/header/nav-user.svg";
-import Cart from "@/images/header/nav-cart.svg";
-import Close from "@/images/vectors/close.svg";
+import { Heart, Burger, Phone, User, Cart } from "@/public/header";
+import { Close } from "@/components/icons";
 
 const navData = [
   { link: "/menu", text: "Меню" },

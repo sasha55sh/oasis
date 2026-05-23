@@ -1,11 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import Background from "@/images/home-page/backgrounds/benefit-section-bg.svg";
-import Pizza from "@/images/home-page/pizza-benefit.svg";
-import Tools from "@/images/home-page/spoon-fork-benefit.svg";
-import Cap from "@/images/home-page/cap-benefit.svg";
-import Food from "@/images/home-page/food-benefit.svg";
+import { BenefitBg as Background } from "@/public/home-page/backgrounds";
+import { Pizza, Tools, Cap, Food } from "@/public/home-page";
 
 const data = [
   { src: Cap, alt: "Cap", title: "Професійних кухарів", quantity: 10 },

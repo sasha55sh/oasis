@@ -1,8 +1,4 @@
-import BetterWellBeingIcon from "@/images/vectors/better-well-being.svg";
-import DoctorIcon from "@/images/vectors/doctor-icon.svg";
-import ExtraPoundsIcon from "@/images/vectors/extra-pounds.svg";
-import VariousDishesIcon from "@/images/vectors/various-dishes.svg";
-import WithoutSugarIcon from "@/images/vectors/without-sugar.svg";
+﻿import { BetterWellBeingIcon, DoctorIcon, ExtraPoundsIcon, VariousDishesIcon, WithoutSugarIcon } from "@/components/icons";
 import Image from "next/image";
 
 const benefitsData = [

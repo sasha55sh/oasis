@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import { Menu } from "@/config/types";
 import MenuItemComponent from "./MenuItemComponent";
-import CoffeeIcon from "@/images/menu-page/coffee-icon.svg";
+import { CoffeeIcon } from "@/public/menu-page";
 
 interface menuProps {
   className?: string;

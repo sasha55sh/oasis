@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { User } from "@/config/types";
@@ -8,10 +8,9 @@ import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import Button from "@/components/ButtonComponent";
 import Input from "@/components/InputComponent";
-import { getUser, updateUser, logoutUser } from "@/service/UserService";
+import { getUser, updateUser, logoutUser } from "@/service/userService";
 
-import Smile from "@/images/account-page/smile-icon.svg";
-import Pencil from "@/images/account-page/pencil-icon.svg";
+import { Smile, Pencil } from "@/public/account-page";
 
 const PersonalDataSection = () => {
   const [user, setUser] = useState<User | null>(null);

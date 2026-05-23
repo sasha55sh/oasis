@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect, FC } from "react";
 import Image from "next/image";
 import { CategoryButton, CardProps } from "@/config/types";
@@ -11,14 +11,9 @@ import {
   searchProducts,
   getProducts,
   getSortedProducts,
-} from "@/service/ProductService";
+} from "@/service/productService";
 
-import Bowl from "@/images/shop-page/bowl-icon.svg";
-import Breakfast from "@/images/shop-page/breakfast-icon.svg";
-import Dessert from "@/images/shop-page/dessert-icon.svg";
-import Main from "@/images/shop-page/mainDish-icon.svg";
-import Soup from "@/images/shop-page/soup-icon.svg";
-import NotFound from "@/images/shop-page/not-found.svg";
+import { Bowl, Breakfast, Dessert, Main, Soup, NotFound } from "@/public/shop-page";
 
 const categoryMap: Record<string, string> = {
   bowl: "Боули",

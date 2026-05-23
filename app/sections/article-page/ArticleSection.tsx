@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useEffect, useState } from "react";
 import Button from "@/components/ButtonComponent";
-import { getNewsByHandle } from "@/service/NewsService";
+import { getNewsByHandle } from "@/service/newsService";
 import { useAlert } from "@/hooks/alertContext";
 import { Loader } from "@mantine/core";
 import { News } from "@/config/types";
@@ -39,13 +39,7 @@ const ArticleSection: FC<articleProps> = ({ articleHandle }) => {
   return (
     <section>
       <div className="max-w-[200px] mt-[30px] ml-[20px] ">
-        <Button
-          text="Повернутися"
-          icon="back"
-          tag="a"
-          href="/news"
-          bordered
-        />
+        <Button text="Повернутися" icon="back" tag="a" href="/news" bordered />
       </div>
       <div className="container my-[50px] space-y-[15px]">
         <h1 className="text-amberOrange font-bold text-[26px] lg:text-[40px]">

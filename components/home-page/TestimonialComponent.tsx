@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import Quotes from "@/images/home-page/testimonials/quotes.svg";
+import { Quotes } from "@/public/home-page/testimonials";
 
 interface testimonialProps {
   className?: string;

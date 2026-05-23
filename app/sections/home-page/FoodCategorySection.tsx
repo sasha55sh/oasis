@@ -1,11 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import SaleCard from "@/components/home-page/SaleCardComponent";
 import { Carousel } from "flowbite-react";
 
-import ChickenRoll from "@/images/home-page/food-category/chicken-roll.svg";
-import Burger from "@/images/home-page/food-category/burger.svg";
-import Salad from "@/images/home-page/food-category/salad.svg";
-import Donuts from "@/images/home-page/food-category/donuts.svg";
+import { ChickenRoll, Burger, Salad, Donuts } from "@/public/home-page/food-category";
 
 const cardsData = [
   {

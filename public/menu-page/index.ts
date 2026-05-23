@@ -1,0 +1,11 @@
+export { default as Bakery } from './bakery-logo.svg';
+export { default as Bistro } from './bistro-logo.svg';
+export { default as MainDish } from './cheessburger.svg';
+export { default as Drinks } from './cocktail.svg';
+export { default as CoffeeIcon } from './coffee-icon.svg';
+export { default as ForkAndSpoon } from './fork&spoon-logo.svg';
+export { default as Dessert } from './pastry.svg';
+export { default as Restaurant } from './restaurant-logo.svg';
+export { default as Starter } from './udon.svg';
+export { default as SweetBakery } from './sweet-bakery-logo.svg';
+export { default as WolfCoffee } from './wolf-coffee-logo.svg';

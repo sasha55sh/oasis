@@ -1,13 +1,13 @@
-"use client";
+﻿"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Loader } from "@mantine/core";
 import { CardProps } from "@/config/types";
-import { getFavorites } from "@/service/UserService";
+import { getFavorites } from "@/service/userService";
 import Button from "@/components/ButtonComponent";
 import CardComponent from "@/components/shop-page/CardComponent";
 
-import EmptyFavorites from "@/images/account-page/empty-favorites.svg";
+import { EmptyFavorites } from "@/public/account-page";
 
 const FavoritesSection = () => {
   const [favorites, setFavorites] = useState<CardProps[]>([]);

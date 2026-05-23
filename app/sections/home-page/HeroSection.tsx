@@ -1,12 +1,10 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ButtonComponent";
 
-import Facebook from "@/images/vectors/facebook-logo.svg";
-import Instagram from "@/images/vectors/instagram-logo.svg";
-import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import MainDish from "@/images/home-page/hero/main-dish.svg";
+import { Facebook, Instagram, Tiktok } from "@/components/icons";
+import { MainDish } from "@/public/home-page/hero";
 
 interface heroProps {
   className?: string;

@@ -1,16 +1,14 @@
-"use client";
+﻿"use client";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Card } from "flowbite-react";
 import { CardProps } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
-import { toggleFavorite } from "@/service/UserService";
+import { toggleFavorite } from "@/service/userService";
 import Counter from "@/components/CounterComponent";
 import AuthModal from "@/components/account-page/LoginComponent";
 
-import Heart from "@/images/vectors/heart-icon.svg";
-import HeartFilled from "@/images/vectors/filled-heard-icon.svg";
-import Plus from "@/images/vectors/plus-icon.svg";
+import { Heart, HeartFilled, Plus } from "@/components/icons";
 
 const CardComponent: FC<
   CardProps & {
@@ -88,10 +86,7 @@ const CardComponent: FC<
       );
   };
 
-  const discountedPrice = (
-    Number(price) -
-    Number(price) * Number(discount)
-  );
+  const discountedPrice = Number(price) - Number(price) * Number(discount);
 
   return (
     <>

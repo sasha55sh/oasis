@@ -1,12 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import Restaurant from "@/images/menu-page/restaurant-logo.svg";
-import SweetBakery from "@/images/menu-page/sweet-bakery-logo.svg";
-import ForkAndSpoon from "@/images/menu-page/fork&spoon-logo.svg";
-import WolfCoffee from "@/images/menu-page/wolf-coffee-logo.svg";
-import Bistro from "@/images/menu-page/bistro-logo.svg";
-import Bakery from "@/images/menu-page/bakery-logo.svg";
+import { Restaurant, SweetBakery, ForkAndSpoon, WolfCoffee, Bistro, Bakery } from "@/public/menu-page";
 
 const partnersData = [
   { src: Restaurant, alt: "Restaurant logo" },

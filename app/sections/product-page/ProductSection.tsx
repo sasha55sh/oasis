@@ -5,7 +5,7 @@ import { Product } from "@/config/types";
 import { useAlert } from "@/hooks/alertContext";
 import { useCart } from "@/hooks/useCart";
 import { Loader } from "@mantine/core";
-import { getProductByHandle } from "@/service/ProductService";
+import { getProductByHandle } from "@/service/productService";
 import Counter from "@/components/CounterComponent";
 import Button from "@/components/ButtonComponent";
 import EnergyCard from "@/components/shop-page/EnergyCardComponent";

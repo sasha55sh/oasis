@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from "react";
 import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
 import CardComponent from "@/components/shop-page/CardComponent";
-import { getProducts } from "@/service/ProductService";
+import { getProducts } from "@/service/productService";
 import { Carousel } from "flowbite-react";
 import { Product } from "@/config/types";
 

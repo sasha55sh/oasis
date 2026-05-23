@@ -1,8 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import Close from "@/images/vectors/close.svg";
-import Search from "@/images/vectors/search.svg";
+import { Close, Search } from "@/components/icons";
 
 interface searchProps {
   className?: string;

@@ -4,9 +4,9 @@ import { FC, useEffect, useState } from "react";
 import Title from "@/components/TitleComponent";
 import BenefitsLine from "./BenefitsLine";
 import { NutritionProgram, Product, User } from "@/config/types";
-import { getNutritionPrograms } from "@/service/NutritionProgramService";
+import { getNutritionPrograms } from "@/service/nutritionProgramService";
 import ProgramDescription from "./ProgramDescription";
-import { getProducts } from "@/service/ProductService";
+import { getProducts } from "@/service/productService";
 import ProgramDescriptionSkeleton from "./ProgramDescriptionSceleton";
 
 const NutritionProgramSection: FC = () => {
@@ -44,13 +44,13 @@ const NutritionProgramSection: FC = () => {
         </h2>
 
         {isLoading ? (
-            <ProgramDescriptionSkeleton />
+          <ProgramDescriptionSkeleton />
         ) : (
-            <ProgramDescription
-              programs={nutritionPrograms}
-              isLoading={isLoading}
-              randomProducts={randomProducts}
-            />
+          <ProgramDescription
+            programs={nutritionPrograms}
+            isLoading={isLoading}
+            randomProducts={randomProducts}
+          />
         )}
       </div>
     </section>

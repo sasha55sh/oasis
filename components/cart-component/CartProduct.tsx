@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import { CartProductProps } from "@/config/types";
-import close from "@/images/vectors/close-orange.svg";
+import { CloseOrange } from "@/components/icons";
 import { useCart } from "@/hooks/useCart";
 import Counter from "../CounterComponent";
 
@@ -34,7 +34,7 @@ const CartProduct = ({ product }: { product: CartProductProps }) => {
           className="absolute bg-warmWhite/90 rounded-full left-[-7px] top-1/2 -translate-y-1/2 "
           onClick={() => onHandleClickDelete(product.id)}
         >
-          <Image src={close} alt="close" />
+          <Image src={CloseOrange} alt="close" />
         </button>
         <Image
           src={product.image}

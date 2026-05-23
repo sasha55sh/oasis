@@ -1,12 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Instagram from "@/images/vectors/instagram-logo.svg";
-import Pinterest from "@/images/vectors/pinterest-logo.svg";
-import Facebook from "@/images/vectors/facebook-logo.svg";
-import Tiktok from "@/images/vectors/tiktok-logo.svg";
-import Clockwise from "@/images/vectors/clockwise-right.svg";
+import { Instagram, Pinterest, Facebook, Tiktok, Clockwise } from "@/components/icons";
 
 const socialObjects = [
   { href: "https://www.instagram.com/", title: "Instagram", image: Instagram },

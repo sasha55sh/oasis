@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from "react";
 import FaqItemComponent from "@/components/faq-page/FaqItemComponent";
 import Title from "@/components/TitleComponent";
-import { getAllFaq } from "@/service/FaqService";
+import { getAllFaq } from "@/service/faqService";
 import { Loader } from "@mantine/core";
 import { Faq } from "@/config/types";
 

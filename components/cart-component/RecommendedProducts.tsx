@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import { Product } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
-import Plus from "@/images/vectors/plus-icon.svg";
+import { Plus } from "@/components/icons";
 
 interface productProps {
   product: Product;

@@ -1,16 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Taco from "@/images/home-page/why-choose-us/taco-image.svg";
-import Burger from "@/images/home-page/why-choose-us/burger-image.svg";
-import Chicken from "@/images/home-page/why-choose-us/chicken-image.svg";
-import Cheeseburger from "@/images/home-page/why-choose-us/cheeseburger-image.svg";
-import Potato from "@/images/home-page/why-choose-us/potato-image.svg";
-import Fish from "@/images/home-page/why-choose-us/fish-image.svg";
-import BurgerIcon from "@/images/home-page/why-choose-us/burger.svg";
-import CookieIcon from "@/images/home-page/why-choose-us/сookie.svg";
-import WineIcon from "@/images/home-page/why-choose-us/wine.svg";
+import { Taco, Burger, Chicken, Cheeseburger, Potato, Fish, BurgerIcon, CookieIcon, WineIcon } from "@/public/home-page/why-choose-us";
 
 const buttonsItems = [
   { src: BurgerIcon, alt: "Burger icon", title: "Сніданок", href: "/shop" },

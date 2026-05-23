@@ -4,7 +4,7 @@ import ShopSection from "./ShopSection";
 import ShopFilters from "./ShopFilters";
 import Title from "@/components/TitleComponent";
 import { CardProps } from "@/config/types";
-import { getProducts } from "@/service/ProductService";
+import { getProducts } from "@/service/productService";
 
 export const ProductsContext = createContext<CardProps[]>([]);
 

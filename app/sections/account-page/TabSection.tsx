@@ -1,9 +1,9 @@
-import React, { FC, memo } from "react";
+﻿import React, { FC, memo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import History from "@/images/delivery-page/path-icon.svg";
-import Heart from "@/images/vectors/heart-icon.svg";
+import { Path as History } from "@/public/delivery-page";
+import { Heart } from "@/components/icons";
 
 interface tabProps {
   activeTab: "history" | "favorites";

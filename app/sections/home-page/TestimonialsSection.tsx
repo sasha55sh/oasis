@@ -1,10 +1,8 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import TestimonialComponent from "@/components/home-page/TestimonialComponent";
 import { Carousel } from "flowbite-react";
 
-import FourStars from "@/images/home-page/testimonials/four-stars.svg";
-import FiveStars from "@/images/home-page/testimonials/five-stars.svg";
-import ReviewerPhoto from "@/images/home-page/testimonials/reviewer.svg";
+import { FourStars, FiveStars, ReviewerPhoto } from "@/public/home-page/testimonials";
 
 const TestimonialsData = [
   {

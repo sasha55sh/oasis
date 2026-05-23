@@ -8,7 +8,7 @@ declare global {
   }
 }
 import { Modal, ModalBody, ModalHeader } from "flowbite-react";
-import { verifyCodeBackend } from "@/service/AuthService";
+import { verifyCodeBackend } from "@/service/authService";
 import { useRouter } from "next/navigation";
 import { auth } from "@/config/firebise";
 import Button from "../ButtonComponent";

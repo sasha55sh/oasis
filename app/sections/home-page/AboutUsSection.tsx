@@ -1,10 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import ListIcon from "@/images/home-page/about-us/list-image.svg";
-import Image1 from "@/images/home-page/about-us/image-1.svg";
-import Image2 from "@/images/home-page/about-us/image-2.svg";
-import Image3 from "@/images/home-page/about-us/image-3.svg";
+import { ListIcon, Image1, Image2, Image3 } from "@/public/home-page/about-us";
 
 const listItems = [
   "Свіжі локальні інгредієнти у кожній страві",

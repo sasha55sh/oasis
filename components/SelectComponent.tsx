@@ -1,10 +1,9 @@
-"use client";
+﻿"use client";
 import React, { FC, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import Arrow from "@/images/vectors/arrow-down-filter.svg";
-import Close from "@/images/vectors/close.svg";
+import { Arrow, Close } from "@/components/icons";
 
 type Option = {
   value: string;

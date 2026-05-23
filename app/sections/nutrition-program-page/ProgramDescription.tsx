@@ -6,7 +6,7 @@ import ProductSceleton from "../shop-page/ProductSceleton";
 import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
 import { useState } from "react";
 import Button from "@/components/ButtonComponent";
-import { cn } from "@/libs/utils";
+import { cn } from "@/lib/utils";
 import RequestOrderModal from "./RequestOrderModal";
 import { comment } from "postcss";
 

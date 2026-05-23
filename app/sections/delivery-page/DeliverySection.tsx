@@ -1,14 +1,9 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Title from "@/components/TitleComponent";
 import Card from "@/components/delivery-page/DeliveryDataComponent";
 import MapComponent from "@/components/delivery-page/MapComponent";
 
-import Cursor from "@/images/delivery-page/cursor-icon.svg";
-import Smartphone from "@/images/delivery-page/smartphone-icon.svg";
-import Path from "@/images/delivery-page/path-icon.svg";
-import Pin from "@/images/delivery-page/mapPin-icon.svg";
-import Alarm from "@/images/delivery-page/alarm-icon.svg";
-import Leaf from "@/images/delivery-page/leaf-icon.svg";
+import { Cursor, Smartphone, Path, Pin, Alarm, Leaf } from "@/public/delivery-page";
 
 const DeliverySection: FC = () => {
   return (

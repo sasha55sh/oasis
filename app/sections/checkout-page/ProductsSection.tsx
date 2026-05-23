@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Loader } from "@mantine/core";
@@ -7,12 +7,12 @@ import { Product } from "@/config/types";
 import { useRouter } from "next/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getProducts } from "@/service/ProductService";
-import { createOrder } from "@/service/OrderService";
+import { getProducts } from "@/service/productService";
+import { createOrder } from "@/service/orderService";
 import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
 import CartProduct from "@/components/cart-component/CartProduct";
 import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
-import EmptyCart from "@/images/shop-page/cart-empty.svg";
+import { EmptyCart } from "@/public/shop-page";
 
 const ProductsSection: FC<{
   validateAll: () => boolean;

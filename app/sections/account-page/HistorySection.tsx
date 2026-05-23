@@ -1,12 +1,12 @@
-"use client";
+﻿"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Loader } from "@mantine/core";
 import { Order } from "@/config/types";
-import { getOrders } from "@/service/OrderService";
+import { getOrders } from "@/service/orderService";
 import Button from "@/components/ButtonComponent";
 
-import EmptyHistory from "@/images/account-page/empty-history.svg";
+import { EmptyHistory } from "@/public/account-page";
 
 const HistorySection = () => {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -48,7 +48,12 @@ const HistorySection = () => {
               {order.selectedTime} {order.selectedDate}
             </h3>
             <p className="text-oldSilver">
-              Метод: <span className="font-medium">{order.method === "self-pickup" ? "Самовивіз" : "Кур'єрська доставка"}</span>
+              Метод:{" "}
+              <span className="font-medium">
+                {order.method === "self-pickup"
+                  ? "Самовивіз"
+                  : "Кур'єрська доставка"}
+              </span>
             </p>
             <p className="my-[10px] text-darkCharcoal">
               Всього:{" "}

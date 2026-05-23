@@ -1,8 +1,7 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Image from "next/image";
 
-import Plus from "@/images/vectors/plus-icon.svg";
-import Minus from "@/images/vectors/minus-icon.svg";
+import { Plus, Minus } from "@/components/icons";
 
 interface counterProps {
   className?: string;

@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from "react";
+﻿import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";
 import Input from "@/components/InputComponent";
 import Select from "@/components/SelectComponent";
-import Info from "@/images/vectors/info-icon.svg";
+import { Info } from "@/components/icons";
 import { Popover } from "flowbite-react";
 import MapComponent from "@/components/delivery-page/MapComponent";
 
