@@ -1,12 +1,11 @@
-import { User } from "@/config/types";
+﻿import { User } from "@/config/types";
 import { getUser } from "@/service/userService";
 import { hasLength, useForm } from "@mantine/form";
 import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Input from "@/components/InputComponent";
 import { RequestData } from "./ProgramDescription";
 import { createProgramRequest } from "@/service/nutritionProgramService";
-import Button from "@/components/ButtonComponent";
+import { Input, Button } from "@/components/ui";
 
 interface ModelProps {
   setOpenModal: Dispatch<SetStateAction<boolean>>;

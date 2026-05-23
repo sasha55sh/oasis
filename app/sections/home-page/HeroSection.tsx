@@ -1,10 +1,10 @@
 ﻿import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "@/components/ButtonComponent";
 
 import { Facebook, Instagram, Tiktok } from "@/components/icons";
 import { MainDish } from "@/public/home-page/hero";
+import { Button } from "@/components/ui";
 
 interface heroProps {
   className?: string;

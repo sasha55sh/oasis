@@ -1,9 +1,16 @@
 ﻿import React, { FC } from "react";
-import Title from "@/components/TitleComponent";
 import Card from "@/components/delivery-page/DeliveryDataComponent";
 import MapComponent from "@/components/delivery-page/MapComponent";
 
-import { Cursor, Smartphone, Path, Pin, Alarm, Leaf } from "@/public/delivery-page";
+import {
+import { Title } from "@/components/ui";
+  Cursor,
+  Smartphone,
+  Path,
+  Pin,
+  Alarm,
+  Leaf,
+} from "@/public/delivery-page";
 
 const DeliverySection: FC = () => {
   return (

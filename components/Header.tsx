@@ -6,11 +6,11 @@ import { Modal, ActionIcon } from "@mantine/core";
 import { useCart } from "@/hooks/useCart";
 import { Popover } from "flowbite-react";
 import AuthModal from "@/components/account-page/LoginComponent";
-import Button from "@/components/ButtonComponent";
 import { useRouter } from "next/navigation";
 
 import { Heart, Burger, Phone, User, Cart } from "@/public/header";
 import { Close } from "@/components/icons";
+import { Button } from "@/components/ui";
 
 const navData = [
   { link: "/menu", text: "Меню" },

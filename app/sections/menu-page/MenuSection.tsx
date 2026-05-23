@@ -4,11 +4,11 @@ import { Menu } from "@/config/types";
 import { Loader } from "@mantine/core";
 import { getMenuByCategory } from "@/service/menuService";
 import MenuCategory from "@/components/menu-page/MenuCategoryComponent";
-import TitleComponent from "@/components/TitleComponent";
 import BenefitSection from "@/app/sections/home-page/BenefitSection";
 import PartnersSection from "./PartnersSection";
 
 import { Starter, MainDish, Dessert, Drinks } from "@/public/menu-page";
+import { Title as TitleComponent } from "@/components/ui";
 
 const MenuList = () => {
   const [starterItems, setStarterItems] = useState<Menu[]>([]);

@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import React, { FC, useEffect, useState } from "react";
 import FaqItemComponent from "@/components/faq-page/FaqItemComponent";
-import Title from "@/components/TitleComponent";
 import { getAllFaq } from "@/service/faqService";
 import { Loader } from "@mantine/core";
 import { Faq } from "@/config/types";
+import { Title } from "@/components/ui";
 
 const FaqSection: FC = () => {
   const [faqItems, setFaqItems] = useState<Faq[]>([]);

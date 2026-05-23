@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import React, { FC, useState, useEffect, createContext } from "react";
 import ShopSection from "./ShopSection";
 import ShopFilters from "./ShopFilters";
-import Title from "@/components/TitleComponent";
 import { CardProps } from "@/config/types";
 import { getProducts } from "@/service/productService";
+import { Title } from "@/components/ui";
 
 export const ProductsContext = createContext<CardProps[]>([]);
 

@@ -1,9 +1,14 @@
-import React, { FC, useEffect } from "react";
+﻿import React, { FC, useEffect } from "react";
 import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";
-import Input from "@/components/InputComponent";
+import { Input } from "@/components/ui";
 
-const CommentsSection: FC<{ setCommentsData: (data: { cutleryQuantity: string; comments: string }) => void }> = ({ setCommentsData }) => {
+const CommentsSection: FC<{
+  setCommentsData: (data: {
+    cutleryQuantity: string;
+    comments: string;
+  }) => void;
+}> = ({ setCommentsData }) => {
   const form = useForm({
     initialValues: {
       cutleryQuantity: "",

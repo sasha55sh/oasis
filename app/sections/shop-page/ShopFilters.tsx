@@ -3,8 +3,6 @@ import React, { useState, useEffect, FC } from "react";
 import Image from "next/image";
 import { CategoryButton, CardProps } from "@/config/types";
 import { useDebounce } from "@/hooks/useDebounce";
-import SearchInput from "@/components/SearchInputComponent";
-import Select from "@/components/SelectComponent";
 import FiltersSkeleton from "./FilterSceleton";
 import {
   getProductsByCategory,
@@ -13,7 +11,15 @@ import {
   getSortedProducts,
 } from "@/service/productService";
 
-import { Bowl, Breakfast, Dessert, Main, Soup, NotFound } from "@/public/shop-page";
+import {
+import { SearchInput, Select } from "@/components/ui";
+  Bowl,
+  Breakfast,
+  Dessert,
+  Main,
+  Soup,
+  NotFound,
+} from "@/public/shop-page";
 
 const categoryMap: Record<string, string> = {
   bowl: "Боули",

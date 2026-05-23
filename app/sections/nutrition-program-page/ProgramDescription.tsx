@@ -1,14 +1,13 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { NutritionProgram, Product } from "@/config/types";
+﻿import { NutritionProgram, Product } from "@/config/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import ProductSceleton from "../shop-page/ProductSceleton";
 import RecommendedProducts from "@/components/cart-component/RecommendedProducts";
 import { useState } from "react";
-import Button from "@/components/ButtonComponent";
 import { cn } from "@/lib/utils";
 import RequestOrderModal from "./RequestOrderModal";
 import { comment } from "postcss";
+import { Tabs, TabsContent, TabsList, TabsTrigger, Button } from "@/components/ui";
 
 const daysData = [
   { label: "Пробний день", value: 1 },

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { Loader } from "@mantine/core";
 import { CardProps } from "@/config/types";
 import { getFavorites } from "@/service/userService";
-import Button from "@/components/ButtonComponent";
 import CardComponent from "@/components/shop-page/CardComponent";
 
 import { EmptyFavorites } from "@/public/account-page";
+import { Button } from "@/components/ui";
 
 const FavoritesSection = () => {
   const [favorites, setFavorites] = useState<CardProps[]>([]);

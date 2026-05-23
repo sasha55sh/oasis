@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import React, { FC } from "react";
-import Title from "@/components/TitleComponent";
-import TabSection from "./TabSection";
+import TabSection from "@/app/(pages)/account/_components/TabSection";
 import HistorySection from "./HistorySection";
 import PersonalDataSection from "./PersonalDataSection";
-import FavoritesSection from "./FavoritesSection";
+import FavoritesSection from "@/app/(pages)/account/favorites/_components/FavoritesSection";
+import { Title } from "@/components/ui";
 
 interface AccountSectionProps {
   activeTab: "history" | "favorites";

@@ -1,7 +1,6 @@
-"use client";
+﻿"use client";
 import React, { FC, useEffect } from "react";
-import Button from "@/components/ButtonComponent";
-import Title from "@/components/TitleComponent";
+import { Button, Title } from "@/components/ui";
 
 const ServerErrorSection = ({
   error,

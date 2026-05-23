@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import AccountSection from "@/app/sections/account-page/AccountSection";
+import AccountSection from "@/app/(pages)/account/history/_components/AccountSection";
 
 export const metadata: Metadata = {
   title: "Oasis - Улюблене",

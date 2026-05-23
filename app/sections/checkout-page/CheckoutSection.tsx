@@ -1,15 +1,28 @@
-"use client";
+﻿"use client";
 import React, { useRef, useState } from "react";
-import Title from "@/components/TitleComponent";
 import PersonalData from "./PersonalDataSection";
 import ProductsSection from "./ProductsSection";
 import CommentsSection from "./CommentsSection";
 import DeliverySection from "./DeliverySection";
+import { Title } from "@/components/ui";
 
 const CheckoutSection = () => {
-  const [personalData, setPersonalData] = useState({ firstName: "", phone: "" });
-  const [commentsData, setCommentsData] = useState({ cutleryQuantity: "", comments: "" });
-  const [deliveryData, setDeliveryData] = useState({ selectedDate: "", selectedTime: "", selectedOption: "", street: "", house: "", flat: "" });
+  const [personalData, setPersonalData] = useState({
+    firstName: "",
+    phone: "",
+  });
+  const [commentsData, setCommentsData] = useState({
+    cutleryQuantity: "",
+    comments: "",
+  });
+  const [deliveryData, setDeliveryData] = useState({
+    selectedDate: "",
+    selectedTime: "",
+    selectedOption: "",
+    street: "",
+    house: "",
+    flat: "",
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateRefs = useRef<(() => boolean)[]>([]);

@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/sceleton";
+﻿import { Skeleton } from "@/components/ui";
 
 const ProgramDescriptionSkeleton = () => {
   return (

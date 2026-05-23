@@ -2,11 +2,10 @@
 import Image from "next/image";
 import { Card } from "flowbite-react";
 import { useForm } from "@mantine/form";
-import Input from "@/components/InputComponent";
-import Select from "@/components/SelectComponent";
 import { Info } from "@/components/icons";
 import { Popover } from "flowbite-react";
 import MapComponent from "@/components/delivery-page/MapComponent";
+import { Input, Select } from "@/components/ui";
 
 const generateDates = (days: number) => {
   const dates: { label: string; value: string }[] = [];

@@ -1,6 +1,10 @@
 "use client";
 import React, { FC, useEffect, useState } from "react";
-import { signInWithPhoneNumber, RecaptchaVerifier, ConfirmationResult } from "firebase/auth";
+import {
+  signInWithPhoneNumber,
+  RecaptchaVerifier,
+  ConfirmationResult,
+} from "firebase/auth";
 
 declare global {
   interface Window {
@@ -11,16 +15,17 @@ import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { verifyCodeBackend } from "@/service/authService";
 import { useRouter } from "next/navigation";
 import { auth } from "@/config/firebise";
-import Button from "../ButtonComponent";
+import Button from "../Button";
 import { useForm } from "@mantine/form";
-import Input from "../InputComponent";
+import Input from "../Input";
 
 const LoginComponent: FC<{
   openModal: boolean;
   setOpenModal: (value: boolean) => void;
 }> = ({ openModal, setOpenModal }) => {
   const [step, setStep] = useState<"phone" | "code">("phone");
-  const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
+  const [confirmationResult, setConfirmationResult] =
+    useState<ConfirmationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [phoneValue, setPhoneValue] = useState("");
   const [error, setError] = useState<string>("");

@@ -1,13 +1,13 @@
-"use client";
+﻿"use client";
 
 import { FC, useEffect, useState } from "react";
-import Title from "@/components/TitleComponent";
 import BenefitsLine from "./BenefitsLine";
 import { NutritionProgram, Product, User } from "@/config/types";
 import { getNutritionPrograms } from "@/service/nutritionProgramService";
 import ProgramDescription from "./ProgramDescription";
 import { getProducts } from "@/service/productService";
 import ProgramDescriptionSkeleton from "./ProgramDescriptionSceleton";
+import { Title } from "@/components/ui";
 
 const NutritionProgramSection: FC = () => {
   const [nutritionPrograms, setNutritionPrograms] = useState<

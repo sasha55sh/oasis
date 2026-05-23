@@ -1,6 +1,5 @@
-import React, { FC } from "react";
-import Button from "@/components/ButtonComponent";
-import Title from "@/components/TitleComponent";
+﻿import React, { FC } from "react";
+import { Button, Title } from "@/components/ui";
 
 const NotFoundSection: FC = () => {
   return (

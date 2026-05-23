@@ -1,8 +1,8 @@
-import React, { FC, useEffect } from "react";
+﻿import React, { FC, useEffect } from "react";
 import { hasLength, useForm } from "@mantine/form";
 import { Card } from "flowbite-react";
-import Input from "@/components/InputComponent";
 import { getUser } from "@/service/userService";
+import { Input } from "@/components/ui";
 
 const CheckoutSection: FC<{
   setPersonalData: (data: { firstName: string; phone: string }) => void;

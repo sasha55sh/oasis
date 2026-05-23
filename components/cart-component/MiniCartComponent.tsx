@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 import React, { FC } from "react";
 import Link from "next/link";
 import { useCart } from "@/hooks/useCart";
 import { usePathname } from "next/navigation";
-import Button from "@/components/ButtonComponent";
+import { Button } from "@/components/ui";
 
 const MiniCartComponent: FC = () => {
   const { products, totalAmount } = useCart();

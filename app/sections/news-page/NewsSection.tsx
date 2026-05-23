@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import React, { FC, useEffect, useState } from "react";
 import NewsCard from "@/components/news-page/NewsCardComponent";
 import { getAllNews } from "@/service/newsService";
-import Title from "@/components/TitleComponent";
 import NewsSceleton from "./NewsSceleton";
 import { News } from "@/config/types";
+import { Title } from "@/components/ui";
 
 const NewsSection: FC = () => {
   const [news, setNews] = useState<News[]>([]);

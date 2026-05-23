@@ -5,10 +5,10 @@ import { Card } from "flowbite-react";
 import { CardProps } from "@/config/types";
 import { useCart } from "@/hooks/useCart";
 import { toggleFavorite } from "@/service/userService";
-import Counter from "@/components/CounterComponent";
 import AuthModal from "@/components/account-page/LoginComponent";
 
 import { Heart, HeartFilled, Plus } from "@/components/icons";
+import { Counter } from "@/components/ui";
 
 const CardComponent: FC<
   CardProps & {

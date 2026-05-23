@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Button from "./ButtonComponent";
+import Button from "./Button";
 
 const deliveryData = [
   { title: "До 45 хвилин", description: "у зеленій зоні" },

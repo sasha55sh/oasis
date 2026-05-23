@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import Button from "../ButtonComponent";
+import Button from "../Button";
 
 interface cardProps {
   className?: string;

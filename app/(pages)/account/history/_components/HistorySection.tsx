@@ -4,9 +4,9 @@ import Image from "next/image";
 import { Loader } from "@mantine/core";
 import { Order } from "@/config/types";
 import { getOrders } from "@/service/orderService";
-import Button from "@/components/ButtonComponent";
 
 import { EmptyHistory } from "@/public/account-page";
+import { Button } from "@/components/ui";
 
 const HistorySection = () => {
   const [orders, setOrders] = useState<Order[]>([]);

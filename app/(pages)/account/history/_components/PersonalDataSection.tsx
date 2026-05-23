@@ -6,11 +6,10 @@ import { Loader } from "@mantine/core";
 import { useRouter } from "next/navigation";
 import { Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { useForm, isEmail, hasLength } from "@mantine/form";
-import Button from "@/components/ButtonComponent";
-import Input from "@/components/InputComponent";
 import { getUser, updateUser, logoutUser } from "@/service/userService";
 
 import { Smile, Pencil } from "@/public/account-page";
+import { Button, Input } from "@/components/ui";
 
 const PersonalDataSection = () => {
   const [user, setUser] = useState<User | null>(null);
