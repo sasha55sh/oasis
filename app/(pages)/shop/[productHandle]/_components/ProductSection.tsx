@@ -2,7 +2,6 @@
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Product } from "@/config/types";
-import { useAlert } from "@/hooks/alertContext";
 import { useCart } from "@/hooks/useCart";
 import { Loader } from "@mantine/core";
 import { getProductByHandle } from "@/service/productService";

@@ -11,8 +11,8 @@ import {
   getSortedProducts,
 } from "@/service/productService";
 
-import {
 import { SearchInput, Select } from "@/components/ui";
+import {
   Bowl,
   Breakfast,
   Dessert,

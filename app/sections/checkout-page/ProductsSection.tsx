@@ -9,7 +9,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getProducts } from "@/service/productService";
 import { createOrder } from "@/service/orderService";
-import ProductSceleton from "@/app/sections/shop-page/ProductSceleton";
+import ProductSceleton from "@/app/(pages)/shop/_components/ProductSceleton";
 import { CartProduct, RecommendedProducts } from "@/components/cart-component";
 import { EmptyCart } from "@/public/shop-page";
 

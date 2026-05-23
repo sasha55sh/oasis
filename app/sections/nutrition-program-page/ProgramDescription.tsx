@@ -1,12 +1,18 @@
 ﻿import { NutritionProgram, Product } from "@/config/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import ProductSceleton from "../shop-page/ProductSceleton";
+import ProductSceleton from "../../(pages)/shop/_components/ProductSceleton";
 import { RecommendedProducts } from "@/components/cart-component";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import RequestOrderModal from "./RequestOrderModal";
-import { Tabs, TabsContent, TabsList, TabsTrigger, Button } from "@/components/ui";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  Button,
+} from "@/components/ui";
 
 const daysData = [
   { label: "Пробний день", value: 1 },

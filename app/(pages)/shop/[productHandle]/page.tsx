@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import ProductSection from "@/app/sections/product-page/ProductSection";
+import ProductSection from "@/app/(pages)/shop/[productHandle]/_components/ProductSection";
 
 export const metadata: Metadata = {
   title: "Oasis - dishes",
